@@ -1,4 +1,19 @@
+-var pageTitle="Главная страница";
+
 doctype html
 html
-	head
-	body
+    include ../common/_head.pug
+    body
+        include ../common/bhappy.pug
+
+        div.firstpage__container
+            include ../common/userbox.pug
+
+            a.author(href="#") Авторизоваться
+
+            footer.copyright &copy; Малюгина Елена| Создано с любовью в Лофтскул 2016г.
+
+        include ../common/script.pug
+
+
+

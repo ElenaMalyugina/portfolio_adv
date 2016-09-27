@@ -1,0 +1,136 @@
+.firstpage__container{
+  width:100%;
+  height:100%;
+  background: url('../img/just/mountains_without_parallax.png') no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+.userbox{
+  width:380px;
+  background: $white;
+  opacity:.8;
+  margin: 0 auto;
+  padding-top: 37px;
+  border-radius: 5px;
+  }
+
+.userbox__img{
+    @extend %border_rad;
+    width:148px;
+    height:148px;
+    margin: 0 auto;
+      img{
+        width:100%;
+    }
+}
+
+.userbox__header{
+  text-align: center;
+  font-size: 26px;
+  font-family: 'Roboto-Regular';
+  color: $dark-gray;
+  margin-top: 12px;
+  margin-bottom: 8px;
+
+
+}
+
+.userbox__descr{
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto-Regular';
+  color: $light-gray;
+  opacity: .5;
+  margin-top: 0;
+  margin-bottom: 30px;
+
+}
+
+.socicon__menu{
+  margin: 0 auto 34px;
+  text-align: center;
+  word-spacing: 20px;
+
+ }
+
+.socicon__li{
+  display: inline-block;
+ }
+
+.socicon__a{
+  color: $light-green;
+  font-size: 30px;
+
+  &:hover{
+    color: $dark-green;
+  }
+}
+
+.socicon_hidden{
+  display: none;
+}
+
+.userbox__tabs{
+  margin: 0;
+  display: flex;
+ }
+
+.userbox__tab-el{
+  background: $light-green;
+  text-align: center;
+  flex: 1;
+
+  border-right: 1px solid $white;
+
+    &:last-child{
+      border: none;
+    }
+
+.Utab__link{
+    display: block;
+    padding: 14px;
+    font-size:16px;
+    font-family: Roboto-Regular;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover{
+    background: $dark-green;
+  }
+}
+
+.author{
+  display: block;
+  border:1px solid $white;
+  font-family: Roboto-Regular;
+  color: $white;
+  padding:10px;
+  width:182px;
+  position: absolute;
+  top:20px;
+  right:20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover{
+    background: $white;
+    color:$light-green;
+  }
+}
+
+.copyright{
+  position: absolute;
+  bottom: 40px;
+  width:100%;
+  text-align: center;
+  font-family: Roboto-Light;
+  color: $white;
+
+
+}
