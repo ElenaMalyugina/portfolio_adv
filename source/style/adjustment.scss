@@ -1,0 +1,68 @@
+%clearfix{
+	&:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+html{
+	font-size: 16px;
+	
+	@include laptop {
+		font-size: 15px;
+	}
+
+	@include tablets {
+		font-size: 14px;
+	}
+	
+	@include phones {
+		font-size: 13px;
+	}
+	
+}
+
+
+
+html, body {
+	width: 100%;
+	height: 100%
+}
+
+.wrapper{
+	position: relative;
+	min-height: 100%;
+	overflow: hidden;
+
+	&:after{
+		content: "";
+		display: block;
+		height: rem(50px);
+		min-width: rem(960px);
+}
+}
+
+.maincontent{
+	min-height: 100%;
+	padding-bottom: rem(50px);
+}
+
+.container{
+	width: 940px;
+	margin: 0px auto;
+	@extend %clearfix;
+
+		@include laptop {
+			width: 90%;
+		}
+
+		@include tablets {
+			width: 480px;
+		}
+				
+		@include phones {
+			width: 320px;
+		}
+}
+
