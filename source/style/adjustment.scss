@@ -38,18 +38,19 @@ html{
 
 html, body {
 	width: 100%;
-	height: 100%
+	height: 100%;
 }
 
 .wrapper{
 	position: relative;
 	min-height: 100%;
 	overflow: hidden;
+	margin-bottom: -157px;
 
 	&:after{
 		content: "";
 		display: block;
-		height: rem(50px);
+		height: rem(157px);
 		min-width: rem(960px);
 }
 }
