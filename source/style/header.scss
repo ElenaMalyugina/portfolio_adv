@@ -63,10 +63,13 @@
 }
 
 .hamburger{
-  font-size: 50px;
+  width: 40px;
+  height: 35px;
+  background: url('../img/sprite.png') -2254px -363px;
   position: absolute;
-  top:0;
+  top:20px;
   right:20px;
+
 }
 
 .saggit{
