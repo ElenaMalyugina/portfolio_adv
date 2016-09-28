@@ -1,0 +1,84 @@
+.header{
+  width:100%;
+  height:100%;
+  background: url('../img/just/mountains_without_parallax.png') no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top:145px;
+
+ }
+
+.header__userbox{
+  width:380px;
+  margin: 0 auto 115px;
+ }
+
+.header__user-photo{
+  @extend %border_rad;
+  width:140px;
+  height:140px;
+  margin: 0 auto;
+  img{
+    width:100%;}
+}
+
+.header__user-header {
+  text-align: center;
+  font-size: 32px;
+  font-family: 'Roboto-Regular';
+  color: $white;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.header__user-descr{
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto-light';
+  color: $white;
+  opacity: .7;
+  margin:0;
+}
+
+.header__socicon-header{
+  position: absolute;
+  top:0;
+  left:20px;
+}
+
+
+.socicon-header__li {
+  display: inline-block;
+ }
+
+.socicon-header__a, .hamburger{
+  display: block;
+  padding: 10px 10px 10px 15px;
+  color: $white;
+  opacity: .7;
+  font-size: 26px;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.hamburger{
+  font-size: 50px;
+  position: absolute;
+  top:0;
+  right:20px;
+}
+
+.saggit{
+  display: block;
+  width: 70px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  color: $white;
+  opacity: .7;
+  font-size: 26px;
+   &:hover {
+    opacity: 1;
+  }
+}
