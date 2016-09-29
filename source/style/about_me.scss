@@ -1,0 +1,70 @@
+.about-me{
+  @extend %clearfix;
+
+}
+.about-me__about{
+  width: 50%;
+  float: left;
+  background: #efeee9;
+  padding-top: 70px;
+  @extend %clearfix;
+ }
+
+.about-me__good{
+  width: 50%;
+  float: right;
+  background: #eeebdf;
+  padding: 70px 50px 50px;
+}
+
+.about-me__header{
+  display: inline-block;
+  vertical-align: top;
+  width: 350px;
+  float: left;
+}
+.about-me__description{
+  display: inline-block;
+  vertical-align: top;
+  width: 443px;
+  float: right;
+}
+
+
+.about-me__photo{
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 40px;
+
+  img{
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.description__header{
+  text-align: center;
+  width: 100px;
+}
+
+.description__p{
+  padding: 0 40px 0 0;
+}
+
+.good__header{
+  width: 320px;
+  text-align: center;
+}
+
+.skills{
+  font-family: Roboto-Bold;
+  font-size: 25px;
+  color:$dark-gray;
+}
+
+.skills__li{
+  font-family: Roboto-Regular;
+  color: $light-green;
+  font-size: 16px;
+}
+
+

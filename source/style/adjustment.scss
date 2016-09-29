@@ -83,3 +83,49 @@ ul{
 	padding-left:0;
 }
 
+.big-header{
+	font-size: 63px;
+	font-family: BERNIERRegular;
+	margin: 0 auto 70px auto;
+    color: $light-gray;
+
+	&:before, &:after{
+		content: '-';
+		opacity: .2;
+		margin: 0 20px;
+        display: inline-block;
+	}
+}
+
+.header_decor{
+	font-size: 35px;
+	font-family: BERNIERRegular;
+	color: $light-gray;
+	margin: 0 auto 40px auto;
+    position: relative;
+
+	&:before, &:after{
+		content: '-';
+		opacity: .2;
+		margin: 0 20px;
+        display: inline-block;
+        position: absolute;
+    }
+    &:before{
+      top:0;
+      left: -40px;
+    }
+
+    &:after{
+      top:0;
+      right: -40px;
+    }
+
+}
+
+.text{
+  color:$dark-gray;
+  font-family: Roboto-Regular;
+  line-height: 1.5;
+}
+
