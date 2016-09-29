@@ -1,7 +1,8 @@
--var pageTitle="Главная страница";
 doctype html
 html(lang='ru-RU')
     include ../common/_head.pug
+    block title
+        title Начальная страница
     body
         include ../common/bhappy.pug
         div.firstpage__container
