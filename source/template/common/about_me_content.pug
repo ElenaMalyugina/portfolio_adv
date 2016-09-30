@@ -1,5 +1,7 @@
 section.about-me
     div.about-me__about
+        svg.top__left(width="1000" height="100")
+            polygon.triangle__left(points="0,0 0,1000 1000,100" fill="#efeee9")
         h2.big-header.about-me__header Обо мне
         div.about-me__description
             div.about-me__photo
@@ -15,6 +17,8 @@ section.about-me
                     Чуть позже я обновлю контент на сайте. А пока посмотрите, какой он классный!
 
     div.about-me__good
+        svg.top__right(width="1000" height="100")
+            polygon.triangle__left(points="1000,0 1000,100 0,100" fill="#eeebdf")
         h3.header_decor.good__header Чем я могу быть вам полезен
         div.text.good__description
             p.
@@ -23,21 +27,65 @@ section.about-me
         ul.good__skills
             li.skills Frontend
                 ul.skills__item
-                    li.skills__li HTML
-                    li.skills__li CSS
-                    li.skills__li Javascript и Jquery
+                    li.skills__li
+                        span.skills__name HTML5
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__html(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name CSS3
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__css(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name Javascript и Jquery
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__js(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+
             li.skills Backend
                 ul.skills__item
-                    li.skills__li PHP
-                    li.skills__li MySQL
-                    li.skills__li Node.js и npm
-                    li.skills__li Mongo.db
+                    li.skills__li
+                        span.skills__name PHP
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__php(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name MySQL
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__mysql(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name node.js и npm
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__node(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name Mongo.db
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__mongo(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+
+
+
+
             li.skills Workflow
                 ul.skills__item
-                    li.skills__li Git
-                    li.skills__li Gulp
-                    li.skills__li Bower
-
+                    li.skills__li
+                        span.skills__name Git
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__git(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name Gulp
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__gulp(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
+                    li.skills__li
+                        span.skills__name Bower
+                        svg.skills__circle(width="130" height="130")
+                            circle.circle__out(r="50" cx="65" cy="65" stroke="#ccc" fill="none" )
+                            circle.circle__in.circle__bower(r="50" cx="65" cy="65" stroke="#00bfa5" transform="rotate(-90 65 65)")
 
 
 

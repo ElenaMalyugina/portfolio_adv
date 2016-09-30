@@ -1,0 +1,54 @@
+.contacts{
+  width: 380px;
+  margin: 0 auto;
+  background: $white;
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 26px 36px 20px 36px;
+
+}
+
+.contacts__header{
+  width: 150px;
+  text-align: center;
+  margin-bottom: 32px;
+  }
+
+.contact__li{
+  margin-bottom: 18px;
+  &:last-child{
+    margin-bottom: 0;
+
+  }
+
+}
+
+.contact__link{
+  text-decoration: none;
+  display: block;
+  &:hover .contact__icon{
+    color:$dark-green;
+  }
+
+  &:hover .contact__text{
+    color:$dark-green;
+  }
+
+
+}
+
+.contact__icon{
+  color: $light-green;
+  font-size: 26px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+.contact__text{
+  font-family:Roboto-Regular;
+  font-size: 16px;
+  color: $dark-gray;
+  display: inline-block;
+  vertical-align: middle;
+}
