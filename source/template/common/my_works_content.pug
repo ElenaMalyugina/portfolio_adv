@@ -1,4 +1,10 @@
 section.my-work
+    svg.top__left(width="1800" height="300")
+        polygon.triangle__left(points="0,0 0,1800 1800,300" fill="#faf8f0")
+    svg.top__right(width="1800" height="300")
+        polygon.triangle__left(points="1800,0 1800,300 0,300" fill="#faf8f0")
+
+
     div.my-work__headerbox
         h2.big-header.my-work__header Мои работы
     div.my-works__slider
@@ -67,11 +73,13 @@ section.my-work__talk
                         div.who__name Зар Захаров
                         div.who__description Преподаватель Loftschool
 
-        form(action="#" method="post")
-            h3.header_decor.header__form Связаться с мной
-            input.input.input__name(type="text" placeholder="Имя")#name
-            input.input.input__email(type="email" placeholder="Email")#email
-            input.textarea(type="textarea" placeholder="Текст сообщения")#message
-            button.button Отправить
-            button.button Очистить
+        form.form__connect(action="#" method="post")
+            .block__input-conn
+                h3.header_decor.header__form Связаться со мной
+                input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя")#name
+                input.form-connect__el.conn__input.input__email(type="email" placeholder="Email")#email
+                textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения")#message
+            .block__button-conn
+                button.form-connect__el.conn__button Отправить
+                button.form-connect__el.conn__button Очистить
 

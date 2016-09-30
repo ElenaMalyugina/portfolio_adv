@@ -54,15 +54,11 @@ html, body {
 	&:after{
 		content: "";
 		display: block;
-		height: rem(157px);
-		min-width: rem(960px);
+		height: 157px;
+		min-width: 960px;
 }
 }
 
-.maincontent{
-	min-height: 100%;
-	padding-bottom: rem(50px);
-}
 
 .container{
 	width: 95%;
@@ -143,5 +139,19 @@ ul{
   color:$dark-gray;
   font-family: Roboto-Regular;
   line-height: 1.5;
+}
+//лучше места не нашлось..
+.top__left{
+	position: absolute;
+	top: -300px;
+	right: 50%;
+	z-index: 10;
+}
+
+.top__right{
+	position: absolute;
+	top: -300px;
+	left: 50%;
+	z-index: 10;
 }
 
