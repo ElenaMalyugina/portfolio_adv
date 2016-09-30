@@ -4,7 +4,7 @@
   background: url('../img/just/mountains_without_parallax.png') no-repeat;
   background-size: cover;
   position: relative;
-  padding:145px 0 100px 0;
+  padding:145px 0 200px 0;
  }
 
 .header__userbox{
@@ -80,7 +80,24 @@
   color: $white;
   opacity: .7;
   font-size: 26px;
+  position: relative;
+  z-index: 40;
    &:hover {
     opacity: 1;
   }
+}
+
+.top__left{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.top__right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+
 }

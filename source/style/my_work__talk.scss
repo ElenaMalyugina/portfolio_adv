@@ -1,0 +1,77 @@
+.my-work__talk{
+  background: url('../img/just/bgabout.png') no-repeat;
+  background-size: cover;;
+  padding: 63px;
+}
+
+.my-talk__container{
+  width: 900px;
+  margin: 0 auto;
+
+}
+
+.talk__header{
+  width: 400px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.talk__item{
+  width: 900px;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+.talk__li{
+  width: 380px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  margin-right: 22px;
+  
+}
+
+.cite__img{
+  width: 80px;
+  height: 80px;
+  @extend %border_rad;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 14px;
+
+  img{
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.talk__cite {
+  margin: 0 0 20px 0;
+
+  &:before{
+    display: block;
+    content: " ";
+    width: 33px;
+    height: 29px;
+    background-image: url('../img/sprite.png');
+    background-position: -2344px -363px;
+    margin-bottom:28px;
+
+  }
+
+  p{
+  line-height: 1.5;
+
+}
+}
+
+.cite__who{
+  display: inline-block;
+  vertical-align: middle;
+  color: $light-green;
+}
+.who__name{
+  font-family: Roboto-Bold;
+  font-size: 18px;
+  line-height: 1.5;
+}

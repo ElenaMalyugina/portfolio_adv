@@ -1,42 +1,34 @@
 .about-me{
   display: flex;
   flex-direction: row;
+  margin-top:-140px;
+  position: relative;
+  z-index: 20;
 }
 .about-me__about{
   position: relative;
   width: 50%;
   background: #efeee9;
-  padding-top: 70px;
+  padding-top: 10px;
   @extend %clearfix;
  }
 
-.top__left{
-  position: absolute;
-  top: -100px;
-  left: 0;
-
-}
 
 .about-me__good{
   width: 50%;
   background: #eeebdf;
-  padding: 70px 50px 50px;
+  padding: 10px 50px 50px;
   position: relative;
 
 }
-.top__right{
-  position: absolute;
-  top: -100px;
-  right: 0;
-}
-
 
 
 .about-me__header{
+  text-align: center;
   display: inline-block;
   vertical-align: top;
-  margin: 0;
-  width: 350px;
+  margin: 0 40px;
+  width: 250px;
   float: left;
 }
 .about-me__description{

@@ -49,7 +49,7 @@ html, body {
 	position: relative;
 	min-height: 100%;
 	overflow: hidden;
-	//margin-bottom: -157px;
+
 
 	&:after{
 		content: "";
@@ -88,17 +88,29 @@ ul{
 }
 
 .big-header{
-	font-size: 63px;
+	font-size: 58px;
 	font-family: BERNIERRegular;
 	margin: 0 auto 70px auto;
     color: $light-gray;
+    position: relative;
 
 	&:before, &:after{
 		content: '-';
 		opacity: .2;
 		margin: 0 20px;
         display: inline-block;
+		position: absolute;
 	}
+
+  &:before{
+    top:0;
+    left: -40px;
+  }
+
+  &:after{
+    top:0;
+    right: -40px;
+  }
 }
 
 .header_decor{
