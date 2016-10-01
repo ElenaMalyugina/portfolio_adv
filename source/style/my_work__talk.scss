@@ -1,7 +1,7 @@
 .my-work__talk{
   background: url('../img/just/bgabout.png') no-repeat;
-  background-size: cover;;
-  padding: 63px;
+  background-size: cover;
+  padding: 63px 63px 60px 63px;
 }
 
 .my-talk__container{
@@ -17,9 +17,10 @@
 }
 
 .talk__item{
-  width: 900px;
+  width: 380*2+22*2px;
   margin: 0 auto 62px auto;
-  font-size: 0;
+ font-size: 0;
+
 }
 
 .talk__li{

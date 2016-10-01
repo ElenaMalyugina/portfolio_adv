@@ -49,13 +49,14 @@ html, body {
 	position: relative;
 	min-height: 100%;
 	overflow: hidden;
+	margin-bottom: -157px;
 
 
 	&:after{
 		content: "";
 		display: block;
 		height: 157px;
-		min-width: 960px;
+		width: 100%;
 }
 }
 
