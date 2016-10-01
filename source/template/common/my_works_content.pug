@@ -1,12 +1,15 @@
 section.my-work
     .container.my_work__container
-        svg.top__left(width="1800" height="300")
-            polygon.triangle__left(points="0,0 0,1800 1800,300" fill="#faf8f0")
-        svg.top__right(width="1800" height="300")
-            polygon.triangle__left(points="1800,0 1800,300 0,300" fill="#faf8f0")
-        div.my-work__headerbox
+        svg.top__left(width="1000" height="200" viewBox="0 0 1000 200" preserveAspectRatio="none")
+            polygon.triangle__left(points="0,0 0,1000 1000,200" fill="#faf8f0")
+        svg.top__right(width="1000" height="200" viewBox="0 0 1000 200" preserveAspectRatio="none" )
+            polygon.triangle__left(points="1000,0 1000,200 0,200" fill="#faf8f0")
+    div.my-work__headerbox
+        .container.my_work__container
+            //чтобы не резался бэкгарунд и в то же время был контейнер на странице
             h2.big-header.my-work__header Мои работы
-        div.my-works__slider
+    div.my-works__slider
+        .container.my_work__container
             ul.slider__item
                 li.slider__li
                     div.slider__left

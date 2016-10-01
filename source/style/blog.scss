@@ -7,7 +7,7 @@
 }
 
 .container__blog{
-  padding: 100px 0 50px 0;
+  padding: 44px 0 50px 0;
 
 }
 
@@ -51,18 +51,35 @@
   margin-bottom: 10px;
 }
 
-.article__header{
-  &:before, &:after{
+.blog__article{
+  margin-bottom: 66px;
+
+  &:after{
     content: '';
+    display: block;
+    height: 4px;
+    width: 70%;
+    background: #eee;
+  }
+}
+
+.article__header{
+  margin-bottom: 20px;
+
+  &:before, &:after{
+    display: none;
   }
 
 }
 
 .article__date{
+  display: block;
+  margin-bottom: 22px;
   color:$light-green;
 }
 
 .article__text{
   line-height: 1.5;
+  margin-bottom: 60px;
 }
 

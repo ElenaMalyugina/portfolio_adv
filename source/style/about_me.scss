@@ -1,25 +1,28 @@
 .about-me{
   position: relative;
   z-index: 20;
-  background: linear-gradient(to right, #efeee9 50%, #eeebdf 50%); //понимаю, что так нельзя...
+  background: linear-gradient(to right, #efeee9 50%, #eeebdf 50%); //понимаю, что так нельзя, но как еще закрасить весь бэкгарунд
 
-  .container__about-me{
-    display: flex;
-    flex-direction: row;
 
-  }
+.container__about-me{
+  display: flex;
+  flex-direction: row;
+
+}
 }
 .about-me__about{
   width: 50%;
   padding: 10px;
   display: flex;
   flex-direction: row;
+  background: #efeee9;
 }
 
 
 .about-me__good{
   width: 50%;
   padding: 10px 50px 50px;
+  background: #eeebdf;
 
 }
 
