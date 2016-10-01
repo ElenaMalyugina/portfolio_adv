@@ -3,6 +3,12 @@
   z-index: 20;
   @extend %clearfix;
 
+
+}
+
+.container__blog{
+  padding: 100px 0 50px 0;
+
 }
 
 .blog__menu{
@@ -25,13 +31,38 @@
 }
 
 .blog__li{
-  padding: 18px;
   border-right: 3px solid transparent;
-}
+  font-family: Roboto-Medium;
+
+  }
 
 .blog__li_active{
   color:$light-green;
   border-right-color:$light-green;
+}
 
+.blog__link{
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.article__header{
+  &:before, &:after{
+    content: '';
+  }
+
+}
+
+.article__date{
+  color:$light-green;
+}
+
+.article__text{
+  line-height: 1.5;
 }
 

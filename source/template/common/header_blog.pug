@@ -1,11 +1,11 @@
-header.header
-    .container.header__container
-        a.index__link(href="index.html" title="На первую страницу")
-            div.header__userbox
-                div.header__user-photo
+header.header.header_blog
+    .container.header__container.header__container_blog
+        a.index__link.inner__link_blog(href="index.html" title="На первую страницу")
+            div.header__userbox.header__userbox_blog
+                div.header__user-photo.header__user-foto_blog
                     img(src="assets/img/just/my_photo.jpg")
-                h1.header__user-header Елена Mалюгинa
-                h3.header__user-descr Личный сайт веб-разработчика
+                h1.header_decor.header__user-header_blog Блог
+                h3.header__user-descr.header__user-descr_blog Статьи, которые я написала
         ul.header__socicon-header
             li.socicon-header__li
                 a.socicon-header__a(href="https://vk.com/id361803656" target='_blank')
@@ -21,7 +21,3 @@ header.header
                     i(class="socicon-header__icon fa fa-linkedin")
         a.hamburger(href="#")
             span.socicon_hidden Куда-то
-        a.saggit.saggit_up(href="#")
-            span.socicon_hidden Вниз
-            i(class="header__icon fa fa-chevron-down")
-

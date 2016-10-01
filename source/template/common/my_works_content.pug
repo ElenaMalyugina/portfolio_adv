@@ -1,89 +1,88 @@
 section.my-work
-    svg.top__left(width="1800" height="300")
-        polygon.triangle__left(points="0,0 0,1800 1800,300" fill="#faf8f0")
-    svg.top__right(width="1800" height="300")
-        polygon.triangle__left(points="1800,0 1800,300 0,300" fill="#faf8f0")
+    .container.my_work__container
+        svg.top__left(width="1800" height="300")
+            polygon.triangle__left(points="0,0 0,1800 1800,300" fill="#faf8f0")
+        svg.top__right(width="1800" height="300")
+            polygon.triangle__left(points="1800,0 1800,300 0,300" fill="#faf8f0")
+        div.my-work__headerbox
+            h2.big-header.my-work__header Мои работы
+        div.my-works__slider
+            ul.slider__item
+                li.slider__li
+                    div.slider__left
+                        img(src="assets/img/mywork/work-1.png")
+                    div.slider__right
+                        h3.about-work__header Сайт школы онлайн-образования
+                        div.about-work__tech HTML, CSS, Javascript
+                        a.about-work__link(href="#" target="_blank")
+                            i.about-work__icon.fa.fa-chain
+                            span.about-work__text-link Посмотреть сайт
+                li.slider__li
+                    div.slider__left
+                        img(src="assets/img/mywork/work-2.png")
+                    div.slider__right
+                        h3.about-work__header Сайт IT-Loft
+                        div.about-work__tech HTML, CSS, Javascript
+                        a.about-work__link(href="#" target="_blank")
+                            i.about-work__icon.fa.fa-chain
+                            span.about-work__text-link Посмотреть сайт
+                li.slider__li
+                    div.slider__left
+                        img(src="assets/img/mywork/work-3.png")
+                    div.slider__right
+                        h3.about-work__header Сайт LoftBlog
+                        div.about-work__tech HTML, CSS, Javascript
+                        a.about-work__link(href="#" target="_blank")
+                            i.about-work__icon.fa.fa-chain
+                            span.about-work__text-link Посмотреть сайт
+                li.slider__li
+                    div.slider__left
+                        img(src="assets/img/mywork/work-4.png")
+                    div.slider__right
+                        h3.about-work__header Сайт Атма-йога
+                        div.about-work__tech HTML, CSS, Javascript
+                        a.about-work__link(href="#" target="_blank")
+                            i.about-work__icon.fa.fa-chain
+                            span.about-work__text-link Посмотреть сайт
 
+    section.my-work__talk
+        .container.my-talk__container
+            h2.big-header.talk__header Что обо мне говорят
+            ul.talk__item
+                li.talk__li
+                    blockquote.talk__cite
+                        p.
+                            Эта девушка проходила обучение не где-то, а в Loftschool.
+                            Два месяца самых современных технологий и бессонных ночей.
+                    div.cite__author
+                        div.cite__img
+                            img(src="assets/img/just/kovalchuk.jpg")
+                        div.cite__who
+                            div.who__name Дмитрий Ковальчук
+                            div.who__description Основатель Loftschool
+                li.talk__li
+                    blockquote.talk__cite
+                        p.
+                            Этот код выдерживает любые испытания.
+                            Только, пожалуйста, не загружайте его на слишком старых браузерах
+                    div.cite__author
+                        div.cite__img
+                            img(src="assets/img/just/zaharov.jpg")
+                        div.cite__who
+                            div.who__name Зар Захаров
+                            div.who__description Преподаватель Loftschool
 
-    div.my-work__headerbox
-        h2.big-header.my-work__header Мои работы
-    div.my-works__slider
-        ul.slider__item
-            li.slider__li
-                div.slider__left
-                    img(src="assets/img/mywork/work-1.png")
-                div.slider__right
-                    h3.about-work__header Сайт школы онлайн-образования
-                    div.about-work__tech HTML, CSS, Javascript
-                    a.about-work__link(href="#" target="_blank")
-                        i.about-work__icon.fa.fa-chain
-                        span.about-work__text-link Посмотреть сайт
-            li.slider__li
-                div.slider__left
-                    img(src="assets/img/mywork/work-2.png")
-                div.slider__right
-                    h3.about-work__header Сайт IT-Loft
-                    div.about-work__tech HTML, CSS, Javascript
-                    a.about-work__link(href="#" target="_blank")
-                        i.about-work__icon.fa.fa-chain
-                        span.about-work__text-link Посмотреть сайт
-            li.slider__li
-                div.slider__left
-                    img(src="assets/img/mywork/work-3.png")
-                div.slider__right
-                    h3.about-work__header Сайт LoftBlog
-                    div.about-work__tech HTML, CSS, Javascript
-                    a.about-work__link(href="#" target="_blank")
-                        i.about-work__icon.fa.fa-chain
-                        span.about-work__text-link Посмотреть сайт
-            li.slider__li
-                div.slider__left
-                    img(src="assets/img/mywork/work-4.png")
-                div.slider__right
-                    h3.about-work__header Сайт Атма-йога
-                    div.about-work__tech HTML, CSS, Javascript
-                    a.about-work__link(href="#" target="_blank")
-                        i.about-work__icon.fa.fa-chain
-                        span.about-work__text-link Посмотреть сайт
+            form.form__connect(action="#" method="post")
+                .block__input-conn
+                    h3.header_decor.header__form Связаться со мной
+                    input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя")#name
+                    input.form-connect__el.conn__input.input__email(type="email" placeholder="Email")#email
+                    textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения")#message
+                .block__button-conn
+                    button.form-connect__el.conn__button Отправить
+                    button.form-connect__el.conn__button Очистить
 
-section.my-work__talk
-    .my-talk__container
-        h2.big-header.talk__header Что обо мне говорят
-        ul.talk__item
-            li.talk__li
-                blockquote.talk__cite
-                    p.
-                        Эта девушка проходила обучение не где-то, а в Loftschool.
-                        Два месяца самых современных технологий и бессонных ночей.
-                div.cite__author
-                    div.cite__img
-                        img(src="assets/img/just/kovalchuk.jpg")
-                    div.cite__who
-                        div.who__name Дмитрий Ковальчук
-                        div.who__description Основатель Loftschool
-            li.talk__li
-                blockquote.talk__cite
-                    p.
-                        Этот код выдерживает любые испытания.
-                        Только, пожалуйста, не загружайте его на слишком старых браузерах
-                div.cite__author
-                    div.cite__img
-                        img(src="assets/img/just/zaharov.jpg")
-                    div.cite__who
-                        div.who__name Зар Захаров
-                        div.who__description Преподаватель Loftschool
-
-        form.form__connect(action="#" method="post")
-            .block__input-conn
-                h3.header_decor.header__form Связаться со мной
-                input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя")#name
-                input.form-connect__el.conn__input.input__email(type="email" placeholder="Email")#email
-                textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения")#message
-            .block__button-conn
-                button.form-connect__el.conn__button Отправить
-                button.form-connect__el.conn__button Очистить
-
-    a.saggit.saggit_down(href="#")
-        span.socicon_hidden Вниз
-        i(class="header__icon fa fa-chevron-up")
+            a.saggit.saggit_down(href="#")
+                span.socicon_hidden Вниз
+                i(class="header__icon fa fa-chevron-up")
 

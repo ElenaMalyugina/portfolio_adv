@@ -1,23 +1,25 @@
 .about-me{
-  display: flex;
-  flex-direction: row;
   position: relative;
   z-index: 20;
+  background: linear-gradient(to right, #efeee9 50%, #eeebdf 50%); //понимаю, что так нельзя...
+
+  .container__about-me{
+    display: flex;
+    flex-direction: row;
+
+  }
 }
 .about-me__about{
-  position: relative;
   width: 50%;
-  background: #efeee9;
-  padding-top: 10px;
-  @extend %clearfix;
- }
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
 
 
 .about-me__good{
   width: 50%;
-  background: #eeebdf;
   padding: 10px 50px 50px;
-  position: relative;
 
 }
 
@@ -41,7 +43,7 @@
 .about-me__photo{
   height: 400px;
   overflow: hidden;
-  margin: 10px 10px 40px 10px;
+  margin: 10px 0 40px 10px;
 
   img{
     width: 100%;

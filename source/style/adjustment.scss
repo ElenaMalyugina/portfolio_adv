@@ -38,6 +38,7 @@ html{
 
 html, body {
 	width: 100%;
+    min-width: 1800px;
 	min-height: 100%;
 }
 
@@ -62,8 +63,10 @@ html, body {
 
 
 .container{
-	width: 95%;
+	width: 1800px;
 	margin: 0 auto;
+	position: relative;
+
 	@extend %clearfix;
 
 		@include laptop {
@@ -88,7 +91,7 @@ ul{
 	font-size: 58px;
 	font-family: BERNIERRegular;
 	margin: 0 auto 70px auto;
-    color: $light-gray;
+    color: $dark-gray;
     position: relative;
 
 	&:before, &:after{
@@ -113,6 +116,7 @@ ul{
 .header_decor{
 	font-size: 35px;
 	font-family: BERNIERRegular;
+    font-weight: 300;
 	color: $light-gray;
 	margin: 0 auto 40px auto;
     position: relative;
