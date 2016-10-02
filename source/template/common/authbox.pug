@@ -3,24 +3,35 @@ div.userbox.userbox_auth
     form.form__auth(action="" method="post")
         h2.header_decor.header__auth Авторизуйтесь
         .block__input_auth
-            div.auth__input
+            label.auth__input(for="login")
                 i.fa.fa-user.input__icon
                 input.input__window(type="text" name="login" id="login" placeholder="Логин")
-            div.auth__input
+            label.auth__input(for="password")
                 i.fa.fa-key.input__icon
                 input.input__window(type="password" name="password" id="password" placeholder="Пароль")
-            input(type="checkbox" name="is-man" id="is-man" value="man")
-            label(for="is-man") Я человек
-            div.radio
-                p Вы точно не робот?
-                input.auth__radio(type="radio" name="robot" id="not_robot" value="not_robot")
-                label(for="not_robot") Да
-                input.auth__radio(type="radio" name="robot" id="robot" value="robot")
-                label(for="robot") Не уверен
+            div.check__block-auth
+                label.label.label_check(for="is-man")
+                    input.check__auth(type="checkbox" name="is-man" id="is-man" value="man")
+                    span.check__decor
+                        span.check__decor-in
+                    span.check__text Я человек
+            .div.radio__block-auth
+                span.radio__question Вы точно не робот?
+                label.label.label__radio(for="not_robot")
+                    input.auth__radio(type="radio" name="robot" id="not_robot" value="not_robot")
+                    span.radio__decor
+                        span.radio__decor-in
+                    span.label__text Да
+                label.label.label__radio(for="robot")
+                    input.auth__radio(type="radio" name="robot" id="robot" value="robot")
+                    span.radio__decor
+                        span.radio__decor-in
+                    span.label__text Не уверен
+
 
         ul.userbox__tabs
            li.userbox__tab-el
-                a.Utab__link(href="#") На главную
+                a.Utab__link(href="index.html") На главную
            li.userbox__tab-el
                 a.Utab__link(href="#") Войти
 

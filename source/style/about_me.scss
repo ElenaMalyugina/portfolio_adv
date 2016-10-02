@@ -26,15 +26,22 @@
 
 }
 
+.about-me__back{
+  @extend .icon-about_header;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
 
 .about-me__header{
   text-align: center;
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 40px;
   width: 250px;
-  float: left;
-}
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  }
+
 .about-me__description{
   display: inline-block;
   vertical-align: top;

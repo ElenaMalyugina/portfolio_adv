@@ -1,197 +1,5 @@
 /*
-SCSS variables are information about icon's compiled state, stored under its original file name
-
-.icon-home {
-  width: $icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
-
-At the bottom of this section, we provide information about the spritesheet itself
-$spritesheet: width height image $spritesheet-sprites;
-*/
-$about-bg-left-name: 'about_bg_left';
-$about-bg-left-x: 0px;
-$about-bg-left-y: 0px;
-$about-bg-left-offset-x: 0px;
-$about-bg-left-offset-y: 0px;
-$about-bg-left-width: 901px;
-$about-bg-left-height: 1013px;
-$about-bg-left-total-width: 3077px;
-$about-bg-left-total-height: 1787px;
-$about-bg-left-image: 'sprite.png';
-$about-bg-left: (0px, 0px, 0px, 0px, 901px, 1013px, 3077px, 1787px, 'sprite.png', 'about_bg_left', );
-$about-bg-right-name: 'about_bg_right';
-$about-bg-right-x: 951px;
-$about-bg-right-y: 0px;
-$about-bg-right-offset-x: -951px;
-$about-bg-right-offset-y: 0px;
-$about-bg-right-width: 900px;
-$about-bg-right-height: 1009px;
-$about-bg-right-total-width: 3077px;
-$about-bg-right-total-height: 1787px;
-$about-bg-right-image: 'sprite.png';
-$about-bg-right: (951px, 0px, -951px, 0px, 900px, 1009px, 3077px, 1787px, 'sprite.png', 'about_bg_right', );
-$arrow-down-name: 'arrow_down';
-$arrow-down-x: 2584px;
-$arrow-down-y: 363px;
-$arrow-down-offset-x: -2584px;
-$arrow-down-offset-y: -363px;
-$arrow-down-width: 26px;
-$arrow-down-height: 16px;
-$arrow-down-total-width: 3077px;
-$arrow-down-total-height: 1787px;
-$arrow-down-image: 'sprite.png';
-$arrow-down: (2584px, 363px, -2584px, -363px, 26px, 16px, 3077px, 1787px, 'sprite.png', 'arrow_down', );
-$bg-name: 'bg';
-$bg-x: 0px;
-$bg-y: 1063px;
-$bg-offset-x: 0px;
-$bg-offset-y: -1063px;
-$bg-width: 1800px;
-$bg-height: 361px;
-$bg-total-width: 3077px;
-$bg-total-height: 1787px;
-$bg-image: 'sprite.png';
-$bg: (0px, 1063px, 0px, -1063px, 1800px, 361px, 3077px, 1787px, 'sprite.png', 'bg', );
-$blog-header-name: 'blog_header';
-$blog-header-x: 1901px;
-$blog-header-y: 363px;
-$blog-header-offset-x: -1901px;
-$blog-header-offset-y: -363px;
-$blog-header-width: 303px;
-$blog-header-height: 208px;
-$blog-header-total-width: 3077px;
-$blog-header-total-height: 1787px;
-$blog-header-image: 'sprite.png';
-$blog-header: (1901px, 363px, -1901px, -363px, 303px, 208px, 3077px, 1787px, 'sprite.png', 'blog_header', );
-$github-name: 'github';
-$github-x: 2427px;
-$github-y: 363px;
-$github-offset-x: -2427px;
-$github-offset-y: -363px;
-$github-width: 26px;
-$github-height: 22px;
-$github-total-width: 3077px;
-$github-total-height: 1787px;
-$github-image: 'sprite.png';
-$github: (2427px, 363px, -2427px, -363px, 26px, 22px, 3077px, 1787px, 'sprite.png', 'github', );
-$hamburger-name: 'hamburger';
-$hamburger-x: 2254px;
-$hamburger-y: 363px;
-$hamburger-offset-x: -2254px;
-$hamburger-offset-y: -363px;
-$hamburger-width: 40px;
-$hamburger-height: 35px;
-$hamburger-total-width: 3077px;
-$hamburger-total-height: 1787px;
-$hamburger-image: 'sprite.png';
-$hamburger: (2254px, 363px, -2254px, -363px, 40px, 35px, 3077px, 1787px, 'sprite.png', 'hamburger', );
-$in-name: 'in';
-$in-x: 2470px;
-$in-y: 448px;
-$in-offset-x: -2470px;
-$in-offset-y: -448px;
-$in-width: 24px;
-$in-height: 22px;
-$in-total-width: 3077px;
-$in-total-height: 1787px;
-$in-image: 'sprite.png';
-$in: (2470px, 448px, -2470px, -448px, 24px, 22px, 3077px, 1787px, 'sprite.png', 'in', );
-$map-marker-name: 'map_marker';
-$map-marker-x: 2254px;
-$map-marker-y: 448px;
-$map-marker-offset-x: -2254px;
-$map-marker-offset-y: -448px;
-$map-marker-width: 30px;
-$map-marker-height: 40px;
-$map-marker-total-width: 3077px;
-$map-marker-total-height: 1787px;
-$map-marker-image: 'sprite.png';
-$map-marker: (2254px, 448px, -2254px, -448px, 30px, 40px, 3077px, 1787px, 'sprite.png', 'map_marker', );
-$portf-arrow-down-name: 'portf_arrow_down';
-$portf-arrow-down-x: 2334px;
-$portf-arrow-down-y: 448px;
-$portf-arrow-down-offset-x: -2334px;
-$portf-arrow-down-offset-y: -448px;
-$portf-arrow-down-width: 18px;
-$portf-arrow-down-height: 29px;
-$portf-arrow-down-total-width: 3077px;
-$portf-arrow-down-total-height: 1787px;
-$portf-arrow-down-image: 'sprite.png';
-$portf-arrow-down: (2334px, 448px, -2334px, -448px, 18px, 29px, 3077px, 1787px, 'sprite.png', 'portf_arrow_down', );
-$portf-arrow-up-name: 'portf_arrow_up';
-$portf-arrow-up-x: 2402px;
-$portf-arrow-up-y: 448px;
-$portf-arrow-up-offset-x: -2402px;
-$portf-arrow-up-offset-y: -448px;
-$portf-arrow-up-width: 18px;
-$portf-arrow-up-height: 29px;
-$portf-arrow-up-total-width: 3077px;
-$portf-arrow-up-total-height: 1787px;
-$portf-arrow-up-image: 'sprite.png';
-$portf-arrow-up: (2402px, 448px, -2402px, -448px, 18px, 29px, 3077px, 1787px, 'sprite.png', 'portf_arrow_up', );
-$portfolio-header-name: 'portfolio_header';
-$portfolio-header-x: 0px;
-$portfolio-header-y: 1474px;
-$portfolio-header-offset-x: 0px;
-$portfolio-header-offset-y: -1474px;
-$portfolio-header-width: 1176px;
-$portfolio-header-height: 313px;
-$portfolio-header-total-width: 3077px;
-$portfolio-header-total-height: 1787px;
-$portfolio-header-image: 'sprite.png';
-$portfolio-header: (0px, 1474px, 0px, -1474px, 1176px, 313px, 3077px, 1787px, 'sprite.png', 'portfolio_header', );
-$portfolio-header1-name: 'portfolio_header1';
-$portfolio-header1-x: 1901px;
-$portfolio-header1-y: 0px;
-$portfolio-header1-offset-x: -1901px;
-$portfolio-header1-offset-y: 0px;
-$portfolio-header1-width: 1176px;
-$portfolio-header1-height: 313px;
-$portfolio-header1-total-width: 3077px;
-$portfolio-header1-total-height: 1787px;
-$portfolio-header1-image: 'sprite.png';
-$portfolio-header1: (1901px, 0px, -1901px, 0px, 1176px, 313px, 3077px, 1787px, 'sprite.png', 'portfolio_header1', );
-$quot-name: 'quot';
-$quot-x: 2344px;
-$quot-y: 363px;
-$quot-offset-x: -2344px;
-$quot-offset-y: -363px;
-$quot-width: 33px;
-$quot-height: 29px;
-$quot-total-width: 3077px;
-$quot-total-height: 1787px;
-$quot-image: 'sprite.png';
-$quot: (2344px, 363px, -2344px, -363px, 33px, 29px, 3077px, 1787px, 'sprite.png', 'quot', );
-$vk-name: 'vk';
-$vk-x: 2503px;
-$vk-y: 363px;
-$vk-offset-x: -2503px;
-$vk-offset-y: -363px;
-$vk-width: 31px;
-$vk-height: 17px;
-$vk-total-width: 3077px;
-$vk-total-height: 1787px;
-$vk-image: 'sprite.png';
-$vk: (2503px, 363px, -2503px, -363px, 31px, 17px, 3077px, 1787px, 'sprite.png', 'vk', );
-$spritesheet-width: 3077px;
-$spritesheet-height: 1787px;
-$spritesheet-image: 'sprite.png';
-$spritesheet-sprites: ($about-bg-left, $about-bg-right, $arrow-down, $bg, $blog-header, $github, $hamburger, $in, $map-marker, $portf-arrow-down, $portf-arrow-up, $portfolio-header, $portfolio-header1, $quot, $vk, );
-$spritesheet: (3077px, 1787px, 'sprite.png', $spritesheet-sprites, );
-
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
+Icon classes can be used entirely standalone. They are named after their original file names.
 
 Example usage in HTML:
 
@@ -208,43 +16,99 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
-@mixin sprite-width($sprite) {
-  width: nth($sprite, 5);
+.icon-about_bg_left {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 901px;
+  height: 1013px;
 }
-
-@mixin sprite-height($sprite) {
-  height: nth($sprite, 6);
+.icon-about_bg_right {
+  background-image: url(../img/sprite.png);
+  background-position: -951px 0px;
+  width: 900px;
+  height: 1009px;
 }
-
-@mixin sprite-position($sprite) {
-  $sprite-offset-x: nth($sprite, 3);
-  $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x  $sprite-offset-y;
+.icon-about_header {
+  background-image: url(../img/sprite.png);
+  background-position: -1226px -1474px;
+  width: 499px;
+  height: 175px;
 }
-
-@mixin sprite-image($sprite) {
-  $sprite-image: nth($sprite, 9);
-  background-image: url(#{$sprite-image});
+.icon-arrow_down {
+  background-image: url(../img/sprite.png);
+  background-position: -2335px -390px;
+  width: 26px;
+  height: 16px;
 }
-
-@mixin sprite($sprite) {
-  @include sprite-image($sprite);
-  @include sprite-position($sprite);
-  @include sprite-width($sprite);
-  @include sprite-height($sprite);
+.icon-bg {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -1063px;
+  width: 1800px;
+  height: 361px;
 }
-
-/*
-The `sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of SCSS
-
-@include sprites($spritesheet-sprites);
-*/
-@mixin sprites($sprites) {
-  @each $sprite in $sprites {
-    $sprite-name: nth($sprite, 10);
-    .#{$sprite-name} {
-      @include sprite($sprite);
-    }
-  }
+.icon-blog_header {
+  background-image: url(../img/sprite.png);
+  background-position: -1901px -215px;
+  width: 303px;
+  height: 208px;
+}
+.icon-github {
+  background-image: url(../img/sprite.png);
+  background-position: -2334px -300px;
+  width: 26px;
+  height: 22px;
+}
+.icon-hamburger {
+  background-image: url(../img/sprite.png);
+  background-position: -2254px -215px;
+  width: 40px;
+  height: 35px;
+}
+.icon-in {
+  background-image: url(../img/sprite.png);
+  background-position: -2037px -473px;
+  width: 24px;
+  height: 22px;
+}
+.icon-map_marker {
+  background-image: url(../img/sprite.png);
+  background-position: -2254px -300px;
+  width: 30px;
+  height: 40px;
+}
+.icon-portf_arrow_down {
+  background-image: url(../img/sprite.png);
+  background-position: -1901px -473px;
+  width: 18px;
+  height: 29px;
+}
+.icon-portf_arrow_up {
+  background-image: url(../img/sprite.png);
+  background-position: -1969px -473px;
+  width: 18px;
+  height: 29px;
+}
+.icon-portfolio_header {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -1474px;
+  width: 1176px;
+  height: 313px;
+}
+.icon-quot {
+  background-image: url(../img/sprite.png);
+  background-position: -2344px -215px;
+  width: 33px;
+  height: 29px;
+}
+.icon-vk {
+  background-image: url(../img/sprite.png);
+  background-position: -2254px -390px;
+  width: 31px;
+  height: 17px;
+}
+.icon-works_header {
+  background-image: url(../img/sprite.png);
+  background-position: -1901px 0px;
+  width: 506px;
+  height: 165px;
 }

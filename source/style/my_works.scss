@@ -8,10 +8,19 @@
   background: #faf8f0;
 }
 
+.my-work__back{
+  @extend .icon-works_header;
+  margin: 0 auto;
+  position: relative;
+}
+
 .my-work__header{
   text-align: center;
-  margin: 0 auto;
   width: 300px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .my-works__slider{

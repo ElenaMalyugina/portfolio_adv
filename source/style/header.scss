@@ -11,6 +11,17 @@
 
 }
 
+.header__background{
+  @extend .icon-portfolio_header;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+
+
+}
+
 .index__link{
   display: block;
   width: 380px;
@@ -75,9 +86,7 @@
 }
 
 .hamburger{
-  width: 40px;
-  height: 35px;
-  background: url('../img/sprite.png') -2254px -363px;
+  @extend .icon-hamburger;
   position: absolute;
   top:20px;
   right:20px;
