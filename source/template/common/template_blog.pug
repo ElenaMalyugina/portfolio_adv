@@ -6,9 +6,9 @@ html(lang="ru")
     body
         .wrapper
             include header_blog
-            block content
-
-        include footer
+            .content
+                block content
+            include footer_blog
 
 
         include script.pug

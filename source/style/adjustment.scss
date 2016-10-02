@@ -42,24 +42,26 @@ html, body {
 	min-height: 100%;
 }
 
+
+
 .firstbody{
   height: 100%;
 }
 
 .wrapper{
-	position: relative;
-	min-height: 100%;
+    min-height: 100%;
 	overflow: hidden;
-	margin-bottom: -157px;
-
-
-	&:after{
-		content: "";
-		display: block;
-		height: 157px;
-		width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.header, .footer{
+  flex: 0 0 auto
 }
+.content{
+  flex: 1 0 auto;
+}
+
 
 
 .container{

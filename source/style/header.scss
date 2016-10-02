@@ -1,6 +1,7 @@
 .header{
   width:100%;
-  height:100%;
+  //height:100vh;
+  height: 100%;
   background: url('../img/just/mountains_without_parallax.png') no-repeat;
   background-size: cover;
   }
@@ -15,11 +16,13 @@
   width: 380px;
   text-decoration: none;
   margin: 0 auto 115px;
+  position: relative;
+  z-index: 40;
 }
 
 .header__userbox{
   width:380px;
-  //margin: 0 auto 115px;
+
  }
 
 .header__user-photo{
