@@ -2,20 +2,27 @@ div.userbox.userbox_auth
     //-блок авторизациии
     form.form__auth(action="" method="post")
         h2.header_decor.header__auth Авторизуйтесь
-        input.auth__input(type="text" name="login" placeholder="Логин")
-        input.auth__input(type="password" name="password" placeholder="Пароль")
-        label я человек
-            input(type="checkbox" name="isMan" value="man")
-        div.radio
-            span Вы точно не робот?
-            input.auth__radio(type="radio" name="robot" value="not_robot")
-            input.auth__radio(type="radio" name="robot" value="not_sure")
+        .block__input_auth
+            div.auth__input
+                i.fa.fa-user.input__icon
+                input.input__window(type="text" name="login" id="login" placeholder="Логин")
+            div.auth__input
+                i.fa.fa-key.input__icon
+                input.input__window(type="password" name="password" id="password" placeholder="Пароль")
+            input(type="checkbox" name="is-man" id="is-man" value="man")
+            label(for="is-man") Я человек
+            div.radio
+                p Вы точно не робот?
+                input.auth__radio(type="radio" name="robot" id="not_robot" value="not_robot")
+                label(for="not_robot") Да
+                input.auth__radio(type="radio" name="robot" id="robot" value="robot")
+                label(for="robot") Не уверен
 
-    ul.userbox__tabs
-       li.userbox__tab-el
-            a.Utab__link(href="#") На главную
-       li.userbox__tab-el
-            a.Utab__link(href="#") Войти
+        ul.userbox__tabs
+           li.userbox__tab-el
+                a.Utab__link(href="#") На главную
+           li.userbox__tab-el
+                a.Utab__link(href="#") Войти
 
 
 
