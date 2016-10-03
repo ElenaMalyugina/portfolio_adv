@@ -36,12 +36,13 @@ html{
 	box-sizing: inherit;
 }
 
+
+
 html, body {
 	width: 100%;
-    min-width: 1800px;
-	min-height: 100%;
+    min-width: 1400px;
+	height: 100%;
 }
-
 
 
 .firstbody{
@@ -51,21 +52,22 @@ html, body {
 .wrapper{
     min-height: 100%;
 	overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: -157px;
+
+  &:after{
+    content:'';
+    display: block;
+    height: 157px;
+  }
+
 }
 
-.header, .footer{
-  flex: 0 0 auto
-}
-.content{
-  flex: 1 0 auto;
-}
+
 
 
 
 .container{
-	width: 1800px;
+	width: 1400px;
 	margin: 0 auto;
 	position: relative;
 
