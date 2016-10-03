@@ -1,13 +1,14 @@
 .contacts{
   width: 380px;
   background: $white;
-  //border: 1px solid #000;
+  opacity: 0.8;
   border-radius: 6px;
   padding: 26px 36px 20px 36px;
   position: absolute;
   top:50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+  z-index: 20;
 
 }
 

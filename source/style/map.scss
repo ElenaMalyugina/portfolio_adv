@@ -1,4 +1,9 @@
-.map_canvas{
+.map_contain{
   height: 1083px;
   position: relative;
+  z-index: 0;
+}
+
+.map{
+  height: 1083px;
 }
