@@ -1,0 +1,149 @@
+.my-works__slider{
+  background: #f0efe9;
+
+}
+
+.slider_window{
+  position: relative;
+  padding: 40px 0 60px 0;
+}
+
+.saggit__pre, .saggit__next{
+  display: block;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+
+  &:hover{
+    background: $light-green;
+  }
+}
+
+.saggit__pre{
+  @extend .icon-portf_arrow_left;
+  left: 0;
+}
+
+.saggit__next{
+  @extend .icon-portf_arrow_right;
+  right: 0;
+}
+
+.slider__circ{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+.slider-toggle{
+  display: inline-block;
+  margin-right: 20px;
+
+    a{
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+}
+
+.toggle_slide{
+  display: block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: $light-green;
+}
+
+.toggle-in{
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent;
+}
+
+.slider-toggle_active{
+  & a{
+    & .toggle-in{
+      background: $white;
+    }
+  }
+}
+
+
+.slider__item{
+  white-space: nowrap ;
+  margin: 0 auto;
+  position: relative;
+  width: 872px;
+  height: 662px;
+  overflow: hidden;
+}
+
+.slider__li{
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 40px;
+  width: 870px;
+}
+
+.slider__left, .slider__right{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.slider__left{
+  width: 516px;
+}
+
+.slider__right{
+  white-space: normal;
+  padding: 0 40px;
+}
+
+.about-work__header{
+  width: 260px;
+  font-family: BERNIERRegular;
+  font-size: 30px;
+  color:$dark-gray;
+}
+
+.about-work__tech{
+  color:$light-green;
+  font-family: Roboto-Regular;
+  text-transform: uppercase;
+  border: 1px solid $light-green;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.about-work__link{
+  display: block;
+  text-decoration: none;
+  color: $white;
+  background:$light-green;
+  width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+
+  &:hover{
+    background: $dark-green;
+  }
+}
+
+.about-work__icon, .about-work__text-link{
+  display: inline-block;
+  vertical-align: middle;
+}
+.about-work__icon{
+  margin-right: 10px;
+}

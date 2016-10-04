@@ -71,8 +71,11 @@ html, body {
 	width: 1400px;
 	margin: 0 auto;
 	position: relative;
+  	@extend %clearfix;
 
-	@extend %clearfix;
+        @include desktop{
+          width: 90%;
+        }
 
 		@include laptop {
 			width: 90%;
