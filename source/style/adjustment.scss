@@ -40,8 +40,26 @@ html{
 
 html, body {
 	width: 100%;
-    min-width: 1400px;
+	min-width: 1100px;
 	height: 100%;
+
+	@include desktop {
+		min-width: 970px;
+	}
+
+	@include laptop {
+		min-width: 750px;
+	}
+
+	@include tablets {
+		min-width: 480px;
+	}
+
+	@include phones {
+		min-width: 320px;
+
+	}
+
 }
 
 
@@ -68,17 +86,17 @@ html, body {
 
 
 .container{
-	width: 1400px;
+	width: 90%;
 	margin: 0 auto;
 	position: relative;
   	@extend %clearfix;
 
         @include desktop{
-          width: 90%;
+          width: 970px;
         }
 
 		@include laptop {
-			width: 90%;
+			width: 750px;
 		}
 
 		@include tablets {
@@ -163,6 +181,10 @@ ul{
   @extend %clearfix;
   position: absolute;
   top: -150px;
+
+  @include tablets{
+    top:-170px
+  }
 }
 .triangle-item{
   width: 50%;

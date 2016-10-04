@@ -1,7 +1,7 @@
 var map,
     marker,
-    myCenter={lat: 55.821117, lng: 37.562016},
-    myPlace= {lat: myCenter.lat+0.004, lng: myCenter.lng},
+    myCenter={lat: 55.819604, lng: 37.563105},
+    myPlace= {lat: 55.823542, lng:37.558679 },
     image= 'assets/img/just/map_marker.png';
 
     function initMap() {
