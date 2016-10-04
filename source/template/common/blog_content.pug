@@ -1,9 +1,12 @@
 section.blog
+    div.triangle
+        .triangle-item.triangle__left
+            svg.svg__left(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none")
+                polygon.triangle__left(points="0,0 0,150 200,150" fill="#fff")
+        .triangle-item.triangle__right
+            svg.svg__right(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none" )
+                polygon.triangle__left(points="200,0 200,150 0,150" fill="#fff")
     .container.container__blog
-        svg.top__left(width="1000" height="200" viewBox="0 0 1000 200" preserveAspectRatio="none")
-            polygon.triangle__left(points="0,0 0,1000 1000,200" fill="#fff")
-        svg.top__right(width="1000" height="200" viewBox="0 0 1000 200" preserveAspectRatio="none" )
-            polygon.triangle__left(points="1000,0 1000,200 0,200" fill="#fff")
         aside.blog__menu
             ul.blog__nav
                 li.blog__li.blog__li_active

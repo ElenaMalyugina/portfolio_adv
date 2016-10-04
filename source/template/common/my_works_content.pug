@@ -1,12 +1,14 @@
 section.my-work
-    .container.my_work__container
-        svg.top__left(width="1000" height="200" viewBox="0 0 1000 200" preserveAspectRatio="none")
-            polygon.triangle__left(points="0,0 0,1000 1000,200" fill="#faf8f0")
-        svg.top__right(width="1000" height="200" viewBox="0 0 1000 200" preserveAspectRatio="none" )
-            polygon.triangle__left(points="1000,0 1000,200 0,200" fill="#faf8f0")
+    div.triangle
+        .triangle-item.triangle__left
+            svg.svg__left(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none")
+                polygon.triangle__left(points="0,0 0,150 200,150" fill="#faf8f0")
+        .triangle-item.triangle__right
+            svg.svg__right(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none" )
+                polygon.triangle__left(points="200,0 200,150 0,150" fill="#faf8f0")
     div.my-work__headerbox
         .container.my_work__container
-            //чтобы не резался бэкгарунд и в то же время был контейнер на странице
+            //- чтобы не резался бэкгарунд и в то же время был контейнер на странице
             .my-work__back
                 h2.big-header.my-work__header Мои работы
     div.my-works__slider
@@ -49,45 +51,45 @@ section.my-work
                             i.about-work__icon.fa.fa-chain
                             span.about-work__text-link Посмотреть сайт
 
-    section.my-work__talk
-        .container.my-talk__container
-            .talk__back
-                h2.big-header.talk__header Что обо мне говорят
-            ul.talk__item
-                li.talk__li
-                    blockquote.talk__cite
-                        p.
-                            Эта девушка проходила обучение не где-то, а в Loftschool.
-                            Два месяца самых современных технологий и бессонных ночей.
-                    div.cite__author
-                        div.cite__img
-                            img(src="assets/img/just/kovalchuk.jpg")
-                        div.cite__who
-                            div.who__name Дмитрий Ковальчук
-                            div.who__description Основатель Loftschool
-                li.talk__li
-                    blockquote.talk__cite
-                        p.
-                            Этот код выдерживает любые испытания.
-                            Только, пожалуйста, не загружайте его на слишком старых браузерах
-                    div.cite__author
-                        div.cite__img
-                            img(src="assets/img/just/zaharov.jpg")
-                        div.cite__who
-                            div.who__name Зар Захаров
-                            div.who__description Преподаватель Loftschool
+section.my-work__talk
+    .container.my-talk__container
+        .talk__back
+            h2.big-header.talk__header Что обо мне говорят
+        ul.talk__item
+            li.talk__li
+                blockquote.talk__cite
+                    p.
+                        Эта девушка проходила обучение не где-то, а в Loftschool.
+                        Два месяца самых современных технологий и бессонных ночей.
+                div.cite__author
+                    div.cite__img
+                        img(src="assets/img/just/kovalchuk.jpg")
+                    div.cite__who
+                        div.who__name Дмитрий Ковальчук
+                        div.who__description Основатель Loftschool
+            li.talk__li
+                blockquote.talk__cite
+                    p.
+                        Этот код выдерживает любые испытания.
+                        Только, пожалуйста, не загружайте его на слишком старых браузерах
+                div.cite__author
+                    div.cite__img
+                        img(src="assets/img/just/zaharov.jpg")
+                    div.cite__who
+                        div.who__name Зар Захаров
+                        div.who__description Преподаватель Loftschool
 
-            form.form__connect(action="#" method="post")
-                .block__input-conn
-                    h3.header_decor.header__form Связаться со мной
-                    input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя")#name
-                    input.form-connect__el.conn__input.input__email(type="email" placeholder="Email")#email
-                    textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения")#message
-                .block__button-conn
-                    button.form-connect__el.conn__button Отправить
-                    button.form-connect__el.conn__button Очистить
+        form.form__connect(action="#" method="post")
+            .block__input-conn
+                h3.header_decor.header__form Связаться со мной
+                input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя")#name
+                input.form-connect__el.conn__input.input__email(type="email" placeholder="Email")#email
+                textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения")#message
+            .block__button-conn
+                button.form-connect__el.conn__button Отправить
+                button.form-connect__el.conn__button Очистить
 
-            a.saggit.saggit_down(href="#")
-                span.socicon_hidden Вниз
-                i(class="header__icon fa fa-chevron-up")
+        a.saggit.saggit_down(href="#")
+            span.socicon_hidden Вниз
+            i(class="header__icon fa fa-chevron-up")
 

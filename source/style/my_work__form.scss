@@ -29,14 +29,25 @@
 .conn__input{
   height: 44px;
   border: none;
-
+  &:focus{
+    outline: none;
+    box-shadow: inset 0 0 5px $light-green;
+  }
 }
+
 
 .conn__textarea{
   height: 140px;
   padding-top: 12px;
   margin-bottom: 0;
   border: none;
+  overflow: auto;
+  resize: none;
+
+  &:focus{
+    outline: none;
+    box-shadow: inset 0 0 5px $light-green;
+  }
 }
 
 .block__button-conn{

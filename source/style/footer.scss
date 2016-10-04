@@ -1,13 +1,12 @@
 .footer{
   background: #000;
-  opacity: .7;
+  opacity: .75;
   height: 157px;
-  margin-top: -157px*2;
+  position: relative;
+  z-index: 20;
+
   }
 
-.footer_blog{
-  margin-top: 0;
-}
 
 .footer__top{
   border-bottom: 1px solid $light-gray;

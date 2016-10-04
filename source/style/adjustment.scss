@@ -45,9 +45,9 @@ html, body {
 }
 
 
-.firstbody{
-  height: 100%;
-}
+// .firstbody{
+//height: 100%;
+//}
 
 .wrapper{
     min-height: 100%;
@@ -62,8 +62,9 @@ html, body {
 
 }
 
-
-
+.content{
+  margin-bottom: -157px;
+}
 
 
 .container{
@@ -148,19 +149,29 @@ ul{
   color:$dark-gray;
   font-family: Roboto-Regular;
   line-height: 1.5;
+
+
 }
 //лучше места не нашлось..
-.top__left{
-	position: absolute;
-	top: -200px;
-	right: 50%;
-	z-index: 0;
+
+
+.triangle{
+ width: 100%;
+  @extend %clearfix;
+  position: absolute;
+  top: -150px;
+}
+.triangle-item{
+  width: 50%;
 }
 
-.top__right{
-	position: absolute;
-	top: -200px;
-	left: 50%;
-	z-index: 0;
+.triangle__left{
+  float: left;
+}
+.triangle__right{
+  float: right;
 }
 
+.svg__left, .svg__right{
+  width: 100%;
+}
