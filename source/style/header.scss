@@ -12,11 +12,14 @@
 }
 
 .header__background{
-  @extend .icon-portfolio_header;
+  //@extend .icon-portfolio_header;
   position: absolute;
   top:50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  fill: $white;
+  fill-opacity: .3;
+
 
   @include tablets{
     display: none;
@@ -91,12 +94,13 @@
 }
 
 .hamburger{
-  @extend .icon-hamburger;
+  //@extend .icon-hamburger;
   position: absolute;
   top:20px;
-  right:0;
-
-
+  right:20px;
+  fill: $white;
+  width: 40px;
+  height: 40px;
 }
 
 .saggit{

@@ -1,6 +1,8 @@
 header.header
     .container.header__container
         div.header__background
+            svg(width='800' height='400' preserveAspectRatio="none")
+               use(xlink:href="assets/img/svg/sprite.svg#portfolio_header" fill="#FFF")
         a.index__link(href="index.html" title="На первую страницу")
             div.header__userbox
                 div.header__user-photo
@@ -21,6 +23,8 @@ header.header
                     span.socicon_hidden linkedin
                     i(class="socicon-header__icon fa fa-linkedin")
         a.hamburger(href="#")
+            svg(width='40' height='40' preserveAspectRatio="none")
+                use(xlink:href="assets/img/svg/sprite.svg#hamburger" )
             span.socicon_hidden Куда-то
         a.saggit.saggit_up(href="#")
             span.socicon_hidden Вниз

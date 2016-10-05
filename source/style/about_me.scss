@@ -34,14 +34,10 @@
 }
 .about-me__about{
   width: 50%;
-  padding: 10px 10px 10px 10px;
-  display: flex;
-  flex-direction: row;
+  padding: 10px;
   background: #efeee9;
 
-  @include desktop{
-    flex-direction: column;
-   }
+
   @include laptop{
     width: 100%;
 
@@ -68,9 +64,26 @@
 
 }
 
+.about-me__left{
+  display: flex;
+  flex-direction: row;
+
+  @include desktop{
+    flex-direction: column;
+  }
+
+
+}
+
 .about-me__back{
-  @extend .icon-about_header;
+  //@extend .icon-about_header;
   position: relative;
+  fill: $light-gray;
+  fill-opacity: 0.1;
+  width: 50%;
+  height: 200px;
+
+
 
   @include laptop{
     margin: 0 auto;
@@ -88,7 +101,7 @@
   }
 
 .about-me__description{
-    width: 443px;
+    width: 50%;
 
   @include laptop{
     margin: 0 auto;

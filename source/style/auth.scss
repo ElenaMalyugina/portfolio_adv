@@ -13,6 +13,11 @@
   font-size: 0;
   white-space: nowrap;
   margin-bottom: 12px;
+
+  &:hover .input__icon{
+    color: $light-green;
+  }
+
 }
 
 
@@ -24,6 +29,7 @@
   color:#bbb;
   padding: 14px;
   font-size: 18px;
+
 }
 
 .input__window{
@@ -36,16 +42,16 @@
   width: 85%;
   border: none;
 
+  &:hover{
+    box-shadow: inset 0 0 5px $light-green;
+  }
+
   &:focus {
       outline: none;
       box-shadow: inset 0 0 5px $light-green;
-
-
-    &~.input__icon{
-      color: $light-green;
-    }
-  }
+ }
 }
+
 
 .label{
   display: inline-block;
