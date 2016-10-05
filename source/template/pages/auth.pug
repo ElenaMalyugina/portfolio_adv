@@ -4,12 +4,14 @@ html(lang='ru').firstbody
     block title
         title Начальная страница
     body.firstbody
-        include ../common/bhappy.pug
-        div.firstpage__container
-            include ../common/authbox.pug
 
-        footer.copyright
-            include ../common/copyright
+        include ../common/bhappy.pug
+        div.wrapper_first
+            div.container.firstpage__container
+                include ../common/authbox.pug
+
+            footer.copyright
+                include ../common/copyright
 
         include ../common/script
 

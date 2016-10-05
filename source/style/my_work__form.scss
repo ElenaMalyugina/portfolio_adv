@@ -5,6 +5,10 @@
   padding-top: 38px;
   border-radius: 5px;
   overflow: hidden;
+
+  @include phones{
+    width: auto;
+  }
 }
 
 .block__input-conn{
@@ -24,6 +28,7 @@
   text-align: center;
   width: 280px;
   margin-bottom: 32px;
+
 }
 
 .conn__input{

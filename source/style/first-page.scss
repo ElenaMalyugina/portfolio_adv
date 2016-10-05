@@ -1,8 +1,16 @@
-.firstpage__container{
-  width:100%;
+.wrapper_first{
+  width: 100%;
   height:100%;
   background: url('../img/just/mountains_without_parallax.png') no-repeat;
   background-size: cover;
+
+  @include phones{
+    min-height: 570px;
+  }
+}
+
+.firstpage__container{
+  height:100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -16,6 +24,10 @@
   padding-top: 37px;
   border-radius: 5px;
   overflow: hidden;
+
+  @include phones{
+    width: auto;
+  }
   }
 
 .userbox__img{
@@ -97,7 +109,7 @@
     font-family: Roboto-Regular;
     color: $white;
     text-decoration: none;
-  }
+}
 
   &:hover{
     background: $dark-green;

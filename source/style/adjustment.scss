@@ -68,22 +68,58 @@ html, body {
 //}
 
 .wrapper{
+
     min-height: 100%;
 	overflow: hidden;
     margin-bottom: -157px;
 
-  &:after{
-    content:'';
+	@include laptop{
+		margin-bottom: -190px;
+	}
+
+	@include tablets{
+		margin-bottom: -120px*2;
+	}
+
+	@include phones{
+		margin-bottom: -256px;
+	}
+
+  &:after {
+    content: '';
     display: block;
     height: 157px;
+
+  	@include laptop{
+		height: 190px;
+	}
+
+    @include tablets {
+      height: 120px*2
+    }
+
+    @include phones {
+      height: 256px;
+    }
   }
-
 }
 
-.content{
-  margin-bottom: -157px;
-}
+.content {
+	margin-bottom: -157px;
 
+	@include laptop{
+		margin-bottom: -190px;
+	}
+
+	@include tablets {
+		margin-bottom: -120px*2;
+
+	}
+
+    @include phones{
+      margin-bottom: -256px;
+    }
+}
 
 .container{
 	width: 90%;
@@ -182,9 +218,17 @@ ul{
   position: absolute;
   top: -150px;
 
+@include laptop{
+	top: -160px;
+}
+
   @include tablets{
-    top:-170px
+    top:-171px
   }
+
+	@include phones{
+		top: -184px;
+	}
 }
 .triangle-item{
   width: 50%;

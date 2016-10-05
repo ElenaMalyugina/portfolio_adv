@@ -5,12 +5,23 @@
   position: relative;
   z-index: 20;
 
+  @include laptop{
+    height: 190px;
+  }
+
+  @include tablets{
+    height: 120px*2;
+    }
+
+  @include phones{
+    height:256px;
+  }
+
   }
 
 
 .footer__top{
   border-bottom: 1px solid $light-gray;
-
   @extend %clearfix;
 
 }
@@ -19,16 +30,39 @@
   font-size: 0;
   float: left;
   padding: 30px 0;
+
+
+  @include tablets{
+    float: none;
+    text-align: center;
+    padding-bottom: 20px;
+
+  }
+
+
+  @include phones{
+    padding:10px 0;
+  }
 }
 
 .footer-nav__li{
   font-size: 16px;
   display: inline-block;
   padding: 0 20px;
-  &:first-child{
-    padding-left: 0;
 
+  @include phones{
+    padding: 0 10px 10px 0;
   }
+
+  &:first-child{
+  padding-left: 0;
+  }
+
+  &:last-child{
+    padding-right: 0;
+  }
+
+
 
   &:hover .footer-nav__a{
     color: $light-green;
@@ -45,6 +79,12 @@
   margin: 0;
   padding: 20px 0;
   font-size: 0;
+
+  @include tablets{
+    float: none;
+    text-align: center;
+    padding: 10px 0;
+  }
 }
 
 .footer-socicon__li{
@@ -63,6 +103,10 @@
   display: inline-block;
   vertical-align: middle;
   color: $white;
+
+  @include tablets{
+    margin-left: 15px;
+  }
 
 
   &:before{
@@ -87,16 +131,37 @@
   @extend %clearfix;
   padding: 20px 0;
 
-}
+  }
 
 .footer__who{
   float: left;
   width: 510px;
+
+  @include laptop{
+    float: none;
+  }
+
+  @include tablets{
+    width: 100%;
+    text-align: center;
+  }
   }
 
 .footer__copyright{
   float: right;
   line-height: 2;
+
+  @include laptop{
+    float: none;
+  }
+
+  @include tablets{
+    margin: 0 auto;
+    text-align: center;
+  @include phones{
+    line-height: 1.5;
+  }
+  }
 
 }
 

@@ -6,6 +6,10 @@
 
 .header__container_blog{
   padding: 76px 0 5px 0;
+
+  @include tablets{
+    padding-bottom: 100px;
+  }
 }
 
 .header__background_blog{
@@ -37,4 +41,12 @@
 
 .inner__link_blog{
   margin-bottom:60px;
+}
+
+.saggit_blog{
+  visibility: hidden;
+
+  @include tablets{
+    visibility: visible;
+  }
 }

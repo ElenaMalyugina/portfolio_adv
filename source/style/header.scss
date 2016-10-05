@@ -30,10 +30,14 @@
   margin: 0 auto 115px;
   position: relative;
   z-index: 40;
+
+  @include phones{
+    width: auto;
+  }
 }
 
 .header__userbox{
-  width:380px;
+
 
  }
 
@@ -90,7 +94,8 @@
   @extend .icon-hamburger;
   position: absolute;
   top:20px;
-  right:20px;
+  right:0;
+
 
 }
 

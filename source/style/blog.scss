@@ -5,7 +5,7 @@
   }
 
 .container__blog{
-  padding: 44px 0 50px 0;
+  padding: 44px 0 70px 0;
   font-size: 0;
 
 }
@@ -16,6 +16,11 @@
   display: inline-block;
   vertical-align: top;
   font-size: 16px;
+
+  @include tablets{
+    position: absolute;
+    left: -999px;
+  }
 }
 
 .blog__column{
@@ -24,6 +29,11 @@
   vertical-align: top;
   width: 80%;
   font-size: 16px;
+
+   @include tablets{
+     width: 100%;
+     padding: 0 10px;
+   }
 }
 
 .blog__nav{
@@ -61,6 +71,11 @@
     height: 4px;
     width: 70%;
     background: #eee;
+
+    @include tablets{
+      width: 100%;
+    }
+
   }
 
   &:last-child{
@@ -88,5 +103,26 @@
 .article__text{
   line-height: 1.5;
   margin-bottom: 60px;
+}
+
+.blog__trigger{
+  display: block;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: $light-green;
+  top: 50vh;
+  left: -20px;
+  border-radius: 50%;
+  visibility: hidden;
+
+  @include tablets{
+    visibility: visible;
+
+    &:hover{
+      box-shadow: 0 0 20px $light-green;
+    }
+  }
+
 }
 

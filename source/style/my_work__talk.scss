@@ -2,10 +2,17 @@
   background: url('../img/just/bgabout.png') no-repeat;
   background-size: cover;
   padding: 63px 63px 60px+157px 63px;
+
+  @include tablets{
+    padding:63px 0 60+120*2px 0 ;
+  }
+
+  @include phones{
+    padding: 63px 0 60+256px 0  ;
+  }
 }
 
 .my-talk__container{
-  width: 900px;
   margin: 0 auto;
 
 }
@@ -29,17 +36,33 @@
 .talk__item{
   width: 380*2+22*2px;
   margin: 0 auto 62px auto;
- font-size: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include tablets{
+    width: auto;
+  }
+
+  @include phones{
+    flex-direction: column;
+
+  }
 
 }
 
 .talk__li{
   width: 380px;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 16px;
-  margin-left: 22px;
-  
+  display: flex;
+  flex-direction: column;
+
+  @include tablets{
+    width: 45%;
+     }
+
+  @include phones{
+    width: 100%;
+  }
 }
 
 .cite__img{
@@ -49,6 +72,7 @@
   display: inline-block;
   vertical-align: middle;
   margin-right: 14px;
+  flex: 1 1 0;
 
   img{
     width: 100%;
@@ -58,6 +82,7 @@
 
 .talk__cite {
   margin: 0 0 20px 0;
+  flex: 1 1 0;
 
   &:before{
     display: block;
@@ -70,8 +95,9 @@
 
   }
 
-  p{
+  cite{
   line-height: 1.5;
+    font-style: normal;
 
 }
 }

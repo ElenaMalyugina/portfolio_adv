@@ -5,11 +5,12 @@ html(lang='ru').firstbody
         title Начальная страница
     body.firstbody
         include ../common/bhappy.pug
-        div.firstpage__container
-            include ../common/userbox.pug
+        .wrapper_first
+            div.container.firstpage__container
+                include ../common/userbox.pug
 
-            footer.copyright
-                include ../common/copyright
+                footer.copyright
+                    include ../common/copyright
 
         include ../common/script.pug
 
