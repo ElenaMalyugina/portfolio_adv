@@ -210,10 +210,12 @@
 .skills__circle{
   fill: none;
   stroke-width: 25;
+  width: 130px;
+
 }
 
 .circle__in{
-  //transition: all 20s;
+  transition: all 20s;
 }
 
 $radius : 50;

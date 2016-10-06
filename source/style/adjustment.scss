@@ -71,7 +71,7 @@ html, body {
 
     min-height: 100%;
 	overflow: hidden;
-    margin-bottom: -157px;
+    margin-bottom: -162px;
 
 	@include laptop{
 		margin-bottom: -190px;
@@ -88,7 +88,7 @@ html, body {
   &:after {
     content: '';
     display: block;
-    height: 157px;
+    height: 162px;
 
   	@include laptop{
 		height: 190px;
@@ -105,7 +105,7 @@ html, body {
 }
 
 .content {
-	margin-bottom: -157px;
+	margin-bottom: -162px;
 
 	@include laptop{
 		margin-bottom: -190px;
@@ -217,7 +217,7 @@ img{
  width: 100%;
   @extend %clearfix;
   position: absolute;
-  top: -150px;
+  top: -149px;
 
 		@include laptop{
 		top: -160px;
@@ -237,6 +237,7 @@ img{
 
 .triangle__left{
   float: left;
+	margin-right: -2px;
 }
 .triangle__right{
   float: right;
