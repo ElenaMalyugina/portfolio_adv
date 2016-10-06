@@ -8,6 +8,7 @@ module.exports = function() {
           pretty: true
         }
       }))
+
       .pipe($.gp.cheerio({
         run: function ($) {
           $('[fill]').removeAttr('fill');
@@ -24,6 +25,8 @@ module.exports = function() {
           }
         }
       }))
+
+
       .pipe($.gulp.dest($.config.root + '/assets/img/svg'))
   })
 };

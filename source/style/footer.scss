@@ -91,20 +91,35 @@
   display: inline-block;
  }
 
-.footer-socicon__a{
-  width: 40px;
-  height: 40px;
-  border: solid 1px $white;
-  opacity: .6;
-  text-align: center;
-  @extend %border_rad;
-  margin-left: 5px;
-  font-size: 20px;
+.footer-socicon__a {
+  margin-left: 20px;
   display: inline-block;
   vertical-align: middle;
-  color: $white;
+  text-decoration: none;
+  //width: 40px;
+  //height: 40px;
+  position: relative;
 
-  @include tablets{
+
+  svg{
+  width: 40px;
+  height: 40px;
+  fill: #000;
+  background: $white;
+  fill-opacity: 1;
+  border: 1px solid $white;
+    border-radius: 50%;
+    transition: 300ms;
+
+    &:hover{
+      background: transparent;
+      fill: $white;
+      transition: 300ms;
+    }
+
+  }
+
+  @include tablets {
     margin-left: 15px;
   }
 
@@ -117,11 +132,7 @@
   
   }
 
-  &:hover {
-    background: $white;
-    opacity: 1;
-    color: $dark-gray;
-   }
+
 }
 
 .footer__bottom{

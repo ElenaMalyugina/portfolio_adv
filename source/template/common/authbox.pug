@@ -4,10 +4,15 @@ div.userbox.userbox_auth
         h2.header_decor.header__auth Авторизуйтесь
         .block__input_auth
             label.auth__input(for="login")
-                i.fa.fa-user.input__icon
+                div.input__icon
+                    svg
+                        use(xlink:href="assets/img/svg/sprite.svg#login")
                 input.input__window(type="text" name="login" id="login" placeholder="Логин")
             label.auth__input(for="password")
-                i.fa.fa-key.input__icon
+                div.input__icon
+                    svg
+                        use(xlink:href="assets/img/svg/sprite.svg#password")
+
                 input.input__window(type="password" name="password" id="password" placeholder="Пароль")
             div.check__block-auth
                 label.label.label_check(for="is-man")

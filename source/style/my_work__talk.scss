@@ -18,9 +18,16 @@
 }
 
 .talk__back{
-  @extend .icon-about_header;
+  //@extend .icon-about_header;
   margin: 0 auto 60px auto;
   position: relative;
+  fill: $light-gray;
+  fill-opacity: 0.2;
+  text-align: center;
+
+  svg{
+    width: 500px;
+  }
 }
 
 .talk__header{
@@ -111,4 +118,8 @@
   font-family: Roboto-Bold;
   font-size: 18px;
   line-height: 1.5;
+}
+
+.saggit_up{
+  transform: rotate(180deg);
 }

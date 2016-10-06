@@ -4,6 +4,7 @@
   height: 100%;
   background: url('../img/just/mountains_without_parallax.png') no-repeat;
   background-size: cover;
+  position: relative;
   }
 
 .header__container{
@@ -12,13 +13,18 @@
 }
 
 .header__background{
-  //@extend .icon-portfolio_header;
   position: absolute;
   top:50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   fill: $white;
   fill-opacity: .3;
+  text-align: center;
+
+  svg{
+   width: 1000px;
+  }
+
 
 
   @include tablets{
@@ -39,10 +45,6 @@
   }
 }
 
-.header__userbox{
-
-
- }
 
 .header__user-photo{
   @extend %border_rad;
@@ -80,27 +82,34 @@
 
 .socicon-header__li {
   display: inline-block;
+
+  svg{
+    width: 50px;
+    height: 30px;
+  }
  }
 
 .socicon-header__a, .hamburger{
   display: block;
   padding: 10px 10px 10px 15px;
   color: $white;
+  fill: $white;
   opacity: .7;
-  font-size: 26px;
+
   &:hover{
     opacity: 1;
   }
 }
 
 .hamburger{
-  //@extend .icon-hamburger;
   position: absolute;
   top:20px;
   right:20px;
-  fill: $white;
-  width: 40px;
-  height: 40px;
+
+  svg{
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .saggit{
@@ -109,15 +118,25 @@
   margin: 0 auto;
   text-align: center;
   padding: 10px;
-  color: $white;
+  fill: $white;
   opacity: .7;
-  font-size: 26px;
   position: relative;
   z-index: 40;
+
+  svg{
+    width: 40px;
+    height: 40px;
+  }
    &:hover {
     opacity: 1;
   }
 }
+
+
+
+
+
+
 
 
 

@@ -71,14 +71,25 @@
 
 .socicon__li{
   display: inline-block;
+  vertical-align: bottom;
+
  }
 
 .socicon__a{
-  color: $light-green;
-  font-size: 30px;
+  fill: $light-green;
+  display: block;
+  text-align: center;
+
+
+  svg{
+    width: 45px;
+    height: 25px;
+
+
+  }
 
   &:hover{
-    color: $dark-green;
+    fill: $dark-green;
   }
 }
 

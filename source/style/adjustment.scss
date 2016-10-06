@@ -206,10 +206,7 @@ ul{
   color:$dark-gray;
   font-family: Roboto-Regular;
   line-height: 1.5;
-
-
 }
-//лучше места не нашлось..
 
 
 .triangle{
@@ -218,17 +215,17 @@ ul{
   position: absolute;
   top: -150px;
 
-@include laptop{
-	top: -160px;
-}
+		@include laptop{
+		top: -160px;
+		}
 
-  @include tablets{
-    top:-171px
-  }
+	  @include tablets{
+		top:-171px
+	  }
 
-	@include phones{
+		@include phones{
 		top: -184px;
-	}
+		}
 }
 .triangle-item{
   width: 50%;
@@ -242,5 +239,32 @@ ul{
 }
 
 .svg__left, .svg__right{
-  width: 100%;
+  	width: 100%;
+	display: block;
 }
+
+
+//для страницы about
+.svg__left_about{
+	fill:#efeee9;
+}
+
+.svg__right_about{
+  fill:#eeebdf;
+  @include laptop{
+    fill:#efeee9;
+  }
+}
+
+//для страницы works
+
+.svg__left_works,.svg__right_works{
+  fill:#faf8f0;
+
+}
+
+//для блога
+.svg__left_blog,.svg__right_blog{
+  fill: #fff;
+}
+

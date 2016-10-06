@@ -9,9 +9,16 @@
 }
 
 .my-work__back{
-  @extend .icon-works_header;
   margin: 0 auto;
   position: relative;
+  text-align: center;
+  fill: $light-gray;
+  fill-opacity: 0.2;
+
+  svg{
+    width: 500px;
+  }
+
 }
 
 .my-work__header{

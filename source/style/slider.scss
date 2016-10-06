@@ -13,20 +13,32 @@
   position: absolute;
   top:50%;
   transform: translateY(-50%);
+  fill: $light-green;
+  padding: 40px 20px;
+
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+
 
   &:hover{
-    background: $light-green;
+   fill: $dark-green;
   }
 }
 
 .saggit__pre{
-  @extend .icon-portf_arrow_left;
+  //@extend .icon-portf_arrow_left;
   left: 0;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
 }
 
 .saggit__next{
-  @extend .icon-portf_arrow_right;
+  //@extend .icon-portf_arrow_right;
   right: 0;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
 }
 
 .slider__circ{
@@ -135,6 +147,12 @@
   width: 200px;
   padding: 15px;
   border-radius: 5px;
+
+  svg{
+    fill: $white;
+    width: 20px;
+    height: 20px;
+  }
 
   &:hover{
     background: $dark-green;

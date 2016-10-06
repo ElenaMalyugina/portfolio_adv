@@ -1,17 +1,17 @@
 section.about-me
     div.triangle
         .triangle-item.triangle__left
-            svg.svg__left(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none")
-                polygon.triangle__left(points="0,0 0,150 200,150" fill="#efeee9")
+            svg.svg__left.svg__left_about(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none")
+                polygon.triangle__left(points="0,0 0,150 200,150")
         .triangle-item.triangle__right
-            svg.svg__right(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none" )
-                polygon.triangle__left(points="200,0 200,150 0,150" fill="#eeebdf")
+            svg.svg__right.svg__right_about(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none" )
+                polygon.triangle__left(points="200,0 200,150 0,150")
     .container.container__about-me
         div.about-me__about
             .container_adapt
                 .about-me__left
                     .about-me__back
-                        svg(width="400" height="200" viewBox="0 0 400 200" preserveAspectRatio="none")
+                        svg
                             use(xlink:href="assets/img/svg/sprite.svg#about_header")
                         h2.big-header.about-me__header Обо мне
                     div.about-me__description

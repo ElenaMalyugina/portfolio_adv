@@ -15,7 +15,7 @@
   margin-bottom: 12px;
 
   &:hover .input__icon{
-    color: $light-green;
+    fill: $light-green;
   }
 
 }
@@ -26,9 +26,14 @@
   vertical-align: middle;
   text-align: center;
   background: #eeebdf;
-  color:#bbb;
-  padding: 14px;
-  font-size: 18px;
+  fill:#bbb;
+  padding: 12px;
+
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+
 
 }
 

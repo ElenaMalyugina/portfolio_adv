@@ -1,7 +1,7 @@
 header.header
     .container.header__container
         div.header__background
-            svg(width='800' height='400' preserveAspectRatio="none")
+            svg
                use(xlink:href="assets/img/svg/sprite.svg#portfolio_header" fill="#FFF")
         a.index__link(href="index.html" title="На первую страницу")
             div.header__userbox
@@ -13,22 +13,27 @@ header.header
             li.socicon-header__li
                 a.socicon-header__a(href="https://vk.com/id361803656" target='_blank')
                     span.socicon_hidden Вконтакте
-                    i(class="socicon-header__icon fa fa-vk")
+                    svg
+                        use(xlink:href="assets/img/svg/sprite.svg#vk")
             li.socicon-header__li
                 a.socicon-header__a(href="https://github.com/ElenaMalyugina" target="_blank")
                     span.socicon_hidden Github
-                    i(class="socicon-header__icon fa fa-github-alt")
+                    svg
+                        use(xlink:href="assets/img/svg/sprite.svg#github")
             li.socicon-header__li
                 a.socicon-header__a(href="#" target="_blank")
                     span.socicon_hidden linkedin
-                    i(class="socicon-header__icon fa fa-linkedin")
+                    svg
+                        use(xlink:href="assets/img/svg/sprite.svg#in")
         a.hamburger(href="#")
-            svg(width='40' height='40' preserveAspectRatio="none")
+            svg
                 use(xlink:href="assets/img/svg/sprite.svg#hamburger" )
             span.socicon_hidden Куда-то
-        a.saggit.saggit_up(href="#")
+        a.saggit.saggit_down(href="#")
             span.socicon_hidden Вниз
-            i(class="header__icon fa fa-chevron-down")
+            svg
+                use(xlink:href="assets/img/svg/sprite.svg#arrow_down" )
+
 
 
 
