@@ -25,8 +25,13 @@
   fill-opacity: 0.2;
   text-align: center;
 
-  svg{
+  svg {
     width: 500px;
+
+    @include phones {
+
+    width: 400px;
+  }
   }
 }
 
@@ -37,6 +42,11 @@
   top:50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+
+  @include phones{
+    font-size: 50px;
+    width: 300px;
+  }
 
 }
 
@@ -70,6 +80,8 @@
   @include phones{
     width: 100%;
   }
+
+
 }
 
 .cite__img{
@@ -94,10 +106,7 @@
   &:before{
     display: block;
     content: " ";
-    width: 33px;
-    height: 29px;
-    background-image: url('../img/sprite.png');
-    background-position: -2344px -363px;
+    @extend .icon-quot;
     margin-bottom:28px;
 
   }

@@ -35,7 +35,7 @@
   text-decoration: none;
   display: block;
   &:hover .contact__icon{
-    color:$dark-green;
+    fill:$dark-green;
   }
 
   &:hover .contact__text{
@@ -46,11 +46,16 @@
 }
 
 .contact__icon{
-  color: $light-green;
+  fill: $light-green;
   font-size: 26px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 16px;
+  width: 18px;
+  height: 18px;
+
+
+
 }
 
 .contact__text{

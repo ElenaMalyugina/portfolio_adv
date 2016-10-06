@@ -3,17 +3,21 @@ section.contacts
     ul.contact__list
         li.contact__li
             a.contact__link(href="skype:elena.elena9812?chat")
-                i.contact__icon.fa.fa-skype
+                svg.contact__icon
+                    use(xlink:href="assets/img/svg/sprite.svg#skype")
                 span.contact__text elena.elena9812
         li.contact__li
             a.contact__link(href="mailto:malyugina.el@yandex.ru")
-                i.contact__icon.fa.fa-envelope
+                svg.contact__icon
+                    use(xlink:href="assets/img/svg/sprite.svg#envelope")
                 span.contact__text malyugina.el@yandex.ru
         li.contact__li
            a.contact__link(href="tel:+123456780")
-                i.contact__icon.fa.fa-phone
-                span.contact__text +7 111 111 11 11
+               svg.contact__icon
+                   use(xlink:href="assets/img/svg/sprite.svg#phone")
+               span.contact__text +7 111 111 11 11
         li.contact__li
             a.contact__link(href="mailto:malyugina.el@yandex.ru")
-                i.contact__icon.fa.fa-map-marker
+                svg.contact__icon
+                    use(xlink:href="assets/img/svg/sprite.svg#map_marker")
                 span.contact__text г.Москва
