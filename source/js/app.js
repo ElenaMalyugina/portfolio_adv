@@ -85,9 +85,6 @@ var map,
                     }
                 ]
             }
-
-
-
     ]
 
     });
@@ -116,6 +113,39 @@ $(document).ready(function () {
                 .siblings()
                 .removeClass('userbox_hide');
         });
+    }());
+
+
+    (function(){
+        $('.modal').hide();
+
+        $('.hamburger').on('click',function(e){
+            e.preventDefault();
+
+            var thisEl=$(this),
+                container=thisEl.closest('body'),
+                modal=container.find('.modal');
+
+            thisEl.hide(200);
+            modal.show();
+        });
+    }());
+
+    (function(){
+        $('.cross').on('click', function(e){
+            e.preventDefault();
+
+            var thisEl=$(this),
+                container=thisEl.closest('.modal'),
+                containerOut=thisEl.closest('body'),
+                ham=containerOut.find('.hamburger');
+
+            container.fadeOut(300);
+            ham.show();
+
+        });
+
+
     }());
 
 
