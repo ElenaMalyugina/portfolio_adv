@@ -99,3 +99,27 @@ var map,
         title: 'Я здесь'
     });
 }
+
+$(document).ready(function () {
+    (function(){
+        $('.author').on('click',function(e){
+            e.preventDefault();
+
+            var thisEl=$(this),
+                anim=thisEl.siblings('.userbox_js');
+
+            $(thisEl)
+                .fadeOut(1000);
+
+            $(anim)
+                .addClass('userbox_hide')
+                .siblings()
+                .removeClass('userbox_hide');
+        });
+    }());
+
+
+
+
+
+});

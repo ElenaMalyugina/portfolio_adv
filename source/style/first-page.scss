@@ -4,6 +4,7 @@
   background: url('../img/just/mountains_without_parallax.png') no-repeat;
   background-size: cover;
 
+
   @include phones{
     min-height: 570px;
   }
@@ -12,9 +13,7 @@
 .firstpage__container{
   height:100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  perspective: 1000px;
  }
 
 .userbox{
@@ -24,11 +23,34 @@
   padding-top: 37px;
   border-radius: 5px;
   overflow: hidden;
+  transition: all 1s;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 40;
+
+
 
   @include phones{
     width: auto;
   }
   }
+
+.userbox_js{
+  transform: translateX(-50%) translateY(-50%)rotateY(0deg);
+  transition: all 2s;
+  opacity: 1;
+}
+
+.userbox_hide{
+  transition: all 1s;
+  transform: translateX(-50%) translateY(-50%) rotateY(180deg);
+  z-index: 20;
+  opacity: 0;
+
+
+}
 
 .userbox__img{
     @extend %border_rad;
@@ -45,7 +67,7 @@
   font-size: 26px;
   font-family: 'Roboto-Regular';
   color: $dark-gray;
-  margin-top: 12px;
+  margin-top: 40px;
   margin-bottom: 8px;
 
 
