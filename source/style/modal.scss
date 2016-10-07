@@ -1,0 +1,65 @@
+.modal{
+  background: $light-green;
+  position: relative;
+  opacity: 0.8;
+  //padding-top: 63px;
+  @extend %clearfix;
+
+}
+
+.modal__nav{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  color: $white;
+  text-decoration: none;
+}
+
+.modal__link{
+  color: $white;
+  opacity: 0.8;
+  display: block;
+  text-decoration: none;
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.modal_left{
+  width: 0%;
+  height: 100vh;
+  float: left;
+  background: lightblue;
+  animation-name: modal;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+
+}
+
+.modal_right{
+  width: 0%;
+  height: 100vh;
+  float: right;
+  background: lavenderblush;
+  animation-name: modal;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes modal {
+  from{
+    width: 0;
+  }
+  to{
+    width: 50%;
+  }
+}
+
+
