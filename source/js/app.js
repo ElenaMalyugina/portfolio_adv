@@ -168,4 +168,115 @@ $(document).ready(function () {
         });
     }());
 
+
+    //слайдер
+    (function(){
+        $('.saggit__next').on('click', function(e){
+            e.preventDefault();
+
+            var thisEl=$(this),
+                container=thisEl.closest('.my_work__container'),
+                activeSlide=container.find('.slider__li_active')
+                flag=true;
+
+
+                if(flag){
+                    flag=false;
+                    activeSlide.animate(
+                        {
+                            'left': '100%'
+                        })
+                        .removeClass('slider__li_active')
+                        .next()
+                        .animate(
+                            {
+                                'left': '0'
+                            })
+                        .addClass('slider__li_active')
+                        .next()
+                        .css({'left': '-100%'});
+                        $('.slider__item').append(activeSlide);
+                    flag=true;
+                } });
+    }());
+
+    (function(){
+        $('.saggit__pre').on('click', function(e){
+            e.preventDefault();
+            var thisEl=$(this),
+                container=thisEl.closest('.my_work__container'),
+                slide=container.find('.slider__li_active'),
+                activeSlide=container.find('.slider__li_active'),
+                flag=true;
+
+           if(flag){
+               flag=false;
+                activeSlide.animate(
+                    {
+                        'left': '-100%'
+                    })
+                    .removeClass('slider__li_active')
+                    .next()
+                    .animate(
+                        {
+                            'left': '0'
+                        })
+                    .addClass('slider__li_active')
+                    .next()
+                    .css({'left': '100%'});
+                $('.slider__item').append(activeSlide);
+                timer=setTimeout(1000);
+                flag=true;
+            }
+
+        });
+    }());
+
+    (function() {
+        $('.slider-toggle').on('click', function (e) {
+            e.preventDefault();
+            var
+                thisEl=$(this),
+                toggleNDX=thisEl.index(),
+                slider=thisEl.closest('.slider_window'),
+                slide=slider.find('.slider__li'),
+                slideToggle=slide.eq(toggleNDX);
+
+            thisEl.addClass('slider-toggle_active')
+                    .siblings()
+                    .removeClass('slider-toggle_active');
+
+            slideToggle.addClass('slider__li_active')
+                    .animate({'left':'0'})
+                    .siblings()
+                    .removeClass('slider__li_active')
+                    .css({'left':'-100%'});
+
+
+        });
+    }());
+
+    // //скролл блог
+    // (function(){
+    //     $(window).on('scroll', function(e){
+    //         e.preventDefault();
+    //         var
+    //             thisEl=$(this),
+    //             menu=thisEl.find('.blog__li'),
+    //             ndx= menu.index(),
+    //             container=thisEl.find('.blog__column'),
+    //             content = container.find('.blog__article'),
+    //             blogIndex=content.eq(ndx),
+    //             h=content.offset().top;
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //     });
+    // }());
+
+
 });

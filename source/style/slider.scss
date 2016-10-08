@@ -6,6 +6,27 @@
 .slider_window{
   position: relative;
   padding: 40px 0 70px 0;
+  height: 800px;
+  width: 872px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @include desktop{
+    height: 960px;
+  }
+
+  @include laptop{
+    width: 800px;
+  }
+
+  @include tablets{
+    width: 440px;
+  }
+
+  @include phones{
+    width: 300px;
+    height: 100vh;
+  }
 }
 
 .saggit__pre, .saggit__next{
@@ -15,6 +36,7 @@
   transform: translateY(-50%);
   fill: $light-green;
   padding: 40px 20px;
+  z-index: 40;
 
   svg{
     width: 30px;
@@ -104,35 +126,27 @@
   white-space: nowrap ;
   margin: 0 auto;
   position: relative;
-  width: 872px;
+  left: 0;
   height: 662px;
-  overflow: hidden;
+
 
   @include desktop{
     height: auto;
   }
 
-  @include laptop{
-    width: 800px;
   }
 
-  @include tablets{
-    width: 440px;
-  }
 
-  @include phones{
-    width: 300px;
-  }
-}
 
 .slider__li{
-  //position: absolute;
+  position: absolute;
   display: inline-block;
   vertical-align: top;
-  top: 0;
-  left: 0;
   padding: 0 40px;
   width: 870px;
+  left:-100%;
+  top:0;
+
 
   @include laptop{
     width: 800px;
@@ -146,6 +160,11 @@
 
   }
 }
+
+.slider__li_active{
+  left:0;
+}
+
 
 .slider__left, .slider__right{
   display: inline-block;
