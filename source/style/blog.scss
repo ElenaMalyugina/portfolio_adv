@@ -38,6 +38,12 @@
 
 .blog__nav{
   text-align: right;
+  position: fixed;
+  left: 10%;
+
+  @include phones{
+    position: absolute;
+  }
 
 }
 

@@ -14,7 +14,7 @@
 
 .my-talk__container{
   margin: 0 auto;
-
+  padding-bottom: 20px;
 }
 
 .talk__back{
@@ -130,5 +130,9 @@
 }
 
 .saggit_up{
-  transform: rotate(180deg);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) rotate(180deg);
+  padding-top: 0;
 }

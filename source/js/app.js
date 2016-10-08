@@ -1,10 +1,11 @@
-var map,
-    marker,
-    myCenter={lat: 55.819604, lng: 37.563105},
-    myPlace= {lat: 55.823542, lng:37.558679 },
-    image= 'assets/img/just/map_marker.png';
+function initMap() {
+        var map,
+            marker,
+            myCenter={lat: 55.819604, lng: 37.563105},
+            myPlace= {lat: 55.823542, lng:37.558679 },
+            image= 'assets/img/just/map_marker.png';
 
-    function initMap() {
+
     map = new google.maps.Map(document.getElementById('map'), {
         center: myCenter,
         zoom: 15,
@@ -97,7 +98,27 @@ var map,
     });
 }
 
+
+
+
+//остальное
 $(document).ready(function () {
+
+    //скроллы
+    (function(){
+        $('.saggit').on('click', function(e){
+            e.preventDefault();
+            var
+                id=$(this).attr('href'),
+                top = $(id).offset().top;
+
+            $('body,html').animate({scrollTop: top}, 1000);
+        });
+    }());
+
+
+
+    //flip
     (function(){
         $('.author').on('click',function(e){
             e.preventDefault();
@@ -115,7 +136,7 @@ $(document).ready(function () {
         });
     }());
 
-
+    //modal
     (function(){
         $('.modal').hide();
 
@@ -131,6 +152,7 @@ $(document).ready(function () {
         });
     }());
 
+    //закрытие по кресту
     (function(){
         $('.cross').on('click', function(e){
             e.preventDefault();
@@ -144,12 +166,6 @@ $(document).ready(function () {
             ham.show();
 
         });
-
-
     }());
-
-
-
-
 
 });

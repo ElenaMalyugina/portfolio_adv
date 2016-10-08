@@ -41,7 +41,7 @@ section.my-work
                             span.toggle_slide
                                 span.toggle-in
                 ul.slider__item
-                    li.slider__li
+                    li.slider__li.slider__li_active
                         div.slider__left
                             img(src="assets/img/mywork/work-1.png")
                         div.slider__right
@@ -122,8 +122,8 @@ section.my-work__talk
                 button.form-connect__el.conn__button Отправить
                 button.form-connect__el.conn__button Очистить
 
-        a.saggit.saggit_up(href="#")
-            span.socicon_hidden Вниз
+        a.saggit.saggit_up(href=".header")
+            span.socicon_hidden Вверх
             svg
                 use(xlink:href="assets/img/svg/sprite.svg#arrow_down")
 
