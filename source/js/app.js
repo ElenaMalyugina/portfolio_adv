@@ -176,8 +176,13 @@ $(document).ready(function () {
 
             var thisEl=$(this),
                 container=thisEl.closest('.my_work__container'),
-                activeSlide=container.find('.slider__li_active')
+                slide=container.find('.slider__li'),
+                activeSlide=container.find('.slider__li_active'),
+                slideActiveIndex=activeSlide.attr('ID'),
+                toggle=container.find('.slider-toggle'),
+                toggleActive=toggle.eq(slideActiveIndex-3),////?????????
                 flag=true;
+
 
 
                 if(flag){
@@ -196,6 +201,14 @@ $(document).ready(function () {
                         .next()
                         .css({'left': '-100%'});
                         $('.slider__item').append(activeSlide);
+
+                    if(!toggleActive.hasClass('slider-toggle_active')){
+
+                      toggleActive.addClass('slider-toggle_active')
+                                .siblings()
+                                .removeClass('slider-toggle_active');}
+
+
                     flag=true;
                 } });
     }());
@@ -205,13 +218,18 @@ $(document).ready(function () {
             e.preventDefault();
             var thisEl=$(this),
                 container=thisEl.closest('.my_work__container'),
-                slide=container.find('.slider__li_active'),
+                slide=container.find('.slider__li'),
                 activeSlide=container.find('.slider__li_active'),
+                slideActiveIndex=activeSlide.attr('ID'),
+                toggle=container.find('.slider-toggle'),
+                toggleActive=toggle.eq(slideActiveIndex-3),////?????????
                 flag=true;
 
            if(flag){
                flag=false;
-                activeSlide.animate(
+                activeSlide
+                    .css({'left': '0'})
+                    .animate(
                     {
                         'left': '-100%'
                     })
@@ -225,7 +243,13 @@ $(document).ready(function () {
                     .next()
                     .css({'left': '100%'});
                 $('.slider__item').append(activeSlide);
-                timer=setTimeout(1000);
+
+               if(!toggleActive.hasClass('slider-toggle_active')){
+
+                   toggleActive.addClass('slider-toggle_active')
+                       .siblings()
+                       .removeClass('slider-toggle_active');}
+
                 flag=true;
             }
 
@@ -240,17 +264,20 @@ $(document).ready(function () {
                 toggleNDX=thisEl.index(),
                 slider=thisEl.closest('.slider_window'),
                 slide=slider.find('.slider__li'),
-                slideToggle=slide.eq(toggleNDX);
+                slideIndex=slide.attr('ID'),
+                activeSlide=slide.eq(toggleNDX);
+
 
             thisEl.addClass('slider-toggle_active')
                     .siblings()
                     .removeClass('slider-toggle_active');
 
-            slideToggle.addClass('slider__li_active')
+            if(!activeSlide.hasClass('slider__li_active')){
+            activeSlide.addClass('slider__li_active')
                     .animate({'left':'0'})
                     .siblings()
                     .removeClass('slider__li_active')
-                    .css({'left':'-100%'});
+                    .css({'left':'-100%'});}
 
 
         });
