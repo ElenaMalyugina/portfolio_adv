@@ -214,6 +214,10 @@
     width: auto;
     text-align: center;
   }
+
+  @include phones{
+    margin: 5px auto;
+  }
 }
 
 .about-work__tech{
@@ -228,6 +232,11 @@
 
   @include desktop{
     text-align: center;
+  }
+
+  @include phones{
+    padding: 5px 0;
+    margin-bottom: 10px;
   }
 }
 

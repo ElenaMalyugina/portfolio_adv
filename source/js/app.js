@@ -99,10 +99,75 @@ function initMap() {
 }
 
 
-
-
 //остальное
 $(document).ready(function () {
+
+
+    //прелоадер
+
+    (function(){
+
+        var imgArray=[];
+        //отбор самого тяжелого
+        $.each($('*'),function(){
+
+            var thisEl=$(this),
+                img=thisEl.is('img'),
+                background=thisEl.css('background-image');
+
+
+            if(img){
+                var path=thisEl.attr('src');
+                if(path){
+                    imgArray.push(path);
+                }
+            }
+
+            if (background != 'none') {
+                var path = background.replace('url("', '').replace('")','');
+                imgArray.push(path);
+            }
+
+
+        });
+
+        //поведение элемента
+        function setPercents(total, current) {
+            var percent = Math.ceil(current / total * 100);
+            $('body').css({'overflow':'hidden'});
+            if (percent >= 100) {
+                $('.preloader').fadeOut();
+                $('body').css({'overflow':'auto'});
+            }
+
+            $('.preloader__percent').text(percent + '%');
+        }
+
+
+        var percentsTotal = 1;
+
+        for (var i = 0; i < imgArray.length; i++) {
+            var image = $('<img>', {
+                attr: {
+                    src: imgArray[i]
+                }
+            });
+
+            image.on({
+                load : function () {
+                    setPercents(imgArray.length, percentsTotal);
+                    percentsTotal++;
+                },
+
+                error : function () {
+                    percentsTotal++;
+                }
+            });
+        }
+
+
+
+    }());
 
     //скроллы
     (function(){
@@ -149,6 +214,7 @@ $(document).ready(function () {
 
             thisEl.hide(200);
             modal.show();
+            $('body').css({'overflow':'hidden'});
         });
     }());
 
@@ -164,6 +230,7 @@ $(document).ready(function () {
 
             container.fadeOut(300);
             ham.show();
+            $('body').css({'overflow':'auto'});
 
         });
     }());
@@ -277,6 +344,8 @@ $(document).ready(function () {
 
     }());
 
+
+
     //Переключение слайдера по кнопкам. Очень глючно
  /*   (function() {
         $('.slider-toggle').on('click', function (e) {
@@ -306,27 +375,60 @@ $(document).ready(function () {
         });
     }());*/
 
-    // //скролл блог
-    // (function(){
-    //     $(window).on('scroll', function(e){
-    //         e.preventDefault();
-    //         var
-    //             thisEl=$(this),
-    //             menu=thisEl.find('.blog__li'),
-    //             ndx= menu.index(),
-    //             container=thisEl.find('.blog__column'),
-    //             content = container.find('.blog__article'),
-    //             blogIndex=content.eq(ndx),
-    //             h=content.offset().top;
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //     });
-    // }());
+
+    //скролл блог
+    (function(){
+        $(window).on('scroll', function(e){
+            e.preventDefault();
+            var
+                thisEl=$(this),
+                container=$('.container__blog'),
+                aside=container.find('.blog__menu'),
+                menu=aside.find('.blog__li'),
+                column=container.find('.blog__column'),
+                article=column.find('.blog__article'),
+                articleActive=column.find('.blog__article_active'),
+                ndxArt=articleActive.index(),
+                menuActive=menu.eq(ndxArt),
+                top=container.offset().top;
+
+
+
+            console.log(menuActive);
+
+
+            if(thisEl.scrollTop()>top){
+                aside.css({'position':'fixed'})
+
+            }
+            else{
+                aside.css({'position':'static'})
+            }
+
+            if ((thisEl.scrollTop()) == ($(article[1]).offset().top)) {
+                    $(article[1]).addClass('blog__article_active')
+                        .siblings()
+                        .removeClass('blog__article_active');
+
+                if(!menuActive.hasClass('blog__li_active')){
+
+                    menuActive.addClass('blog__li_active')
+                        .siblings()
+                        .removeClass('blog__li_active');}
+                }
+
+
+
+
+
+
+
+
+
+
+
+        });
+    }());
 
 
 });
