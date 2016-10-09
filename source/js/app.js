@@ -171,6 +171,9 @@ $(document).ready(function () {
 
     //слайдер
     (function(){
+        flag=true;
+
+
         $('.saggit__next').on('click', function(e){
             e.preventDefault();
 
@@ -181,7 +184,7 @@ $(document).ready(function () {
                 slideActiveIndex=activeSlide.attr('ID'),
                 toggle=container.find('.slider-toggle'),
                 toggleActive=toggle.eq(slideActiveIndex-3),////?????????
-                flag=true;
+                endAnim=$.Deferred();
 
 
 
@@ -209,11 +212,21 @@ $(document).ready(function () {
                                 .removeClass('slider-toggle_active');}
 
 
-                    flag=true;
-                } });
+                    endAnim.resolve($(this));
+
+
+              }
+                $.when(endAnim).done(function(){
+                setTimeout(function(){flag=true}, 400);
+            });
+        });
+
     }());
 
     (function(){
+        flag=true;
+
+
         $('.saggit__pre').on('click', function(e){
             e.preventDefault();
             var thisEl=$(this),
@@ -223,7 +236,8 @@ $(document).ready(function () {
                 slideActiveIndex=activeSlide.attr('ID'),
                 toggle=container.find('.slider-toggle'),
                 toggleActive=toggle.eq(slideActiveIndex-3),////?????????
-                flag=true;
+                endAnim=$.Deferred();
+
 
            if(flag){
                flag=false;
@@ -244,19 +258,27 @@ $(document).ready(function () {
                     .css({'left': '100%'});
                 $('.slider__item').append(activeSlide);
 
-               if(!toggleActive.hasClass('slider-toggle_active')){
+                if(!toggleActive.hasClass('slider-toggle_active')){
 
                    toggleActive.addClass('slider-toggle_active')
                        .siblings()
                        .removeClass('slider-toggle_active');}
 
-                flag=true;
+               endAnim.resolve($(this));
             }
 
+            $.when(endAnim).done(function(){
+                setTimeout(function(){flag=true}, 400);
+
+            });
+
         });
+
+
     }());
 
-    (function() {
+    //Переключение слайдера по кнопкам. Очень глючно
+ /*   (function() {
         $('.slider-toggle').on('click', function (e) {
             e.preventDefault();
             var
@@ -266,6 +288,7 @@ $(document).ready(function () {
                 slide=slider.find('.slider__li'),
                 slideIndex=slide.attr('ID'),
                 activeSlide=slide.eq(toggleNDX);
+
 
 
             thisEl.addClass('slider-toggle_active')
@@ -281,7 +304,7 @@ $(document).ready(function () {
 
 
         });
-    }());
+    }());*/
 
     // //скролл блог
     // (function(){
