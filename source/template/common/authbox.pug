@@ -21,20 +21,21 @@ div.userbox.userbox_auth.userbox_hide
                     span.check__decor
                         span.check__decor-in
                     span.check__text Я человек
-                    .tooltip Это обязательно
+                    .tooltip.tooltip__check Это обязательно
             .div.radio__block-auth
-                span.radio__question Вы точно не робот?
-                label.label.label__radio(for="not_robot")
-                    input.auth__radio(type="radio" name="robot" id="not_robot" value="not_robot")
-                    span.radio__decor
-                        span.radio__decor-in
-                    span.label__text Да
-                label.label.label__radio(for="robot")
-                    input.auth__radio(type="radio" name="robot" id="robot" value="robot")
-                    span.radio__decor
-                        span.radio__decor-in
-                    span.label__text Не уверен
-                    .tooltip Это обязательно
+                .radio__question Вы точно не робот?
+                .radio_wrapper
+                    label.label.label__radio(for="not_robot")
+                        input.auth__radio(type="radio" name="robot" id="not_robot" value="not_robot")
+                        span.radio__decor
+                            span.radio__decor-in
+                        span.label__text Да
+                    label.label.label__radio(for="robot")
+                        input.auth__radio(type="radio" name="robot" id="robot" value="robot" checked)
+                        span.radio__decor
+                            span.radio__decor-in
+                        span.label__text Не уверен
+                        .tooltip.tooltip__radio Это обязательно
 
 
         ul.userbox__tabs

@@ -21,7 +21,7 @@
   background: rgba($white, .8);
   padding-top: 37px;
   border-radius: 5px;
-  overflow: hidden;
+  //overflow: hidden;
   transition: all 1s;
   position: absolute;
   top:50%;
@@ -121,6 +121,8 @@
 .userbox__tabs{
   margin: 0;
   display: flex;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
  }
 
 .userbox__tab-el{

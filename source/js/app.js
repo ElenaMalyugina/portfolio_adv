@@ -98,34 +98,29 @@ function initMap() {
     });
 }
 
+//прелоадер
+$(window).load(function () {
+    (function() {
 
-//остальное
-$(document).ready(function () {
-
-
-    //прелоадер
-
-    (function(){
-
-        var imgArray=[];
+        var imgArray = [];
         //отбор самого тяжелого
-        $.each($('*'),function(){
+        $.each($('*'), function () {
 
-            var thisEl=$(this),
-                img=thisEl.is('img'),
-                background=thisEl.css('background-image'),
-                regBack=/^url/;
+            var thisEl = $(this),
+                img = thisEl.is('img'),
+                background = thisEl.css('background-image'),
+                regBack = /^url/;
 
 
-            if(img){
-                var path=thisEl.attr('src');
-                if(path){
+            if (img) {
+                var path = thisEl.attr('src');
+                if (path) {
                     imgArray.push(path);
                 }
             }
 
             if (regBack.test(background)) {
-                var path = background.replace('url("', '').replace('")','');
+                var path = background.replace('url("', '').replace('")', '');
                 imgArray.push(path);
             }
 
@@ -135,10 +130,10 @@ $(document).ready(function () {
         //поведение элемента
         function setPercents(total, current) {
             var percent = Math.ceil(current / total * 100);
-            $('body').css({'overflow':'hidden'});
+            $('body').css({'overflow': 'hidden'});
             if (percent >= 100) {
                 $('.preloader').fadeOut();
-                $('body').css({'overflow':'auto'});
+                $('body').css({'overflow': 'auto'});
             }
 
             $('.preloader__percent').text(percent + '%');
@@ -153,23 +148,26 @@ $(document).ready(function () {
                     src: imgArray[i]
                 }
 
-                        });
+            });
 
             image.on({
-                load : function () {
+                load: function () {
                     setPercents(imgArray.length, percentsTotal);
                     percentsTotal++;
                 },
 
-                error : function () {
+                error: function () {
                     percentsTotal++;
                 }
             });
         }
 
-
-
     }());
+
+    });
+
+//остальное
+$(document).ready(function () {
 
     //скроллы
     (function(){
@@ -230,7 +228,7 @@ $(document).ready(function () {
                 containerOut=thisEl.closest('body'),
                 ham=containerOut.find('.hamburger');
 
-            container.fadeOut(300);
+            container.fadeOut(1000);
             ham.show();
             $('body').css({'overflow':'auto'});
 
@@ -512,6 +510,14 @@ $(document).ready(function () {
                 .css({'display':'none'})
         });
 
+
+        $('.form__connect').on('reset', function () {
+            $(this).find($('input'))
+                .css({'box-shadow':'none'})
+                .next('.tooltip')
+                .css({'display':'none'});
+        });
+
     }());
 
 
@@ -524,8 +530,8 @@ $(document).ready(function () {
 
             var $this=$(this),
                 login=$this.find('.login'),
-                loginIcon=login.siblings('.input__icon');
-                password=$this.find('.password');
+                loginIcon=login.siblings('.input__icon'),
+                password=$this.find('.password'),
                 passwordIcon=password.siblings('.input__icon'),
                 check1=$this.find('.check__auth');
 
@@ -534,7 +540,7 @@ $(document).ready(function () {
                login.css({
                     'box-shadow':'0 0 5px red inset'
                 })
-                    .next($('.toolitp'))
+                    .next($('.tooltip'))
                     .css({'display':'block'});
                 loginIcon.css({'fill':'red'});
 
@@ -547,7 +553,7 @@ $(document).ready(function () {
                 password.css({
                     'box-shadow':'0 0 5px red inset'
                 })
-                    .next($('.toolitp'))
+                    .next($('.tooltip'))
                     .css({'display':'block'});
                 passwordIcon.css({'fill':'red'});
 
@@ -555,8 +561,20 @@ $(document).ready(function () {
 
             }
             else
-            if(!check1){
-
+            if(!check1.attr('checked')){
+                console.log(check1);
+                check1.siblings($('.tooltip'))
+                    .css({'display':'block'});
+                return false;
+            }
+            else
+            if($('#robot').attr('checked')){
+                $('#robot').siblings($('.tooltip'))
+                    .css({'display':'block'});
+                return false;
+            }
+            else{
+                return true;
             }
 
         });
@@ -569,10 +587,11 @@ $(document).ready(function () {
                 .css({'display':'none'})
                 .siblings($('.input__icon'))
                 .css({'fill':'#00bfa5'})
-
-
-
         });
+
+
+
+
 
     }());
 

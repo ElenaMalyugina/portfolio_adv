@@ -64,6 +64,8 @@
   vertical-align:middle;
   padding: 10px;
   cursor: pointer;
+  position: relative;
+  white-space: nowrap;
 }
 
 .check__block-auth{
@@ -116,6 +118,10 @@
 
 .radio__block-auth{
   margin-bottom: 30px;
+}
+
+.radio_wrapper{
+  text-align: center;
 }
 
 .radio__question{

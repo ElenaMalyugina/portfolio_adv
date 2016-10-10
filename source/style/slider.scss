@@ -130,6 +130,7 @@
   height: 662px;
 
 
+
   @include desktop{
     height: auto;
   }
@@ -140,8 +141,9 @@
 
 .slider__li{
   position: absolute;
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 0 40px;
   width: 870px;
   left:-100%;
@@ -150,6 +152,7 @@
 
   @include laptop{
     width: 800px;
+    flex-direction: column-reverse;
 
   @include tablets{
     width: 440px;
@@ -166,15 +169,7 @@
 }
 
 
-.slider__left, .slider__right{
-  display: inline-block;
-  vertical-align: middle;
 
-  @include desktop{
-    display: block;
-    width: auto;
-  }
-}
 
 .slider__left{
   width: 516px;
@@ -198,6 +193,11 @@
 .slider__right{
   white-space: normal;
   padding: 0 40px;
+  @include laptop{
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
 
   @include phones{
     padding: 0;

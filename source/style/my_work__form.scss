@@ -4,7 +4,7 @@
   background: rgba($white, .5);
   padding-top: 38px;
   border-radius: 5px;
-  overflow: hidden;
+  //overflow: hidden;
 
 
   @include phones{
@@ -63,8 +63,8 @@
 
 .block__button-conn{
   font-size: 0;
-
-
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
 }
 
 
