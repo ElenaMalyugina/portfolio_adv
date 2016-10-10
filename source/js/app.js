@@ -123,8 +123,8 @@ $(document).ready(function () {
                 }
             }
 
-            if (background != 'none') {
-                var path = background.replace('url("', '').replace('")','');
+            if (background== /url*/) {
+                var path = $background.replace('url("', '').replace('")','');
                 imgArray.push(path);
             }
 
@@ -376,25 +376,27 @@ $(document).ready(function () {
     }());*/
 
 
-    //скролл блог
+    //скролл блог срабатывает непонятно как непонятно когда и мешает следующей функции
+
     (function(){
         $(window).on('scroll', function(e){
             e.preventDefault();
             var
                 thisEl=$(this),
                 container=$('.container__blog'),
-                aside=container.find('.blog__menu'),
+                aside=container.find('.blog__nav'),
                 menu=aside.find('.blog__li'),
                 column=container.find('.blog__column'),
                 article=column.find('.blog__article'),
-                articleActive=column.find('.blog__article_active'),
+                articleActive=article.filter('.blog__article_active'),
                 ndxArt=articleActive.index(),
                 menuActive=menu.eq(ndxArt),
-                top=container.offset().top;
+                top=container.offset().top
+                ;
 
 
 
-            console.log(menuActive);
+            console.log();
 
 
             if(thisEl.scrollTop()>top){
@@ -405,30 +407,42 @@ $(document).ready(function () {
                 aside.css({'position':'static'})
             }
 
-            if ((thisEl.scrollTop()) == ($(article[1]).offset().top)) {
+            /*if ((thisEl.scrollTop()) == (($(article[1])).offset().top)) {
                     $(article[1]).addClass('blog__article_active')
                         .siblings()
-                        .removeClass('blog__article_active');
+                        .removeClass('blog__article_active');}
 
                 if(!menuActive.hasClass('blog__li_active')){
 
                     menuActive.addClass('blog__li_active')
                         .siblings()
-                        .removeClass('blog__li_active');}
-                }
-
-
-
-
-
-
-
-
-
-
-
+                       .removeClass('blog__li_active');}
+*/
         });
-    }());
+        }());
+
+//прокрутка блога по клику
+        (function () {
+            $('.blog__li>a').on('click',function(e){
+                e.preventDefault();
+                var
+                    $this=$(this),
+                    id=$this.attr('href'),
+                    top = ($(id).offset().top-40);
+
+                $this
+                    .parent()
+                    .addClass('blog__li_active')
+                    .siblings()
+                    .removeClass('blog__li_active');
+
+
+                $('body,html').animate({scrollTop: top}, 1000);
+            });
+
+        }());
+
+
 
 
 });

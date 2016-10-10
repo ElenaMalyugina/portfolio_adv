@@ -24,11 +24,12 @@
 }
 
 
-.blog__menu{
+.blog__nav{
+  text-align: right;
   //для перехода на fixed
-  left:16.5%;
-  top:20px;
-  transition: 1s;
+  left:16%;
+  top:0;
+  transition: all 1s;
 
   @include tablets{
     position: absolute;
@@ -49,16 +50,6 @@
    }
 }
 
-.blog__nav{
-  text-align: right;
-  //position: fixed;
-  left: 10%;
-
-  @include phones{
-    position: absolute;
-  }
-
-}
 
 .blog__li{
   border-right: 3px solid transparent;
