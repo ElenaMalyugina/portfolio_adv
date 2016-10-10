@@ -13,6 +13,7 @@
   font-size: 0;
   white-space: nowrap;
   margin-bottom: 12px;
+  position: relative;
 
   &:hover .input__icon{
     fill: $light-green;
@@ -170,3 +171,7 @@
 .label__text {
   display: inline-block;
   vertical-align: middle;}
+
+.button__auth{
+  width: 100%;
+}

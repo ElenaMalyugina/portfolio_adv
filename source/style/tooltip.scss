@@ -1,0 +1,29 @@
+.tooltip{
+  background: #e44845;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  color: $white;
+  font-size: 14px;
+  border-radius: 4px;
+  position: absolute;
+  top: 100%;
+  left:50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 40;
+
+
+  &:before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #e44845;
+    position: absolute;
+    top:-20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

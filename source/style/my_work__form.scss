@@ -6,6 +6,7 @@
   border-radius: 5px;
   overflow: hidden;
 
+
   @include phones{
     width: auto;
   }
@@ -14,6 +15,10 @@
 .block__input-conn{
   padding: 0 18px 16px 18px;
 
+}
+
+.input__wrapper{
+  position: relative;
 }
 
 .form-connect__el{
@@ -34,6 +39,7 @@
 .conn__input{
   height: 44px;
   border: none;
+
   &:focus{
     outline: none;
     box-shadow: inset 0 0 5px $light-green;
@@ -74,6 +80,7 @@
   color: $white;
   border: none;
   cursor: pointer;
+  outline: none;
 
     &:first-child{
       border-right: 1px solid rgba($white,.3);

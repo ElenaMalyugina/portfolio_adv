@@ -113,7 +113,8 @@ $(document).ready(function () {
 
             var thisEl=$(this),
                 img=thisEl.is('img'),
-                background=thisEl.css('background-image');
+                background=thisEl.css('background-image'),
+                regBack=/^url/;
 
 
             if(img){
@@ -123,8 +124,8 @@ $(document).ready(function () {
                 }
             }
 
-            if (background== /url*/) {
-                var path = $background.replace('url("', '').replace('")','');
+            if (regBack.test(background)) {
+                var path = background.replace('url("', '').replace('")','');
                 imgArray.push(path);
             }
 
@@ -151,7 +152,8 @@ $(document).ready(function () {
                 attr: {
                     src: imgArray[i]
                 }
-            });
+
+                        });
 
             image.on({
                 load : function () {
@@ -378,7 +380,7 @@ $(document).ready(function () {
 
     //скролл блог срабатывает непонятно как непонятно когда и мешает следующей функции
 
-    (function(){
+    /*(function(){
         $(window).on('scroll', function(e){
             e.preventDefault();
             var
@@ -407,7 +409,7 @@ $(document).ready(function () {
                 aside.css({'position':'static'})
             }
 
-            /*if ((thisEl.scrollTop()) == (($(article[1])).offset().top)) {
+            /!*if ((thisEl.scrollTop()) == (($(article[1])).offset().top)) {
                     $(article[1]).addClass('blog__article_active')
                         .siblings()
                         .removeClass('blog__article_active');}
@@ -417,9 +419,9 @@ $(document).ready(function () {
                     menuActive.addClass('blog__li_active')
                         .siblings()
                        .removeClass('blog__li_active');}
-*/
+*!/
         });
-        }());
+        }());*/
 
 //прокрутка блога по клику
         (function () {
@@ -442,7 +444,137 @@ $(document).ready(function () {
 
         }());
 
+    //валидация формы
+    (function() {
 
+        $('.form__connect').on('submit', function(e){
+            //e.preventDefault();
+
+                var $this=$(this),
+                    inputs=$this.find('.form-connect__el'),
+                    inputName=$this.find('.input__name'),
+                    inputEmail=$this.find('.input__email'),
+                    inputText=$this.find('.conn__textarea'),
+                    regEmail=(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,6})+$/);
+
+
+
+
+            if(inputName.val().length==0){
+                //console.log('Заполните имя');
+                inputName.css({
+                    'box-shadow':'0 0 5px red inset'
+                })
+                .next($('.toolitp'))
+                .css({'display':'block'});
+
+                return false;
+
+            }
+            else
+            if ((inputEmail.val().length == 0)||(!regEmail.test(inputEmail.val()))) {
+                // console.log('Заполните email');
+                inputEmail.css({
+                    'box-shadow':'0 0 5px red inset'
+                })
+                .next($('.toolitp'))
+                .css({'display':'block'});
+
+                return false;
+
+
+            }
+            else
+            if (inputText.val().length == 0) {
+               // console.log('Напишите сообщение');
+                inputText.css({
+                    'box-shadow':'0 0 5px red inset'
+                })
+
+                .next($('.toolitp'))
+                .css({'display':'block'});
+
+                return false;
+            }
+            else{
+                //console.log('Готово');
+                inputs.css({
+                    'box-shadow':'0 0 5px green inset'
+                });
+                return true;
+            }
+
+        });
+
+        $('.form-connect__el').on('focus', function () {
+            $(this).css({'box-shadow':'0 0 5px green inset'})
+                .next($('.tooltip'))
+                .css({'display':'none'})
+        });
+
+    }());
+
+
+
+    //валидация авторизации
+    (function() {
+
+        $('.form__auth').on('submit', function(e){
+            //e.preventDefault();
+
+            var $this=$(this),
+                login=$this.find('.login'),
+                loginIcon=login.siblings('.input__icon');
+                password=$this.find('.password');
+                passwordIcon=password.siblings('.input__icon'),
+                check1=$this.find('.check__auth');
+
+
+            if(login.val().length==0){
+               login.css({
+                    'box-shadow':'0 0 5px red inset'
+                })
+                    .next($('.toolitp'))
+                    .css({'display':'block'});
+                loginIcon.css({'fill':'red'});
+
+
+                return false;
+
+            }
+            else
+            if(password.val().length==0){
+                password.css({
+                    'box-shadow':'0 0 5px red inset'
+                })
+                    .next($('.toolitp'))
+                    .css({'display':'block'});
+                passwordIcon.css({'fill':'red'});
+
+                return false;
+
+            }
+            else
+            if(!check1){
+
+            }
+
+        });
+
+
+        $('.input__window').on('click', function () {
+
+            $(this).css({'box-shadow':'0 0 5px #00bfa5 inset'})
+                .next($('.tooltip'))
+                .css({'display':'none'})
+                .siblings($('.input__icon'))
+                .css({'fill':'#00bfa5'})
+
+
+
+        });
+
+    }());
 
 
 });
