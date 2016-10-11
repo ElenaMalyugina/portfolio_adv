@@ -441,25 +441,38 @@ $(document).ready(function () {
                     ndxArt = articleActive.index(),
                     menuActive = menu.eq(ndxArt),
                     top = container.offset().top,
-                    topEl=article.offset().top,
                     scrollTop = thisEl.scrollTop(),
                     diff;
 
-                for(var i=0; i<=article.length; i++){
-                    diff = topEl - scrollTop;
+                for(var i=0; i<article.length; i++){
 
-                    if (diff==100){
+                    topEl=$(article[i]).offset().top;
 
-                        articleActive=article[i];
+                    diff = topEl-scrollTop;
 
 
-                        if(!articleActive.hasClass('blog__article_active')) {
-                            articleActive.addClass('blog__article_active')
+                    if ((diff>-150)&&(diff<6)){
+                         articleActive=article[i];
+
+                        if(!($(articleActive).hasClass('blog__article_active'))){
+                            ($(articleActive)).addClass('blog__article_active')
                                 .siblings()
-                                .removeClass('blog__article_active');
+                                .removeClass('blog__article_active');}
                         }
-                    }
+
+                        }
+
+                if(!menuActive.hasClass('blog__article_active')){
+                    menuActive.addClass('blog__li_active')
+                        .siblings()
+                        .removeClass('blog__li_active');
+
                 }
+
+
+
+
+
 
 
 
@@ -481,14 +494,12 @@ $(document).ready(function () {
                     $this = $(this),
                     link=$this.children('a'),
                     id = link.attr('href'),
-                    top = ($(id).offset().top - 40),
+                    top = ($(id).offset().top),
                     container=$this.closest('.container__blog'),
-                    menu=container.find('.blog__li'),
                     article=container.find('.blog__article'),
                     ndx=$this.index(),
                     articleActive=article.eq(ndx);
 
-                console.log(article);
 
 
                 if(!$this.hasClass('blog__li_active')){
