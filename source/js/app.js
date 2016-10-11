@@ -164,7 +164,7 @@ $(window).load(function () {
 
     }());
 
-    });
+});
 
 //остальное
 $(document).ready(function () {
@@ -199,38 +199,84 @@ $(document).ready(function () {
                 .siblings()
                 .removeClass('userbox_hide');
         });
+
+        $('.utab__index').on('click', function (e) {
+            e.preventDefault();
+
+            var thisEl=$(this),
+                anim=thisEl.closest('.userbox_auth');
+
+            $('.author')
+                .fadeIn(1000);
+
+            //после каждого прохода анимации перетираем транзишны, иначе - вертолет
+            //вопрос с файерфоксом остается открытым
+            $(anim)
+                .css({
+                    'transition':'all 1s'})
+                .addClass('userbox_hide')
+                .css({
+                    'transition':'all 500'})
+                .siblings()
+                .css({
+                    'transition':'all 500'})
+                .removeClass('userbox_hide')
+                .css({
+                    'transition':'all 1s'});
+        })
+
     }());
+
 
     //modal
     (function(){
-        $('.modal').hide();
-
         $('.hamburger').on('click',function(e){
             e.preventDefault();
 
             var thisEl=$(this),
                 container=thisEl.closest('body'),
-                modal=container.find('.modal');
+                modal=container.find('.modal'),
+                left=modal.find('.modal_left'),
+                right=modal.find('.modal_right'),
+                menu=modal.find('.modal__nav'),
+                cross=modal.find('.cross');
+
 
             thisEl.hide(200);
             modal.show();
+            cross.show();
             $('body').css({'overflow':'hidden'});
-        });
-    }());
+            left.addClass('modal_left-active');
+            right.addClass('modal_right-active');
+            menu.fadeIn(1000);
 
+
+        });
     //закрытие по кресту
-    (function(){
-        $('.cross').on('click', function(e){
+
+        $('.cross').on('click', function(e) {
             e.preventDefault();
 
-            var thisEl=$(this),
-                container=thisEl.closest('.modal'),
-                containerOut=thisEl.closest('body'),
-                ham=containerOut.find('.hamburger');
+            var thisEl = $(this),
+                container = thisEl.closest('.modal'),
+                nav=container.find('.modal__nav'),
+                left=container.find('.modal_left'),
+                right=container.find('.modal_right'),
+                containerOut = thisEl.closest('body'),
+                ham = containerOut.find('.hamburger');
 
-            container.fadeOut(1000);
+            nav.fadeOut(300);
+            left.removeClass('modal_left-active');
+            right.removeClass('modal_right-active');
+            thisEl.hide();
             ham.show();
-            $('body').css({'overflow':'auto'});
+            setTimeout(function(){
+                container.hide();
+
+                $('body').css({'overflow': 'auto'});
+            },2000);
+
+
 
         });
     }());
@@ -375,85 +421,108 @@ $(document).ready(function () {
         });
     }());*/
 
+    //скролл блог
 
-    //скролл блог срабатывает непонятно как непонятно когда и мешает следующей функции
-
-    /*(function(){
-        $(window).on('scroll', function(e){
-            e.preventDefault();
-            var
-                thisEl=$(this),
-                container=$('.container__blog'),
-                aside=container.find('.blog__nav'),
-                menu=aside.find('.blog__li'),
-                column=container.find('.blog__column'),
-                article=column.find('.blog__article'),
-                articleActive=article.filter('.blog__article_active'),
-                ndxArt=articleActive.index(),
-                menuActive=menu.eq(ndxArt),
-                top=container.offset().top
-                ;
+    (function() {
+        if(document.title=="Мой блог") {
 
 
+            $(window).on('scroll', function () {
+                //e.preventDefault();
+                var
+                    thisEl = $(this),
+                    container = $('.container__blog'),
+                    aside = container.find('.blog__nav'),
+                    menu = aside.find('.blog__li'),
+                    column = container.find('.blog__column'),
+                    article = column.find('.blog__article'),
+                    id=article.attr('id'),
+                    articleActive = article.filter('.blog__article_active'),
+                    ndxArt = articleActive.index(),
+                    menuActive = menu.eq(ndxArt),
+                    top = container.offset().top,
+                    topEl=article.offset().top,
+                    scrollTop = thisEl.scrollTop(),
+                    diff;
 
-            console.log();
+                for(var i=0; i<=article.length; i++){
+                    diff = topEl - scrollTop;
+
+                    if (diff==100){
+
+                        articleActive=article[i];
 
 
-            if(thisEl.scrollTop()>top){
-                aside.css({'position':'fixed'})
+                        if(!articleActive.hasClass('blog__article_active')) {
+                            articleActive.addClass('blog__article_active')
+                                .siblings()
+                                .removeClass('blog__article_active');
+                        }
+                    }
+                }
 
-            }
-            else{
-                aside.css({'position':'static'})
-            }
 
-            /!*if ((thisEl.scrollTop()) == (($(article[1])).offset().top)) {
-                    $(article[1]).addClass('blog__article_active')
-                        .siblings()
-                        .removeClass('blog__article_active');}
 
-                if(!menuActive.hasClass('blog__li_active')){
+                //закрепление меню
+                if (thisEl.scrollTop() > top) {
+                    aside.css({'position': 'fixed'})
 
-                    menuActive.addClass('blog__li_active')
-                        .siblings()
-                       .removeClass('blog__li_active');}
-*!/
-        });
-        }());*/
+                }
+                else {
+                    aside.css({'position': 'static'})
+                }
+            });
 
-//прокрутка блога по клику
-        (function () {
-            $('.blog__li>a').on('click',function(e){
+           // скролл по клику
+
+            $('.blog__li').on('click', function (e) {
                 e.preventDefault();
                 var
-                    $this=$(this),
-                    id=$this.attr('href'),
-                    top = ($(id).offset().top-40);
+                    $this = $(this),
+                    link=$this.children('a'),
+                    id = link.attr('href'),
+                    top = ($(id).offset().top - 40),
+                    container=$this.closest('.container__blog'),
+                    menu=container.find('.blog__li'),
+                    article=container.find('.blog__article'),
+                    ndx=$this.index(),
+                    articleActive=article.eq(ndx);
 
-                $this
-                    .parent()
-                    .addClass('blog__li_active')
-                    .siblings()
-                    .removeClass('blog__li_active');
+                console.log(article);
+
+
+                if(!$this.hasClass('blog__li_active')){
+                        $this.addClass('blog__li_active')
+                            .siblings()
+                            .removeClass('blog__li_active')
+                }
+
+                if(!articleActive.hasClass('blog__article_active')){
+                    articleActive.addClass('blog__article_active')
+                        .siblings()
+                        .removeClass('blog__article_active')
+                }
 
 
                 $('body,html').animate({scrollTop: top}, 1000);
             });
 
-        }());
 
-    //валидация формы
+        }
+    }());
+
+
+    //валидация форм
     (function() {
-
         $('.form__connect').on('submit', function(e){
             //e.preventDefault();
 
-                var $this=$(this),
-                    inputs=$this.find('.form-connect__el'),
-                    inputName=$this.find('.input__name'),
-                    inputEmail=$this.find('.input__email'),
-                    inputText=$this.find('.conn__textarea'),
-                    regEmail=(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,6})+$/);
+            var $this=$(this),
+                inputs=$this.find('.form-connect__el'),
+                inputName=$this.find('.input__name'),
+                inputEmail=$this.find('.input__email'),
+                inputText=$this.find('.conn__textarea'),
+                regEmail=(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,6})+$/);
 
 
 
@@ -463,8 +532,8 @@ $(document).ready(function () {
                 inputName.css({
                     'box-shadow':'0 0 5px red inset'
                 })
-                .next($('.toolitp'))
-                .css({'display':'block'});
+                    .next($('.toolitp'))
+                    .css({'display':'block'});
 
                 return false;
 
@@ -475,8 +544,8 @@ $(document).ready(function () {
                 inputEmail.css({
                     'box-shadow':'0 0 5px red inset'
                 })
-                .next($('.toolitp'))
-                .css({'display':'block'});
+                    .next($('.toolitp'))
+                    .css({'display':'block'});
 
                 return false;
 
@@ -484,13 +553,13 @@ $(document).ready(function () {
             }
             else
             if (inputText.val().length == 0) {
-               // console.log('Напишите сообщение');
+                // console.log('Напишите сообщение');
                 inputText.css({
                     'box-shadow':'0 0 5px red inset'
                 })
 
-                .next($('.toolitp'))
-                .css({'display':'block'});
+                    .next($('.toolitp'))
+                    .css({'display':'block'});
 
                 return false;
             }
@@ -518,12 +587,8 @@ $(document).ready(function () {
                 .css({'display':'none'});
         });
 
-    }());
 
 
-
-    //валидация авторизации
-    (function() {
 
         $('.form__auth').on('submit', function(e){
             //e.preventDefault();
@@ -561,16 +626,15 @@ $(document).ready(function () {
 
             }
             else
-            if(!check1.attr('checked')){
-                console.log(check1);
+            if(!check1.prop('checked')){
                 check1.siblings($('.tooltip'))
-                    .css({'display':'block'});
+                    .css({'display':'inline-block'});
                 return false;
             }
             else
-            if($('#robot').attr('checked')){
+            if($('#robot').prop('checked')){
                 $('#robot').siblings($('.tooltip'))
-                    .css({'display':'block'});
+                    .css({'display':'inline-block'});
                 return false;
             }
             else{
@@ -589,9 +653,24 @@ $(document).ready(function () {
                 .css({'fill':'#00bfa5'})
         });
 
+        $('.check__auth').on('change', function () {
+            var
+            $this=$(this),
+            tooltip=$this.siblings('.tooltip');
 
+                tooltip.css({'display':'none'});
 
+        });
 
+        $('.auth__radio').on('change', function () {
+            var
+                $this=$(this),
+                container=$this.closest('.radio__wrapper'),
+                tooltip=container.find('.tooltip');
+
+            tooltip.css({'display':'none'});
+
+        });
 
     }());
 
