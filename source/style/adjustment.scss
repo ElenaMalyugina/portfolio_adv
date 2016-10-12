@@ -218,6 +218,7 @@ img{
   @extend %clearfix;
   position: absolute;
   top: -149px;
+	z-index: 10;
 
 		@include laptop{
 		top: -160px;

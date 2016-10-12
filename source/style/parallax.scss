@@ -1,0 +1,41 @@
+.parallax__container{
+  position: fixed;
+  overflow: hidden;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 105vw;
+  height: 105vh;
+  z-index: 0;
+
+}
+
+
+.parallax__layer{
+  position: absolute;
+  width:120vw;
+  margin-left: -5vw;
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  transform: translateX(0) translateY(0) translateZ(0);
+
+  img{
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    bottom: 0;
+    margin-bottom: -250px;
+
+    @include desktop{
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+
+
+

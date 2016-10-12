@@ -1,7 +1,10 @@
 .my-work__talk{
-  background: url('../img/just/bgabout.png') no-repeat;
+  position: relative;
+  background: $white url('../img/just/bgabout.png') no-repeat;
   background-size: cover;
+  background-position: center center;
   padding: 63px 63px 60px+157px 63px;
+  z-index: 10;
 
   @include tablets{
     padding:63px 0 60+120*2px 0 ;
@@ -11,6 +14,28 @@
     padding: 63px 0 60+256px 0  ;
   }
 }
+
+.my-work__back1{
+  position: absolute;
+  width: 100vw;
+  height: 150vh;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  img{
+    display: block;
+    width: 100vw;
+    min-width: 900px;
+  }
+}
+
+
+
+
+
+
 
 .my-talk__container{
   margin: 0 auto;

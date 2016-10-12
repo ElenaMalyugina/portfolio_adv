@@ -1,10 +1,47 @@
+.form__wrapper{
+  overflow: hidden;
+  position: relative;
+  width: 380px;
+  margin: 0 auto 50px auto;
+  border-radius: 5px;
+
+  @include phones{
+    width: auto;
+  }
+
+}
+
+.form-blur{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: url('../img/just/bgabout.png')no-repeat;
+  background-position: center -600px;
+  //background-size: cover;
+  filter: blur(20px);
+  border-radius: 5px;
+
+  @include laptop{
+    background-position: center -650px;
+  }
+
+  @include tablets{
+    background-position: center -700px;
+  }
+
+  @include phones{
+    background-position: center -850px;
+  }
+}
+
+
 .form__connect{
   width: 380px;
-  margin: 0 auto 50px;
-  background: rgba($white, .5);
   padding-top: 38px;
-  border-radius: 5px;
-  //overflow: hidden;
+  position: relative;
+  z-index: 10;
+
 
 
   @include phones{
@@ -94,3 +131,5 @@
     }
 
 }
+
+

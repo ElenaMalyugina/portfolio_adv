@@ -166,8 +166,91 @@ $(window).load(function () {
 
 });
 
+
 //остальное
 $(document).ready(function () {
+
+//параллакс по мышке
+
+    (function () {
+        if(document.title=='Начальная страница') {
+            $(window).on('mousemove', function (e) {
+
+                var
+                    cursorX=e.pageX,
+                    cursorY=e.pageY,
+                    widthW=(window.innerWidth/2)-cursorX,
+                    heightW=(window.innerHeight/2)-cursorY,
+                    layers=$('.parallax__container').find('.parallax__layer')
+                ;
+
+            layers.map(function(key, value) {
+                var posX=widthW*(key+5)/100,
+                    posY=heightW*(key+2)/100;
+
+                $(value).css({
+                    'transform': 'translate3d('+posX+'px,'+posY+'px, 0px)',
+                    'margin-bottom': (key*(-5))+'px'
+
+                })
+
+            });
+
+            });
+        }
+    }());
+
+
+    //параллакс по скроллу
+    (function () {
+
+            $(window).on('scroll', function () {
+
+                var
+                    $this=$(this),
+                    scrollY=$this.scrollTop(),
+                    heightS=(-scrollY),
+                    layers=$('.parallax__container').find('.parallax__layer')
+                    ;
+
+
+                layers.map(function(key, value) {
+                    var posY=heightS*(key+1)*0.03;
+
+                    $(value).css({
+                        'transform' : 'translateY('+posY+'px)'
+
+                    });
+
+                });
+
+            });
+
+    }());
+
+   /* //blur
+    (function(){
+        $(window).on('resize', function () {
+            var blur=$('.form-blur'),
+                section=$('.my-work__back'),
+                imgWidth = $(section).width(),
+                posLeft = section.offset().left-$('.form__wrapper').offset().left,
+                posTop = section.offset().top-$('.form__wrapper').offset().top-500;
+
+            blur.css({
+                'background-size' : imgWidth+'px '+'auto',
+                'background-position' : (posLeft)+'px '+(posTop)+'px'
+
+                })
+
+        });
+
+    }());*/
+
+
+
+
+
 
     //скроллы
     (function(){
@@ -210,7 +293,7 @@ $(document).ready(function () {
                 .fadeIn(1000);
 
             //после каждого прохода анимации перетираем транзишны, иначе - вертолет
-            //вопрос с файерфоксом остается открытым
+
             $(anim)
                 .css({
                     'transition':'all 1s'})

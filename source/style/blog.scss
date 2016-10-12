@@ -2,11 +2,14 @@
   position: relative;
   z-index: 20;
   padding-bottom: 162px;
+  background: $white;
   }
 
 .container__blog{
   padding: 44px 0 70px 0;
   font-size: 0;
+
+
 
 }
 .blog-menu__lift{
@@ -59,12 +62,14 @@
 .blog__li{
   border-right: 3px solid transparent;
   font-family: Roboto-Medium;
+  transition: all 300ms;
 
   }
 
 .blog__li_active{
   color:$light-green;
   border-right-color:$light-green;
+  transition: all 300ms;
 }
 
 .blog__link{

@@ -1,4 +1,5 @@
 section.my-work
+
     div.triangle
         .triangle-item.triangle__left
             svg.svg__left.svg__left_works(width="200" height="150" viewBox="0 0 200 150" preserveAspectRatio="none")
@@ -84,6 +85,8 @@ section.my-work
                                 span.about-work__text-link Посмотреть сайт
 
 section.my-work__talk
+    //.my-work__back1
+    //    img(src="assets/img/just/bgabout.png")
     .container.my-talk__container
         .talk__back
             svg
@@ -113,24 +116,31 @@ section.my-work__talk
                         div.who__name Зар Захаров
                         div.who__description Преподаватель Loftschool
 
-        form.form__connect(action="#" method="post")
-            .block__input-conn
-                h3.header_decor.header__form Связаться со мной
-                .input__wrapper
-                    input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя" name="name")#name
-                    .tooltip Заполните имя
-                .input__wrapper
-                    input.form-connect__el.conn__input.input__email(type="text" placeholder="Email" name="email")#email
-                    .tooltip Введите правильный Email
-                .input__wrapper
-                    textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения" name="text")#message
-                    .tooltip Напишите текст
-            .block__button-conn
-                input(type="submit").conn__button
-                input(type="reset" value="Очистить").conn__button
+
+        .form__wrapper
+            .form-blur
+            form.form__connect(action="#" method="post")
+                .block__input-conn
+                    h3.header_decor.header__form Связаться со мной
+                    .input__wrapper
+                        input.form-connect__el.conn__input.input__name(type="text" placeholder="Имя" name="name")#name
+                        .tooltip Заполните имя
+                    .input__wrapper
+                        input.form-connect__el.conn__input.input__email(type="text" placeholder="Email" name="email")#email
+                        .tooltip Введите правильный Email
+                    .input__wrapper
+                        textarea.form-connect__el.conn__textarea(type="textarea" placeholder="Текст сообщения" name="text")#message
+                        .tooltip Напишите текст
+                .block__button-conn
+                    input(type="submit").conn__button
+                    input(type="reset" value="Очистить").conn__button
 
         a.saggit.saggit_up(href=".header")
             span.socicon_hidden Вверх
             svg
                 use(xlink:href="assets/img/svg/sprite.svg#arrow_down")
+
+
+
+
 

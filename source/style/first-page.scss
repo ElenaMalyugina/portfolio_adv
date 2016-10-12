@@ -1,7 +1,9 @@
 .wrapper_first{
   width: 100%;
   height:100%;
-  background: url("../img/just/mountains_without_parallax.png") no-repeat;
+  position: relative;
+  overflow: hidden;
+  background: url("../img/parallax/layer1.png");
   background-size: cover;
 
 
@@ -32,9 +34,11 @@
 
 
   @include phones{
-    width: 1005;
+    width: 100%;
   }
   }
+
+
 
 .userbox_js{
   transform: translateX(-50%) translateY(-50%)rotateY(0deg);
@@ -48,8 +52,32 @@
   z-index: 20;
   opacity: 0;
 
+}
+
+@-moz-document url-prefix() {
+  .userbox{
+    transition: all 400ms ;
+  }
+
+
+  .userbox_js{
+    transform: translateX(-50%) translateY(-50%)rotateY(0deg);
+    transition: all 2s;
+    opacity: 1;
+    z-index: 40;
+  }
+
+  .userbox_hide{
+    transition: all 300ms;
+    transform: translateX(-50%) translateY(-50%) rotateY(-180deg);
+    z-index: 20;
+    opacity: 0;
+
+
+  }
 
 }
+
 
 .userbox__img{
     @extend %border_rad;
