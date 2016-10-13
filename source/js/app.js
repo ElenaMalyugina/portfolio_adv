@@ -335,7 +335,7 @@ $(document).ready(function () {
 
 
         });
-    //закрытие по кресту
+        //закрытие по кресту
 
         $('.cross').on('click', function(e) {
             e.preventDefault();
@@ -367,13 +367,16 @@ $(document).ready(function () {
 
     //слайдер
     (function(){
-        flag=true;
+            flag=true;
+
 
 
         $('.saggit__next').on('click', function(e){
+
             e.preventDefault();
 
-            var thisEl=$(this),
+            var
+                thisEl=$(this),
                 container=thisEl.closest('.my_work__container'),
                 slide=container.find('.slider__li'),
                 activeSlide=container.find('.slider__li_active'),
@@ -384,94 +387,51 @@ $(document).ready(function () {
 
 
 
-                if(flag){
-                    flag=false;
-                    activeSlide.animate(
-                        {
-                            'left': '100%'
-                        })
-                        .removeClass('slider__li_active')
-                        .next()
-                        .animate(
-                            {
-                                'left': '0'
-                            })
-                        .addClass('slider__li_active')
-                        .next()
-                        .css({'left': '-100%'});
-                        $('.slider__item').append(activeSlide);
-
-                    if(!toggleActive.hasClass('slider-toggle_active')){
-
-                      toggleActive.addClass('slider-toggle_active')
-                                .siblings()
-                                .removeClass('slider-toggle_active');}
 
 
-                    endAnim.resolve($(this));
 
 
-              }
-                $.when(endAnim).done(function(){
-                setTimeout(function(){flag=true}, 400);
-            });
-        });
-
-    }());
-
-    (function(){
-        flag=true;
 
 
-        $('.saggit__pre').on('click', function(e){
-            e.preventDefault();
-            var thisEl=$(this),
-                container=thisEl.closest('.my_work__container'),
-                slide=container.find('.slider__li'),
-                activeSlide=container.find('.slider__li_active'),
-                slideActiveIndex=activeSlide.attr('ID'),
-                toggle=container.find('.slider-toggle'),
-                toggleActive=toggle.eq(slideActiveIndex-3),////?????????
-                endAnim=$.Deferred();
 
 
-           if(flag){
-               flag=false;
-                activeSlide
-                    .css({'left': '0'})
-                    .animate(
-                    {
-                        'left': '-100%'
-                    })
-                    .removeClass('slider__li_active')
-                    .next()
-                    .animate(
-                        {
-                            'left': '0'
-                        })
-                    .addClass('slider__li_active')
-                    .next()
-                    .css({'left': '100%'});
-                $('.slider__item').append(activeSlide);
-
-                if(!toggleActive.hasClass('slider-toggle_active')){
-
-                   toggleActive.addClass('slider-toggle_active')
-                       .siblings()
-                       .removeClass('slider-toggle_active');}
-
-               endAnim.resolve($(this));
-            }
-
-            $.when(endAnim).done(function(){
-                setTimeout(function(){flag=true}, 400);
-
-            });
 
         });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
