@@ -3,7 +3,7 @@
   background-size: cover;
   padding: 0;
   background-position: 50% 20%;
-  height: 70vh;
+  height: 99vh;
 
 }
 
@@ -53,10 +53,3 @@
   margin-bottom:60px;
 }
 
-.saggit_blog{
-  visibility: hidden;
-
-  @include tablets{
-    visibility: visible;
-  }
-}

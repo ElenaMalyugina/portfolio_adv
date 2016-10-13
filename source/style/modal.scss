@@ -50,13 +50,13 @@
   height: 100vh;
   float: left;
   background: $light-green;
-  transition: all 2s;
-  animation: modal 2s;
+  transition: all 1s;
+  animation: modal 1s;
   }
 
 .modal_left-active{
   width: 50%;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .modal_right{
@@ -64,13 +64,13 @@
   height: 100vh;
   float: right;
   background: $light-green;
-  transition: all 2s; //хорошо работает в обратную сторону
-  animation: modal 2s; //потому что транзишн срабатывает на открытие только при первом проходею в то же время, анимация плохо работает в обратную сторону
+  transition: all 1s; //хорошо работает в обратную сторону
+  animation: modal 1s; //потому что транзишн срабатывает на открытие только при первом проходею в то же время, анимация плохо работает в обратную сторону
 }
 
 .modal_right-active{
   width: 50%;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 
