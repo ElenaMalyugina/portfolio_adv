@@ -366,103 +366,153 @@ $(document).ready(function () {
 
 
     //слайдер
-    (function(){
-            flag=true;
+    (function() {
+        var flag = true;
+        counter=1;
 
 
 
-        $('.saggit__next').on('click', function(e){
+        $('.saggit__next').on('click', function(e) {
 
             e.preventDefault();
 
             var
-                thisEl=$(this),
-                container=thisEl.closest('.my_work__container'),
-                slide=container.find('.slider__li'),
-                activeSlide=container.find('.slider__li_active'),
-                slideActiveIndex=activeSlide.attr('ID'),
-                toggle=container.find('.slider-toggle'),
-                toggleActive=toggle.eq(slideActiveIndex-3),////?????????
-                endAnim=$.Deferred();
+                thisEl = $(this),
+                container = thisEl.closest('.my_work__container'),
+                slide = container.find('.slider__li'),
+                activeSlide = slide.filter('.slider__li_active'),
+                toggle = container.find('.slider-toggle'),
+                duration = 300,
+                toggleActive = toggle.eq(activeSlide.index()-3),////?????????
+                endAnim = $.Deferred();
+
+            slide.css({'left':'-100%'});
+            activeSlide.css({'left':'0%'});
+
+            if (flag) {
+                flag = false;
+
+                if (counter >= slide.length) {
+                    counter = 0;
+                }
+
+                var reqItem = slide.eq(counter);
+
+
+                activeSlide.animate({
+                    'left': '100%'
+                }, duration);
+
+
+                reqItem.animate({
+                    'left': '0%'
+                }, duration, function () {
+                    activeSlide.removeClass('slider__li_active')
+                        .css({'left': '-100%'});
+
+                    endAnim.resolve($(this))
+
+                });
+
+
+                if(!toggleActive.hasClass('slider-toggle_active')){
+                    toggleActive.addClass('slider-toggle_active')
+                        .siblings()
+                        .removeClass('slider-toggle_active');
+                }
+
+                counter++;
+
+            }
+
+
+            $.when(endAnim).done(function (data1) {
+                data1.addClass('slider__li_active');
+                flag = true;
+            });
+
+        });
+
+
+
+        $('.saggit__pre').on('click', function(e) {
+
+            e.preventDefault();
+
+            var
+                thisEl = $(this),
+                container = thisEl.closest('.my_work__container'),
+                slide = container.find('.slider__li'),
+                activeSlide = slide.filter('.slider__li_active'),
+                toggle = container.find('.slider-toggle'),
+                duration = 300,
+                toggleActive = toggle.eq(activeSlide.index()-1),////?????????
+                endAnim1 = $.Deferred();
 
 
 
 
+            slide.css({'left':'100%'});
+            activeSlide.css({'left':'0%'});
+
+            if (flag) {
+                flag = false;
+
+                if (counter <=0 ) {
+                    counter = slide.length}
+
+                var reqItem1 = slide.eq(counter-1);
+
+
+                activeSlide.animate({
+                    'left': '-100%'
+                }, duration);
+
+
+                reqItem1.animate({
+                    'left': '0%'
+                }, duration, function () {
+                    activeSlide.removeClass('slider__li_active')
+                        .css({'left':'100%'});
+
+                    endAnim1.resolve($(this));
+
+                });
 
 
 
+                if(!toggleActive.hasClass('slider-toggle_active')){
+                    toggleActive.addClass('slider-toggle_active')
+                        .siblings()
+                        .removeClass('slider-toggle_active');
+                }
 
+
+                counter--;
+
+            }
+
+
+
+            $.when(endAnim1).done(function (data2) {
+                data2.addClass('slider__li_active');
+                flag = true;
+            });
 
 
 
 
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        $('.slider-toggle').on('click', function (e) {
+            e.preventDefault();
+        });
 
 
     }());
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Переключение слайдера по кнопкам. Очень глючно
- /*   (function() {
-        $('.slider-toggle').on('click', function (e) {
-            e.preventDefault();
-            var
-                thisEl=$(this),
-                toggleNDX=thisEl.index(),
-                slider=thisEl.closest('.slider_window'),
-                slide=slider.find('.slider__li'),
-                slideIndex=slide.attr('ID'),
-                activeSlide=slide.eq(toggleNDX);
-
-
-
-            thisEl.addClass('slider-toggle_active')
-                    .siblings()
-                    .removeClass('slider-toggle_active');
-
-            if(!activeSlide.hasClass('slider__li_active')){
-            activeSlide.addClass('slider__li_active')
-                    .animate({'left':'0'})
-                    .siblings()
-                    .removeClass('slider__li_active')
-                    .css({'left':'-100%'});}
-
-
-        });
-    }());*/
 
     //скролл блог
 
