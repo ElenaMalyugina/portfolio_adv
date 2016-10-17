@@ -1,18 +1,19 @@
 .my-works__slider{
   background: #f0efe9;
+  height: 100vh;
 
 }
 
 .slider_window{
   position: relative;
   padding: 40px 0 70px 0;
-  height: 800px;
+  height: 870px;
   width: 872px;
   overflow: hidden;
   margin: 0 auto;
 
   @include desktop{
-    height: 960px;
+    //height: 960px;
   }
 
   @include laptop{
@@ -25,7 +26,7 @@
 
   @include phones{
     width: 300px;
-    height: 100vh;
+   // height: 100vh;
   }
 }
 
@@ -73,6 +74,8 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  z-index: 30;
+  margin: 0;
 }
 
 .slider-toggle{
@@ -123,16 +126,16 @@
 
 
 .slider__item{
-  white-space: nowrap ;
   margin: 0 auto;
   position: relative;
   left: 0;
-  height: 662px;
+  height: 100%;
+  overflow: hidden;
 
 
 
   @include desktop{
-    height: auto;
+    //height: auto;
   }
 
   }
@@ -148,6 +151,7 @@
   width: 870px;
   left:-100%;
   top:0;
+  //height: 100%;
 
 
   @include laptop{
@@ -155,7 +159,7 @@
     flex-direction: column-reverse;
 
   @include tablets{
-    width: 440px;
+    width: 400px;
   }
   @include phones{
     width: 300px;
@@ -169,8 +173,6 @@
 }
 
 
-
-
 .slider__left{
   width: 516px;
 
@@ -182,7 +184,7 @@
   }
 
   @include tablets{
-    width: 440px;
+    width: 400px;
   }
 
   @include phones{
@@ -191,10 +193,9 @@
 }
 
 .slider__right{
-  white-space: normal;
   padding: 0 40px;
   @include laptop{
-    width: 100%;
+    width: 80%;
     padding: 0;
     margin-bottom: 20px;
   }
