@@ -367,7 +367,14 @@ $(document).ready(function () {
 
     //слайдер
     (function() {
-        var flag = true;
+        var flag = true,
+            container = $('.my_work__container'),
+            slide = container.find('.slider__li'),
+            activeSlide = slide.filter('.slider__li_active'),
+            toggle = container.find('.slider-toggle'),
+            duration = 300,
+            toggleActive = toggle.eq(activeSlide.index()-3),////?????????
+
         counter=1;
 
 
@@ -378,16 +385,16 @@ $(document).ready(function () {
 
             var
                 thisEl = $(this),
-                container = thisEl.closest('.my_work__container'),
-                slide = container.find('.slider__li'),
-                activeSlide = slide.filter('.slider__li_active'),
-                toggle = container.find('.slider-toggle'),
+                /*container = thisEl.closest('.my_work__container'),
+                slide = container.find('.slider__li'),*/
+                //activeSlide = slide.filter('.slider__li_active'),
+                toggle = container.find('.slider-toggle'),/*
                 duration = 300,
-                toggleActive = toggle.eq(activeSlide.index()-3),////?????????
+                toggleActive = toggle.eq(activeSlide.index()-3),////?????????*/
                 endAnim = $.Deferred();
 
             slide.css({'left':'-100%'});
-            activeSlide.css({'left':'0%'});
+            $('.slider__li_active').css({'left':'0%'});
 
             if (flag) {
                 flag = false;
@@ -428,6 +435,7 @@ $(document).ready(function () {
 
             $.when(endAnim).done(function (data1) {
                 data1.addClass('slider__li_active');
+                activeSlide = slide.filter('.slider__li_active');
                 flag = true;
             });
 
@@ -441,19 +449,19 @@ $(document).ready(function () {
 
             var
                 thisEl = $(this),
-                container = thisEl.closest('.my_work__container'),
+                /*container = thisEl.closest('.my_work__container'),
                 slide = container.find('.slider__li'),
                 activeSlide = slide.filter('.slider__li_active'),
                 toggle = container.find('.slider-toggle'),
                 duration = 300,
-                toggleActive = toggle.eq(activeSlide.index()-1),////?????????
+                toggleActive = toggle.eq(activeSlide.index()-1),////?????????*/
                 endAnim1 = $.Deferred();
 
 
 
 
             slide.css({'left':'100%'});
-            activeSlide.css({'left':'0%'});
+            $('.slider__li_active').css({'left':'0%'});
 
             if (flag) {
                 flag = false;
@@ -494,8 +502,9 @@ $(document).ready(function () {
 
 
 
-            $.when(endAnim1).done(function (data2) {
-                data2.addClass('slider__li_active');
+            $.when(endAnim1).done(function (data1) {
+                data1.addClass('slider__li_active');
+                activeSlide = slide.filter('.slider__li_active');
                 flag = true;
             });
 
@@ -563,20 +572,20 @@ $(document).ready(function () {
                 }
 
 
-
-
-
-
-
-
                 //закрепление меню
                 if (thisEl.scrollTop() > top) {
-                    aside.css({'position': 'fixed'})
+                    aside.css({'position': 'fixed'});
+
+                    if($(window).width()<769) {
+                        $('.blog__trigger').css({'visibility': 'visible'});
+                    }
 
                 }
                 else {
-                    aside.css({'position': 'static'})
+                    aside.css({'position': 'static'});
+                    $('.blog__trigger').css({'visibility': 'hidden'});
                 }
+
             });
 
            // скролл по клику
@@ -612,7 +621,47 @@ $(document).ready(function () {
             });
 
 
+            $('.blog__trigger').on('click', function(e){
+                e.preventDefault();
+
+                var $this=$(this),
+                    container=$this.siblings('.container__blog'),
+                    menu=container.find('.blog-menu__lift'),
+                    menuIn=menu.find('.blog__nav'),
+                    pos=$(menu).offset().left;
+
+
+
+                if(pos<0){
+                menu.animate({
+                    'left': '0%'
+                });
+
+                menuIn.animate({
+                    'left': '0%'
+                });}
+
+
+            });
+
+            $('.blog-menu__lift').on('click', function(e){
+                e.preventDefault();
+
+                var $this=$(this);
+
+
+                if($(window).width()<769){
+                    $this.animate({
+                        'left': '-999px'
+                    });
+
+                    $this.children().animate({
+                        'left': '-999px'
+                    });}
+
+            });
         }
+
     }());
 
 
