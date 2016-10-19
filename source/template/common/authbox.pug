@@ -1,6 +1,6 @@
 div.userbox.userbox_auth.userbox_hide
     //-блок авторизациии
-    form.form__auth(action="" method="post")
+    form.form__auth(action="assets/script/res.php" method="POST")
         h2.header_decor.header__auth Авторизуйтесь
         .block__input_auth
             label.auth__input(for="login")
@@ -36,6 +36,8 @@ div.userbox.userbox_auth.userbox_hide
                             span.radio__decor-in
                         span.label__text Не уверен
                         .tooltip.tooltip__radio Это обязательно
+
+            .result
 
 
         ul.userbox__tabs

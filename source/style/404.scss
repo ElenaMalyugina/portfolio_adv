@@ -1,0 +1,20 @@
+.not_found{
+  width: 100vw;
+  height: 100vh;
+  background: url('../img/just/bgabout.png');
+  background-size: cover;
+
+  .header_decor{
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 20%;
+    text-align: center;
+
+    &:before, &:after{
+      content: ' ';
+    }
+  }
+}
+

@@ -368,12 +368,12 @@ $(document).ready(function () {
     //слайдер
     (function() {
         var flag = true,
-            container = $('.my_work__container'),
+           /* container = $('.my_work__container'),
             slide = container.find('.slider__li'),
             activeSlide = slide.filter('.slider__li_active'),
             toggle = container.find('.slider-toggle'),
             duration = 300,
-            toggleActive = toggle.eq(activeSlide.index()-3),////?????????
+            toggleActive = toggle.eq(activeSlide.index()-3),////?????????*/
 
         counter=1;
 
@@ -385,12 +385,12 @@ $(document).ready(function () {
 
             var
                 thisEl = $(this),
-                /*container = thisEl.closest('.my_work__container'),
-                slide = container.find('.slider__li'),*/
-                //activeSlide = slide.filter('.slider__li_active'),
-                toggle = container.find('.slider-toggle'),/*
+                container = thisEl.closest('.my_work__container'),
+                slide = container.find('.slider__li'),
+                activeSlide = slide.filter('.slider__li_active'),
+                toggle = container.find('.slider-toggle'),
                 duration = 300,
-                toggleActive = toggle.eq(activeSlide.index()-3),////?????????*/
+                toggleActive = toggle.eq(activeSlide.index()-3),////?????????
                 endAnim = $.Deferred();
 
             slide.css({'left':'-100%'});
@@ -449,12 +449,12 @@ $(document).ready(function () {
 
             var
                 thisEl = $(this),
-                /*container = thisEl.closest('.my_work__container'),
+                container = thisEl.closest('.my_work__container'),
                 slide = container.find('.slider__li'),
                 activeSlide = slide.filter('.slider__li_active'),
                 toggle = container.find('.slider-toggle'),
                 duration = 300,
-                toggleActive = toggle.eq(activeSlide.index()-1),////?????????*/
+                toggleActive = toggle.eq(activeSlide.index()-1),////?????????
                 endAnim1 = $.Deferred();
 
 
@@ -668,7 +668,7 @@ $(document).ready(function () {
     //валидация форм
     (function() {
         $('.form__connect').on('submit', function(e){
-            //e.preventDefault();
+            e.preventDefault();
 
             var $this=$(this),
                 inputs=$this.find('.form-connect__el'),
@@ -717,11 +717,35 @@ $(document).ready(function () {
                 return false;
             }
             else{
-                //console.log('Готово');
                 inputs.css({
                     'box-shadow':'0 0 5px green inset'
                 });
-                return true;
+                //return true;
+
+                var msg = $this.serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '/assets/script/res.php',
+                    data: msg,
+                    success: function (data) {
+                        $('.result')
+                            .fadeIn(1000)
+                            .text('Сообщение отправлено')
+                            .on('click', function(){
+                                $(this).fadeOut(1000);
+                            });
+
+                    },
+                    error: function (xhr, str) {
+                        console.log(xhr.responseCode);
+                        $('.result')
+                            .fadeIn(1000)
+                            .text('Возникла ошибка при отправке.')
+                            .on('click', function(){
+                                $(this).fadeOut(1000);
+                            });
+                    }
+                });
             }
 
         });
@@ -744,7 +768,7 @@ $(document).ready(function () {
 
 
         $('.form__auth').on('submit', function(e){
-            //e.preventDefault();
+            e.preventDefault();
 
             var $this=$(this),
                 login=$this.find('.login'),
@@ -790,8 +814,34 @@ $(document).ready(function () {
                     .css({'display':'inline-block'});
                 return false;
             }
-            else{
-                return true;
+            else {
+                //return true;
+
+                var msg = $this.serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '/assets/script/res.php',
+                    data: msg,
+                    success: function (data) {
+                        $('.result')
+                            .fadeIn(1000)
+                            .text('Идет проверка личности')
+                            .on('click', function() {
+                                $(this).fadeOut(1000);
+                            });
+                    },
+                    error: function(xhr) {
+                            console.log(xhr.responseCode);
+                            $('.result')
+                                .fadeIn(1000)
+                                .text('Техническая ошибка')
+                                .on('click', function(){
+                                $(this).fadeOut(1000);
+                            });
+                        }
+                });
+
+
             }
 
         });
@@ -826,6 +876,9 @@ $(document).ready(function () {
         });
 
     }());
+
+
+
 
 
 });

@@ -27,7 +27,7 @@
   }
 
   @include tablets{
-    background-position: center -700px;
+    background-position: center -730px;
   }
 
   @include phones{
@@ -130,6 +130,20 @@
       background: rgba($dark-green, .5);
     }
 
+}
+
+.result{
+  display: none;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 70%;
+  padding: 30px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid $light-green;
 }
 
 
