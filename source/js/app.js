@@ -366,161 +366,104 @@ $(document).ready(function () {
 
 
     //слайдер
-    (function() {
-        var flag = true,
-           /* container = $('.my_work__container'),
-            slide = container.find('.slider__li'),
-            activeSlide = slide.filter('.slider__li_active'),
-            toggle = container.find('.slider-toggle'),
-            duration = 300,
-            toggleActive = toggle.eq(activeSlide.index()-3),////?????????*/
-
-        counter=1;
+    (function(){
+       var flag = true;
 
 
+            $('.saggitSl').on('click', function (e) {
+                e.preventDefault();
 
-        $('.saggit__next').on('click', function(e) {
 
-            e.preventDefault();
+                if(flag) {
+                    flag=false;
 
-            var
-                thisEl = $(this),
-                container = thisEl.closest('.my_work__container'),
-                slide = container.find('.slider__li'),
-                activeSlide = slide.filter('.slider__li_active'),
-                toggle = container.find('.slider-toggle'),
-                duration = 300,
-                toggleActive = toggle.eq(activeSlide.index()-3),////?????????
-                endAnim = $.Deferred();
+                    var
+                        container = $('.my_work__container'),
+                        slide = container.find('.slider__li'),
+                        activeSlide = slide.filter('.slider__li_active'),
+                        prevSlide = activeSlide.prev(),
+                        nextSlide = activeSlide.next(),
+                        firstSlide = slide.first(),
+                        lastSlide = slide.last(),
+                        toggle = container.find('.slider-toggle'),
+                        endAnim = $.Deferred(),
+                        endAnim1=$.Deferred();
 
-            slide.css({'left':'-100%'});
-            $('.slider__li_active').css({'left':'0%'});
 
-            if (flag) {
-                flag = false;
+                    if ($(this).hasClass('saggit__next')) {
 
-                if (counter >= slide.length) {
-                    counter = 0;
+                        if (nextSlide.length) {
+                            activeSlide.animate({'left': '100%'});
+                            nextSlide.animate({'left': '0%'})
+                                .addClass('slider__li_active')
+                                .siblings()
+                                .removeClass('slider__li_active')
+                                .css({'left': '-100%'})
+                        }
+                        else {
+                            activeSlide.animate({'left': '100%'});
+                            firstSlide.animate({'left': '0%'})
+                                .addClass('slider__li_active')
+                                .siblings()
+                                .removeClass('slider__li_active')
+                                .css({'left': '-100%'});
+                        }
+
+
+                        toggleActive = toggle.eq(activeSlide.index() - 3);////?????????
+                        if (!toggleActive.hasClass('slider-toggle_active')) {
+                            toggleActive.addClass('slider-toggle_active')
+                                .siblings()
+                                .removeClass('slider-toggle_active')
+                        }
+                        endAnim.resolve();
+                    }
+
+
+
+
+                    if ($(this).hasClass('saggit__pre')) {
+                        if (prevSlide.length) {
+                            activeSlide.animate({'left': '-100%'});
+                            prevSlide.animate({'left': '0%'})
+                                .addClass('slider__li_active')
+                                .siblings()
+                                .removeClass('slider__li_active')
+                                .css({'left': '100%'});
+                        }
+                        else {
+                            activeSlide.animate({'left': '-100%'});
+                            lastSlide.animate({'left': '0%'})
+                                .addClass('slider__li_active')
+                                .siblings()
+                                .removeClass('slider__li_active')
+                                .css({'left': '100%'});
+                        }
+
+
+                        toggleActive = toggle.eq(activeSlide.index() - 1);////?????????
+                        if (!toggleActive.hasClass('slider-toggle_active')) {
+                            toggleActive.addClass('slider-toggle_active')
+                                .siblings()
+                                .removeClass('slider-toggle_active')
+                        }
+
+                        endAnim1.resolve();
+                    }
+
+                    endAnim.done(function(){
+                        setTimeout(function(){flag=true}, 300)
+                    });
+
+                    endAnim1.done(function(){
+                        setTimeout(function(){flag=true}, 300)
+                    });
+
                 }
 
-                var reqItem = slide.eq(counter);
-
-
-                activeSlide.animate({
-                    'left': '100%'
-                }, duration);
-
-
-                reqItem.animate({
-                    'left': '0%'
-                }, duration, function () {
-                    activeSlide.removeClass('slider__li_active')
-                        .css({'left': '-100%'});
-
-                    endAnim.resolve($(this))
-
-                });
-
-
-                if(!toggleActive.hasClass('slider-toggle_active')){
-                    toggleActive.addClass('slider-toggle_active')
-                        .siblings()
-                        .removeClass('slider-toggle_active');
-                }
-
-                counter++;
-
-            }
-
-
-            $.when(endAnim).done(function (data1) {
-                data1.addClass('slider__li_active');
-                activeSlide = slide.filter('.slider__li_active');
-                flag = true;
             });
-
-        });
-
-
-
-        $('.saggit__pre').on('click', function(e) {
-
-            e.preventDefault();
-
-            var
-                thisEl = $(this),
-                container = thisEl.closest('.my_work__container'),
-                slide = container.find('.slider__li'),
-                activeSlide = slide.filter('.slider__li_active'),
-                toggle = container.find('.slider-toggle'),
-                duration = 300,
-                toggleActive = toggle.eq(activeSlide.index()-1),////?????????
-                endAnim1 = $.Deferred();
-
-
-
-
-            slide.css({'left':'100%'});
-            $('.slider__li_active').css({'left':'0%'});
-
-            if (flag) {
-                flag = false;
-
-                if (counter <=0 ) {
-                    counter = slide.length}
-
-                var reqItem1 = slide.eq(counter-1);
-
-
-                activeSlide.animate({
-                    'left': '-100%'
-                }, duration);
-
-
-                reqItem1.animate({
-                    'left': '0%'
-                }, duration, function () {
-                    activeSlide.removeClass('slider__li_active')
-                        .css({'left':'100%'});
-
-                    endAnim1.resolve($(this));
-
-                });
-
-
-
-                if(!toggleActive.hasClass('slider-toggle_active')){
-                    toggleActive.addClass('slider-toggle_active')
-                        .siblings()
-                        .removeClass('slider-toggle_active');
-                }
-
-
-                counter--;
-
-            }
-
-
-
-            $.when(endAnim1).done(function (data1) {
-                data1.addClass('slider__li_active');
-                activeSlide = slide.filter('.slider__li_active');
-                flag = true;
-            });
-
-
-
-
-        });
-
-        $('.slider-toggle').on('click', function (e) {
-            e.preventDefault();
-        });
-
 
     }());
-
-
 
 
     //скролл блог
@@ -876,9 +819,5 @@ $(document).ready(function () {
         });
 
     }());
-
-
-
-
 
 });
