@@ -710,7 +710,7 @@ $(document).ready(function () {
 
 
         $('.form__auth').on('submit', function(e){
-            e.preventDefault();
+            //e.preventDefault();
 
             var $this=$(this),
                 login=$this.find('.login'),
