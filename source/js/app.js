@@ -370,8 +370,11 @@ $(document).ready(function () {
        var flag = true;
 
 
+
             $('.saggitSl').on('click', function (e) {
                 e.preventDefault();
+
+                var endAnim = $.Deferred();
 
 
                 if(flag) {
@@ -385,9 +388,9 @@ $(document).ready(function () {
                         nextSlide = activeSlide.next(),
                         firstSlide = slide.first(),
                         lastSlide = slide.last(),
-                        toggle = container.find('.slider-toggle'),
-                        endAnim = $.Deferred(),
-                        endAnim1=$.Deferred();
+                        toggle = container.find('.slider-toggle');
+
+
 
 
                     if ($(this).hasClass('saggit__next')) {
@@ -416,7 +419,7 @@ $(document).ready(function () {
                                 .siblings()
                                 .removeClass('slider-toggle_active')
                         }
-                        endAnim.resolve();
+
                     }
 
 
@@ -448,18 +451,14 @@ $(document).ready(function () {
                                 .removeClass('slider-toggle_active')
                         }
 
-                        endAnim1.resolve();
+
                     }
-
-                    endAnim.done(function(){
-                        setTimeout(function(){flag=true}, 300)
-                    });
-
-                    endAnim1.done(function(){
-                        setTimeout(function(){flag=true}, 300)
-                    });
-
+                    endAnim.resolve();
                 }
+
+                endAnim.done(function(){
+                    setTimeout(function(){flag=true}, 400);
+                });
 
             });
 
@@ -611,7 +610,7 @@ $(document).ready(function () {
     //валидация форм
     (function() {
         $('.form__connect').on('submit', function(e){
-            e.preventDefault();
+            //e.preventDefault();
 
             var $this=$(this),
                 inputs=$this.find('.form-connect__el'),
