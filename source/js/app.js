@@ -660,7 +660,7 @@ $(document).ready(function () {
             }
             else{
                 inputs.css({
-                    'box-shadow':'0 0 5px green inset'
+                    'box-shadow':'0 0 5px #00bfa5 inset'
                 });
                 //return true;
 
@@ -693,14 +693,14 @@ $(document).ready(function () {
         });
 
         $('.form-connect__el').on('focus', function () {
-            $(this).css({'box-shadow':'0 0 5px green inset'})
+            $(this).css({'box-shadow':'0 0 5px #00bfa5 inset'})
                 .next($('.tooltip'))
                 .css({'display':'none'})
         });
 
 
         $('.form__connect').on('reset', function () {
-            $(this).find($('input'))
+            $(this).find($('.form-connect__el'))
                 .css({'box-shadow':'none'})
                 .next('.tooltip')
                 .css({'display':'none'});
