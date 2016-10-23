@@ -16,7 +16,7 @@ mail($to, $sub, $mes, $headers);
 //header("Location: {$_SERVER['HTTP_REFERER']}");
 
 
-//если нужна копия письма в базу данных+вывод куда то в файл
+//если нужна копия письма в базу данных+вывод куда-то в файл
 require '../../../.config.php';
 /*$host="localhost";
 $user="root";
@@ -38,7 +38,7 @@ $mailBase->execute($arrayMail);
 $resMail= $pdo->query("SELECT * FROM mailes");
 $resM=$resMail->fetchAll();
 
-echo "Отправленные письма <br>";
+echo "<h2>Отправленные письма </h2>";
 foreach ($resM as $key => $value) {
 
     echo $value['name']." ".$value['email']." ".$value['text']."<br>";
