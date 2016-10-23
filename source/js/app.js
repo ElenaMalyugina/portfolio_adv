@@ -610,7 +610,7 @@ $(document).ready(function () {
     //валидация форм
     (function() {
         $('.form__connect').on('submit', function(e){
-            //e.preventDefault();
+            e.preventDefault();
 
             var $this=$(this),
                 inputs=$this.find('.form-connect__el'),
@@ -667,11 +667,12 @@ $(document).ready(function () {
                 var msg = $this.serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/assets/script/res.php',
+                    url: '/assets/script/mail.php',
                     data: msg,
                     success: function (data) {
+                        //console.log(data);
                         $('.result')
-                            .fadeIn(1000)
+                            .show()
                             .text('Сообщение отправлено')
                             .on('click', function(){
                                 $(this).fadeOut(1000);
@@ -681,7 +682,7 @@ $(document).ready(function () {
                     error: function (xhr, str) {
                         console.log(xhr.responseCode);
                         $('.result')
-                            .fadeIn(1000)
+                            .show()
                             .text('Возникла ошибка при отправке.')
                             .on('click', function(){
                                 $(this).fadeOut(1000);
@@ -766,7 +767,7 @@ $(document).ready(function () {
                     data: msg,
                     success: function (data) {
                         $('.result')
-                            .fadeIn(1000)
+                            .show()
                             .text('Идет проверка личности')
                             .on('click', function() {
                                 $(this).fadeOut(1000);
@@ -775,7 +776,7 @@ $(document).ready(function () {
                     error: function(xhr) {
                             console.log(xhr.responseCode);
                             $('.result')
-                                .fadeIn(1000)
+                                .show()
                                 .text('Техническая ошибка')
                                 .on('click', function(){
                                 $(this).fadeOut(1000);
