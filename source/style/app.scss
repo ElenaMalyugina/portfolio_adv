@@ -9,8 +9,6 @@ $white:#fff;
 $h1: 63px ;
 $subh: 35px Roboto-Regular;
 
-
-
 @import "fonts.scss";
 @import "sprite.scss";
 @import "mixins.scss";
@@ -34,3 +32,6 @@ $subh: 35px Roboto-Regular;
 @import "modal";
 @import "tooltip.scss";
 @import "404";
+@import "admin";
+@import "admin_skill";
+@import "admin_blog";

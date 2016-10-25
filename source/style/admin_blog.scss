@@ -1,0 +1,52 @@
+.admin-blog__form, .admin-new__form, .admin-work__form{
+  & .admin__input{
+    display: block;
+    width: 400px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 6px;
+    border-color: transparent;
+  }
+
+  & textarea{
+    width: 600px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 6px;
+    border-color: transparent;
+    resize: none;
+    padding: 10px;
+    overflow-y: scroll;
+}
+  .admin__submit{
+    display: block;
+    width: 120px;
+    padding: 15px;
+    background: $light-green;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    &:hover{
+      background: $dark-green;
+    }
+  }
+
+
+
+
+
+}
+
+.admin__submit{
+  width: 120px;
+  padding: 15px;
+  background: $light-green;
+  border: none;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  &:hover{
+    background: $dark-green;
+  }
+}

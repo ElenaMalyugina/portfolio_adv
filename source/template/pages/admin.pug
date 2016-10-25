@@ -1,0 +1,31 @@
+html(lang="ru")
+    include ../common/_head
+        title="Панель администрирования"
+    body.admin__body
+        header.header__admin
+            .container.container__admin
+                h1.admin__h1 Панель администрирования
+                a.admin__go_site(href="index.html") Вернуться на сайт
+        .content.content__admin
+            .container
+                ul.tab__header
+                    li.tab-header__li.tab-header__li_active
+                        a.tab-admin__a(href="#") Обо мне
+                    li.tab-header__li
+                        a.tab-admin__a(href="#") Блог
+                    li.tab-header__li
+                        a.tab-admin__a(href="#") Мои работы
+                    li.tab-header__li
+                        a.tab-admin__a(href="#") Новый пользователь
+                ul.admin__content
+                    li.admin-content__li.admin-content__li_active
+                        include ../common/admin_skill
+                    li.admin-content__li
+                        include ../common/admin_blog
+                    li.admin-content__li
+                        include  ../common/admin_work
+                    li.admin-content__li
+                        include ../common/admin_new
+        footer.footer__admin
+            .container @Loftschool
+include ../common/script
