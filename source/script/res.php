@@ -1,8 +1,10 @@
 <?php
 require '../../../.config.php';
-//$user="root";
-//$pass= "";
-//$db="test"
+/*$user="root";
+$pass= "";
+$db="test";
+$host="localhost";
+$charset="utf8";*/
 
 
 $dsn="mysql:host=$host; dbname=$db; charset=$charset";
@@ -22,7 +24,8 @@ $res=$passBase->fetch(PDO::FETCH_ASSOC);
 
 
 if($password===$res['password']){
-    echo ('Доступ разрешен');
+    header("Location: /admin.html");
+
 }
 else{
    // header('HTTP/1.1 401 Unauthorized');
