@@ -35,12 +35,12 @@ $arrayMail=array('name'=>$name, 'email'=>$email, 'text'=>$text);
 $mailBase = $pdo->prepare("INSERT INTO mailes (name, email, text) VALUES (:name, :email, :text)");
 $mailBase->execute($arrayMail);
 
-$resMail= $pdo->query("SELECT * FROM mailes");
+/*$resMail= $pdo->query("SELECT * FROM mailes");
 $resM=$resMail->fetchAll();
 
 echo "<h2>Отправленные письма </h2>";
 foreach ($resM as $key => $value) {
 
     echo $value['name']." ".$value['email']." ".$value['text']."<br>";
-}
+}*/
 

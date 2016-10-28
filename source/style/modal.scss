@@ -99,9 +99,18 @@
     stroke-opacity: 1;
   }
 
-    @include phones{
-      width: 30px;
-      height: 30px;
+    @include phones {
+      & svg {
+        width: 30px;
+        height: 30px;
+
+        & line{
+          width: 30px;
+          height: 30px;
+        }
+
+
+      }
     }
 }
 
