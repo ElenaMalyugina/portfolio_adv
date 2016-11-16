@@ -6,9 +6,6 @@ $(window).load(function () {
 //остальное
 $(document).ready(function () {
 
-
-
-
     parallaxMouse();
     parallaxScroll();
     scrolls();
@@ -19,5 +16,6 @@ $(document).ready(function () {
     forms();
     admin_tabs();
     ajaxSkill();
+    initMap();
 
 });
