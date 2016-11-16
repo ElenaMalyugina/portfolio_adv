@@ -79,6 +79,10 @@
   white-space: nowrap;
   z-index: 30;
   //margin: 0;
+
+  @include tablets{
+    display: none;
+  }
 }
 
 .slider-toggle{

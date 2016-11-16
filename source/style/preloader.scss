@@ -2,13 +2,10 @@
   width: 100%;
   height: 100vh;
   background: $light-green;
-  position: absolute;
-  z-index: 60;
+  position: fixed;
+  z-index: 2000;
   top:0;
   left:0;
-  opacity: 0.8;
-  overflow: hidden;
-
 }
 
 .preloader__cont{
