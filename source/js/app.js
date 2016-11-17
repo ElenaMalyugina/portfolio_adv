@@ -1,6 +1,7 @@
 $(window).load(function () {
     preloader();
 
+
 });
 
 //остальное
@@ -16,6 +17,6 @@ $(document).ready(function () {
     forms();
     admin_tabs();
     ajaxSkill();
-    initMap();
+
 
 });

@@ -49,21 +49,26 @@
 
 
 .tab-header__li{
-& .tab-admin__a{
-  display: block;
-  text-align: center;
   background-color:#dddddd;
+  width: 150px;
+  border-right: 2px solid #f0efe9;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+
+  & .tab-admin__a{
+  display: block;
+  width: 100%;
+  text-align: center;
   color: $light-gray;
   text-decoration: none;
-  padding: 20px;
-  border-right: 2px solid #f0efe9;
-
 }
 }
 
 .tab-header__li_active{
- & .tab-admin__a {
   background: #f0efe9;
+ & .tab-admin__a {
+
   color: $light-green;
 }
 }

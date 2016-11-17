@@ -1,17 +1,13 @@
 <?php
 require '../../../.config.php';
-/*$user="root";
-$pass= "";
-$db="test";
-$host="localhost";
-$charset="utf8";*/
-
 
 $dsn="mysql:host=$host; dbname=$db; charset=$charset";
 
 $option=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC);
 $pdo=new PDO($dsn, $user, $pass, $option);
+
+session_start();
 
 $login=$_POST['login'];
 $password=crypt($_POST['password'], $login);
@@ -24,11 +20,17 @@ $res=$passBase->fetch(PDO::FETCH_ASSOC);
 
 
 if($password===$res['password']){
+    $idBase = $pdo->prepare("SELECT id FROM users WHERE login=:login");
+    $idBase->execute($arraySel);
+    $id=$idBase->fetch(PDO::FETCH_ASSOC);
+
+    $_SESSION['user_id']=$id;
+
     header("Location: /admin.html");
 
 }
 else{
-   // header('HTTP/1.1 401 Unauthorized');
+
    header("Location: {$_SERVER['HTTP_REFERER']}");
    exit;
 

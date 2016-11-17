@@ -96,4 +96,6 @@ function initMap() {
         icon: image,
         title: 'Я здесь'
     });
+
+
 }
