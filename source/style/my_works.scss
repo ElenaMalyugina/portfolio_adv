@@ -6,6 +6,10 @@
 .my-work__headerbox{
   padding: 55px 0;
   background: #faf8f0;
+
+  @include phones{
+    padding: 0;
+  }
 }
 
 .my-work__back{

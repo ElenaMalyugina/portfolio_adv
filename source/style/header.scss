@@ -2,11 +2,8 @@
   width:100%;
   height:99vh;
   position: relative;
-  //background: url("../img/parallax/layer1.png");
   overflow: hidden;
-
-
-  }
+}
 
 .header__container{
   padding:145px 0 48px 0;
@@ -16,15 +13,15 @@
 
 .header__background{
   position: absolute;
+  width: 100vw;
   top:50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   fill: $white;
   fill-opacity: .3;
-  text-align: center;
 
   svg{
-   width: 1000px;
+    width: 100%;
   }
 
 

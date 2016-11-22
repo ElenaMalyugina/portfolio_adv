@@ -1,4 +1,5 @@
 var modal= function(){
+
     $('.hamburger').on('click',function(e){
         e.preventDefault();
 
@@ -8,13 +9,14 @@ var modal= function(){
             left=modal.find('.modal_left'),
             right=modal.find('.modal_right'),
             menu=modal.find('.modal__nav'),
-            cross=modal.find('.cross');
+            cross=modal.find('.cross'),
+            arrow=$('.saggit_down');
 
 
         thisEl.hide(200);
         modal.show();
         cross.show();
-        $('body').css({'overflow':'hidden'});
+        arrow.hide();
         left.addClass('modal_left-active');
         right.addClass('modal_right-active');
         menu.fadeIn(1000);
@@ -32,6 +34,7 @@ var modal= function(){
             left=container.find('.modal_left'),
             right=container.find('.modal_right'),
             containerOut = thisEl.closest('body'),
+            arrow=$('.saggit_down'),
             ham = containerOut.find('.hamburger');
 
         nav.fadeOut(300);
@@ -39,11 +42,10 @@ var modal= function(){
         right.removeClass('modal_right-active');
         thisEl.hide();
         ham.show();
+        arrow.hide();
         setTimeout(function(){
             container.hide();
-
-            $('body').css({'overflow': 'auto'});
-        },2000);
+        },1000);
 
 
 

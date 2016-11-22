@@ -1,12 +1,14 @@
 var slider= function(){
     var flag = true;
 
+    $('.slider__circ').on('click', function (e) {
+        e.preventDefault();
+    });
+
 
 
     $('.saggitSl').on('click', function (e) {
         e.preventDefault();
-
-        var endAnim = $.Deferred();
 
 
         if(flag) {
@@ -85,12 +87,11 @@ var slider= function(){
 
 
             }
-            endAnim.resolve();
-        }
+            setTimeout(function(){flag=true}, 500);
+       }
 
-        endAnim.done(function(){
-            setTimeout(function(){flag=true}, 400);
-        });
+
+
 
     });
 

@@ -41,7 +41,7 @@ html{
 html, body {
 	width: 100%;
 	min-width: 1100px;
-	height: 100%;
+	min-height: 100%;
 
 	@include desktop {
 		min-width: 970px;
@@ -63,9 +63,9 @@ html, body {
 }
 
 
-// .firstbody{
-//height: 100%;
-//}
+.firstbody{
+	height: 100%;
+}
 
 .wrapper{
 
