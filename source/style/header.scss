@@ -11,6 +11,10 @@
 
 }
 
+.container__header_top{
+  @extend %clearfix;
+}
+
 .header__background{
   position: absolute;
   width: 100vw;
@@ -75,7 +79,7 @@
 }
 
 .header__socicon-header{
-  width: 40%;
+  width: 80%;
   margin: 0;
   float: left;
 }
@@ -108,7 +112,9 @@
 }
 
 .hamburger{
+  display: block;
   float: right;
+  padding-right: 0;
 
 
   svg{
@@ -143,6 +149,20 @@
    &:hover {
     opacity: 1;
   }
+}
+
+.header__user-header_blog{
+  font-size: 63px;
+  width: 200px;
+  text-align: center;
+  margin-bottom:2px;
+  color: $white;
+  line-height: 1;
+
+}
+
+.header__user-descr_blog{
+  margin-top: 0;
 }
 
 

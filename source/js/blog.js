@@ -110,6 +110,9 @@ var blog =function() {
                     'left': '0%'
                 });
 
+                $('header').hide();
+                $('footer').hide();
+
                 menuIn.animate({
                     'left': '0%'
                 });}
@@ -123,14 +126,22 @@ var blog =function() {
             var $this=$(this);
 
 
-            if($(window).width()<769){
-                $this.animate({
+            $this.animate({
                     'left': '-999px'
                 });
 
-                $this.children().animate({
+            $this.children().animate({
                     'left': '-999px'
-                });}
+                });
+
+            $('.blog__nav').animate({
+                'left': '-999px'
+
+            });
+            //костыли
+            $('header').show();
+            $('footer').show();
+
 
         });
     }

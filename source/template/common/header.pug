@@ -3,15 +3,21 @@ header.header
     .container.header__container
         div.header__background
             svg
-               use(xlink:href="assets/img/svg/sprite.svg#portfolio_header")
+                if(pageTitle=='blog')
+                    use(xlink:href="assets/img/svg/sprite.svg#blog_header")
+                else
+                    use(xlink:href="assets/img/svg/sprite.svg#portfolio_header")
         a.index__link(href="index.html" title="На первую страницу")
             div.header__userbox
                 div.header__user-photo
                     img(src="assets/img/just/my_photo.jpg")
-                h1.header__user-header Елена Mалюгинa
-                h3.header__user-descr Личный сайт веб-разработчика
-
-        .container
+                if(pageTitle=='blog')
+                    h1.header_decor.header__user-header_blog Блог
+                    h3.header__user-descr.header__user-descr_blog Статьи, которые я написала
+                else
+                    h1.header__user-header Елена Mалюгинa
+                    h3.header__user-descr Личный сайт веб-разработчика
+        .container__header_top
             ul.header__socicon-header
                 li.socicon-header__li
                     a.socicon-header__a(href="https://vk.com/id361803656" target='_blank')

@@ -1,6 +1,9 @@
-extends ../common/template_blog
+extends ../common/template_general
 block title
     title Мой блог
+block vars
+    - var pageTitle='blog';
+
 block content
     include ../common/blog_content
 
