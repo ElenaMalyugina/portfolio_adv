@@ -6,26 +6,21 @@ div.userbox.userbox_js
     h3.userbox__descr Личный сайт веб-разработчика
 
     ul.socicon__menu
-        li.socicon__li
-            a.socicon__a(href="https://vk.com/id361803656" target='_blank')
-                svg
-                    use(xlink:href="assets/img/svg/sprite.svg#vk")
-        li.socicon__li
-            a.socicon__a(href="https://github.com/ElenaMalyugina" target="_blank")
-                svg
-                    use(xlink:href="assets/img/svg/sprite.svg#github")
-        li.socicon__li
-            a.socicon__a(href="#" target="_blank")
-                svg
-                    use(xlink:href="assets/img/svg/sprite.svg#in")
+        include variables
+        for elem in socicon
+            li.socicon__li
+                a.socicon__a(href=elem.href)
+                    span.socicon_hidden=elem.name
+                    svg
+                        use(xlink:href=elem.svg)
+
 
     ul.userbox__tabs
-        li.userbox__tab-el
-            a.Utab__link(href="my_works.html") Мои работы
-        li.userbox__tab-el
-            a.Utab__link(href="about_me.html") Обо мне
-        li.userbox__tab-el
-            a.Utab__link(href="blog.html") Блог
+        include variables
+            -for(var i=0; i<3; i++){
+                li.userbox__tab-el
+                    a.Utab__link(href=elem[i].href)=elem[i].name
+            -}
 
 a.author(href="#") Авторизоваться
 

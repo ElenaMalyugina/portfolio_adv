@@ -2,30 +2,20 @@ footer.footer
     div.footer__top
         div.container.container__footer-top
             ul.footer-nav__item
-                li.footer-nav__li
-                    a.footer-nav__a(href="my_works.html") Moи работы
-                li.footer-nav__li
-                    a.footer-nav__a(href="about_me.html") Обо мне
-                li.footer-nav__li
-                    a.footer-nav__a(href="blog.html") Блог
-                li.footer-nav__li
-                    a.footer-nav__a(href="index.html") Авторизация
+
+                for i in elem
+                    li.footer-nav__li
+                        a.footer-nav__a(href=i.href)=i.name
+
             ul.footer__socicon
-                li.footer-socicon__li
-                    a.footer-socicon__a(href="https://vk.com/id361803656" target='_blank')
-                        span.socicon_hidden Вконтакте
-                        svg
-                            use(xlink:href="assets/img/svg/sprite.svg#vk_round")
-                li.footer-socicon__li
-                    a.footer-socicon__a(href="https://github.com/ElenaMalyugina" target="_blank")
-                        span.socicon_hidden Github
-                        svg
-                            use(xlink:href="assets/img/svg/sprite.svg#github_round")
-                li.footer-socicon__li
-                    a.footer-socicon__a(href="#" target="_blank")
-                        span.socicon_hidden linkedin
-                        svg
-                            use(xlink:href="assets/img/svg/sprite.svg#in_round")
+
+                for el in socicon
+                    li.footer-socicon__li
+                        a.footer-socicon__a(href=el.href target='_blank')
+                            span.socicon_hidden=el.name
+                            svg
+                                use(xlink:href=el.svg+'_round')
+
 
     div.footer__bottom
         div.container.container__footer-bottom

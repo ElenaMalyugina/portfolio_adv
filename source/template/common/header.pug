@@ -1,3 +1,4 @@
+include variables
 header.header
     include parallax
     .container.header__container
@@ -19,21 +20,14 @@ header.header
                     h3.header__user-descr Личный сайт веб-разработчика
         .container__header_top
             ul.header__socicon-header
-                li.socicon-header__li
-                    a.socicon-header__a(href="https://vk.com/id361803656" target='_blank')
-                        span.socicon_hidden Вконтакте
-                        svg
-                            use(xlink:href="assets/img/svg/sprite.svg#vk")
-                li.socicon-header__li
-                    a.socicon-header__a(href="https://github.com/ElenaMalyugina" target="_blank")
-                        span.socicon_hidden Github
-                        svg
-                            use(xlink:href="assets/img/svg/sprite.svg#github")
-                li.socicon-header__li
-                    a.socicon-header__a(href="#" target="_blank")
-                        span.socicon_hidden linkedin
-                        svg
-                            use(xlink:href="assets/img/svg/sprite.svg#in")
+
+                for elem in socicon
+                   li.socicon-header__li
+                        a.socicon-header__a(href=elem.href target="_blank")
+                            span.socicon_hidden=elem.name
+                            svg
+                                use(xlink:href=elem.svg)
+
             a.hamburger(href="#")
                 svg
                     use(xlink:href="assets/img/svg/sprite.svg#hamburger" )
