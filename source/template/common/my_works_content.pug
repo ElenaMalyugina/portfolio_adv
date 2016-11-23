@@ -26,68 +26,52 @@ section.my-work
                         use(xlink:href="assets/img/svg/sprite.svg#arrow_down")
             div.slider_window
                 ul.slider__circ
-                    li.slider-toggle
-                        a(href="#")
-                            span.toggle_slide
-                                span.toggle-in
-                    li.slider-toggle.slider-toggle_active
-                        a(href="#")
-                            span.toggle_slide
-                                span.toggle-in
-                    li.slider-toggle
-                        a(href="#")
-                            span.toggle_slide
-                                span.toggle-in
-                    li.slider-toggle
-                        a(href="#")
-                            span.toggle_slide
-                                span.toggle-in
+                    -for(var i=0; i<slider.length; i++){
+                        if(i==0)
+                            li.slider-toggle.slider-toggle_active
+                                a(href="#")
+                                    span.toggle_slide
+                                        span.toggle-in
+                        else
+                            li.slider-toggle
+                                a(href="#")
+                                    span.toggle_slide
+                                        span.toggle-in
+                    -}
+
+
+
                 ul.slider__item
-                    li.slider__li#0(style='left:100%;')
-                        div.slider__left
-                            img(src="assets/img/mywork/work-1.png")
-                        div.slider__right
-                            h3.about-work__header Сайт школы онлайн-образования
-                            div.about-work__tech HTML, CSS, Javascript
-                            a.about-work__link(href="#" target="_blank")
-                                svg.about-work__icon
-                                    use(xlink:href="assets/img/svg/sprite.svg#link")
-                                span.about-work__text-link Посмотреть сайт
-                    li.slider__li.slider__li_active#1
-                        div.slider__left
-                            img(src="assets/img/mywork/work-2.png")
-                        div.slider__right
-                            h3.about-work__header Сайт IT-Loft
-                            div.about-work__tech HTML, CSS, Javascript
-                            a.about-work__link(href="#" target="_blank")
-                                svg.about-work__icon
-                                    use(xlink:href="assets/img/svg/sprite.svg#link")
-                                span.about-work__text-link Посмотреть сайт
-                    li.slider__li#2
-                        div.slider__left
-                            img(src="assets/img/mywork/work-3.png")
-                        div.slider__right
-                            h3.about-work__header Сайт LoftBlog
-                            div.about-work__tech HTML, CSS, Javascript
-                            a.about-work__link(href="#" target="_blank")
-                                svg.about-work__icon
-                                    use(xlink:href="assets/img/svg/sprite.svg#link")
-                                span.about-work__text-link Посмотреть сайт
-                    li.slider__li#3
-                        div.slider__left
-                            img(src="assets/img/mywork/work-4.png")
-                        div.slider__right
-                            h3.about-work__header Сайт Атма-йога
-                            div.about-work__tech HTML, CSS, Javascript
-                            a.about-work__link(href="#" target="_blank")
-                                svg.about-work__icon
-                                    use(xlink:href="assets/img/svg/sprite.svg#link")
-                                span.about-work__text-link Посмотреть сайт
+                    -for(var i=0; i<slider.length; i++){
+                        if(i==0)
+                            li.slider__li.slider__li_active(id=i)
+                                div.slider__left
+                                    img(src=slider[i].img)
+                                div.slider__right
+                                    h3.about-work__header=slider[i].name
+                                    div.about-work__tech=slider[i].tech
+                                    a.about-work__link(href=slider[i].href target="_blank")
+                                        svg.about-work__icon
+                                            use(xlink:href="assets/img/svg/sprite.svg#link")
+                                        span.about-work__text-link Посмотреть сайт
+
+                        else
+                            li.slider__li(id=i)
+                                div.slider__left
+                                    img(src=slider[i].img)
+                                div.slider__right
+                                    h3.about-work__header=slider[i].name
+                                    div.about-work__tech=slider[i].tech
+                                    a.about-work__link(href=slider[i].href target="_blank")
+                                        svg.about-work__icon
+                                            use(xlink:href="assets/img/svg/sprite.svg#link")
+                                        span.about-work__text-link Посмотреть сайт
+
+                        -}
+
 
 section.my-work__talk
-    //-.my-work__back1
-    //-    img(src="assets/img/just/bgabout.png")
-    .container.my-talk__container
+   .container.my-talk__container
         .talk__back
             svg
                 use(xlink:href="assets/img/svg/sprite.svg#about_header")

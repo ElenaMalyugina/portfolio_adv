@@ -172,6 +172,10 @@
   left:-100%;
   top:0;
 
+  &:last-child{
+    left: 100%;
+  }
+
 
 
   @include laptop{
