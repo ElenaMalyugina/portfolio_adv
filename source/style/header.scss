@@ -6,7 +6,7 @@
 }
 
 .header__container{
-  padding:145px 0 48px 0;
+  padding: 20px 0 48px 0;
   height: 99vh;
 
 }
@@ -75,9 +75,9 @@
 }
 
 .header__socicon-header{
-  position: absolute;
-  top:0;
-  left:20px;
+  width: 40%;
+  margin: 0;
+  float: left;
 }
 
 
@@ -108,9 +108,8 @@
 }
 
 .hamburger{
-  position: absolute;
-  top:20px;
-  right:20px;
+  float: right;
+
 
   svg{
     width: 40px;

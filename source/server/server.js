@@ -20,7 +20,7 @@ http.createServer (function (req, res) {
          img; 
     if (_url.pathname === '/') { 
              filename 
-             = 'index.html';} 
+             = '../../build/index.html';} 
 
     extname = path.extname(filename); 
     type = typeMime[path.extname(filename)];

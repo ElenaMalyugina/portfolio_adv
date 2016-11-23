@@ -1,5 +1,4 @@
 .modal{
-  background: transparent;
   display: none;
   position: fixed;
   width: 100%;
@@ -7,9 +6,11 @@
   z-index: 60;
   top:0;
   left:0;
-  //opacity: 0.8;
-  //overflow: hidden;
   @extend %clearfix;
+  animation-name: modal;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  transition: all 1s;
 }
 
 
@@ -54,56 +55,50 @@
   }
 }
 
-.modal_left{
-  width: 0;
-  height: 100vh;
-  float: left;
-  background: $light-green;
-  transition: all 1s;
-  animation: modal 1s;
-  }
-
-.modal_left-active{
-  width: 50%;
-  transition: all 1s;
-}
-
-.modal_right{
-  width: 0;
-  height: 100vh;
-  float: right;
-  background: $light-green;
-  transition: all 1s; //хорошо работает в обратную сторону
-  animation: modal 1s; //потому что транзишн срабатывает на открытие только при первом проходе, в то же время, анимация плохо работает в обратную сторону
-}
-
-.modal_right-active{
-  width: 50%;
-  transition: all 1s;
-}
-
 
 @keyframes modal {
   from{
-    width: 0;
+    box-shadow: 0 0 0  $light-green inset,
+                0 0 0  $light-green inset;
+
   }
   to{
-    width: 50%;
+    box-shadow: 50vw 0 0  $light-green inset,
+                -50vw 0 0 $light-green inset;
   }
 }
 
+@keyframes modal-back {
+  from{
+    box-shadow: 50vw 0 0  $light-green inset,
+                -50vw 0 0 $light-green inset;
 
+  }
+  to{
+    box-shadow: 0 0 0  $light-green inset,
+                0 0 0  $light-green inset;
+  }
+}
+
+.container__cross{
+  text-align: right;
+  padding: 30px 50px;
+}
 
 .cross{
-    display: block;
-    position: absolute;
-    top:30px;
-    right: 30px;
-    width: 30px;
-    height: 30px;
     stroke: $white;
     stroke-width: 6;
     stroke-opacity: 0.7;
+
+  svg{
+    width: 40px;
+    height: 40px;
+
+    @include laptop{
+      width: 30px;
+      height: 30px;
+    }
+  }
 
   &:hover{
     stroke-opacity: 1;
