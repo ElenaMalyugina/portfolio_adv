@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "bower install"
   },
+  "entry-points": "server/server.js",
   "devDependencies": {
     "browser-sync": "2.11.2",
     "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
@@ -28,6 +29,7 @@
     "rimraf": "2.5.2"
   },
   "dependencies": {
+    "express": "^4.14.0",
     "normalize.css": "^4.1.1"
   }
 }

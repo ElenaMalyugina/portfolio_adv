@@ -55,7 +55,7 @@ http.createServer (function (req, res) {
 
         else { 
         fs.readFile(filename, 'utf8', function (err, content) {
-        if (err) {res
+            if (err) {res
                 .writeHead(404, {'Content-Type': 'text/plain; charset=utf-8'}); 
                 res.write(err.message); 
                 res.end(); 

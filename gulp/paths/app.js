@@ -14,5 +14,4 @@ module.exports = [
   './source/js/admin_tabs.js',
   './source/js/ajax_skill.js',
   './source/js/app.js'
-
 ];
