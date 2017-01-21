@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install"
   },
-  "entry-points": "server/server.js",
+  "entry-point": "source/server/server.js",
   "devDependencies": {
     "browser-sync": "2.11.2",
     "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",

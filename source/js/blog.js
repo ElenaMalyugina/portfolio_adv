@@ -121,27 +121,29 @@ var blog =function() {
         });
 
         $('.blog-menu__lift').on('click', function(e){
-            e.preventDefault();
 
-            var $this=$(this);
+        	if($(window).width()<769) {
+	            e.preventDefault();
+
+	            var $this=$(this);
 
 
-            $this.animate({
-                    'left': '-999px'
-                });
+	            $this.animate({
+	                    'left': '-999px'
+	                });
 
-            $this.children().animate({
-                    'left': '-999px'
-                });
+	            $this.children().animate({
+	                    'left': '-999px'
+	                });
 
-            $('.blog__nav').animate({
-                'left': '-999px'
+	            $('.blog__nav').animate({
+	                'left': '-999px'
 
-            });
-            //костыли
-            $('header').show();
-            $('footer').show();
-
+	            });
+	            //костыли
+	            $('header').show();
+	            $('footer').show();
+			}
 
         });
     }

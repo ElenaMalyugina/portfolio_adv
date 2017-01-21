@@ -1,71 +1,27 @@
+var express = require('express');
 
-var http = require('http'), 
-    fs = require('fs'), 
-    url = require('url'), 
-    path = require('path'), 
-    typeMime = { 
-        '.html': 'text/html', 
-        '.htm': 'text/html', 
-        '.js': 'text/javascript', 
-        '.css': 'text/css', 
-        '.png': 'image/png', 
-        '.jpg': 'image/jpeg',
-        '.svg' :'image/svg+xml'
-    }; 
-http.createServer (function (req, res) { 
-    var _url = url.parse(req.url), 
-         filename = _url.pathname.substring(1), 
-         extname, 
-         type, 
-         img; 
-    if (_url.pathname === '/') { 
-             filename 
-             = '../../build/index.html';} 
+var app= express();
 
-    extname = path.extname(filename); 
-    type = typeMime[path.extname(filename)];
+app.set('port', process.env.PORT || 3000);
+
+app.use(function (req, res) {
+    res.type('text/plain');
+    res.status(404);
+    res.send('404 - не найдено');
+
+});
+
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.type('text/plain');
+    res.status(500);
+    res.send('500 - ошибка сервера');
+
+});
+
+app.listen(app.get('port'), function () {
+    console.log('сервер запущен');
+});
 
 
-
-    if ((extname === '.png') || (extname === '.jpg')) { 
-        img = fs.readFileSync(filename); 
-        res.writeHead(200, { 
-                'Content-Type': type}); 
-                res.write(img, 'hex'); 
-                res.end(); 
-        } 
-    else 
-	if ((extname === '.woff2') || (extname === '.woff') || (extname === '.ttf') 
-		|| (extname === '.eot') || (extname === '.otf')||(extname === '.svg')) {
-    		font = fs.readFileSync(filename);
-   		 	res.writeHead(200, {
-      		'Content-Type': type
-    			});
-    	res.write(font, 'binary');
-   		res.end();
-  }
-  else 
-  	if(extname === '.svg') { 
-        svg = fs.readFileSync(filename); 
-        res.writeHead(200, { 
-                'Content-Type': type}); 
-                res.write(svg, 'xml'); 
-                res.end(); 
-        } 
-
-        else { 
-        fs.readFile(filename, 'utf8', function (err, content) {
-            if (err) {res
-                .writeHead(404, {'Content-Type': 'text/plain; charset=utf-8'}); 
-                res.write(err.message); 
-                res.end(); 
-            } 
-            else { 
-                res.writeHead(200, {'Content-Type': type }); 
-                res.write(content); 
-                res.end(); 
-                } 
-        }) 
-    } 
-}).listen(3000);
 
